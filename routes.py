@@ -1,21 +1,10 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.responses import JSONResponse
 from typing import Annotated
-import uvicorn
 from redis import Redis
 import pickle
-from contextlib import asynccontextmanager
 
-@asynccontextmanager
-async def lifespan(router: FastAPI):
-    try:
-        router.state.redis = Redis(host="127.0.0.1", port=6379, db=0)
-        yield
-        router.state.redis.close()
-    except Exception as e:
-        print(e)
-
-router = FastAPI(lifespan=lifespan)
+router = FastAPI()
 
 @router.post("/get_file/")
 async def get_file(file: Annotated[bytes, File()]):
@@ -43,6 +32,3 @@ async def create_upload_file(file: UploadFile = File(...)):
                 
             except Exception as e:
                 raise HTTPException(status_code=500, detail=str(e))
-        
-if __name__ == "__main__":
-    uvicorn.run("routes:router", host="localhost", port=8000, reload=True)

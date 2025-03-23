@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.responses import JSONResponse
 from typing import Annotated
-from redis import Redis
 import pickle
 
 router = FastAPI()

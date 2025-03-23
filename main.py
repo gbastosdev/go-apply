@@ -1,5 +1,4 @@
-import json
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from sentence_transformers import SentenceTransformer, util
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -7,6 +6,7 @@ import routes
 from contextlib import asynccontextmanager
 from redis import Redis
 import httpx
+import os
 
 origins = [
     "http://localhost",
@@ -16,7 +16,7 @@ origins = [
 @asynccontextmanager
 async def lifespan(router: FastAPI):
     try:
-        routes.router.state.redis = Redis(host="3.15.60.69", port=6379, db=0)
+        routes.router.state.redis = Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=0)
         routes.router.state.client = httpx.AsyncClient()
         yield
         router.state.redis.close()

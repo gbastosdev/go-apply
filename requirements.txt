@@ -1,0 +1,6 @@
+fastapi
+sentence_transformers
+redis
+python-dotenv
+httpx
+uvicorn

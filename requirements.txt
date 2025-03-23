@@ -4,3 +4,4 @@ redis
 python-dotenv
 httpx
 uvicorn
+python-multipart    

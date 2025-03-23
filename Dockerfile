@@ -1,17 +1,13 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.9
 
-# Copy the requirements file from the root folder to the container
-COPY requirements.txt .
+WORKDIR /code
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 
-# Copy the rest of the application code from the root folder to the container
-COPY . .
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-# Expose port 80 for the FastAPI app
-EXPOSE 80
 
-# Run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+COPY ./main.py /code/
+
+
+CMD ["fastapi", "run", "main.py", "--port", "80"]

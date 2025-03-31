@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from sentence_transformers import SentenceTransformer, util
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import routes
@@ -33,13 +32,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.mount('/api', routes.router)
-
-# documents = []
-
-# model = SentenceTransformer("all-MiniLM-L6-v2")
-# embedded_docs = {
-#     doc["id"]: model.encode(doc['text'],convert_to_tensor=True) for doc in documents
-# }
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="localhost", port=8000, reload=True)

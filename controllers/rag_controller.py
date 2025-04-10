@@ -1,5 +1,6 @@
 from sentence_transformers import SentenceTransformer, util
 from routes import router
+from threading import Thread
 
 # documents = []
 

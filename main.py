@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import routes
 from contextlib import asynccontextmanager
-from redis import Redis
-import httpx
+from redis import Redis, ConnectionError
+from controllers.redis_controller import UploadController
 import os
 
 origins = [
@@ -15,12 +15,21 @@ origins = [
 @asynccontextmanager
 async def lifespan(router: FastAPI):
     try:
-        routes.router.state.redis = Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=0)
-        routes.router.state.client = httpx.AsyncClient()
+        redis_client = Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=0)
+        if not redis_client.ping():
+            raise ConnectionError("Redis connection failed")
+        
+        # Inicialize o Redis no router
+        routes.router.state.redis = redis_client
+        
+        # Opcional: Inicialize o controller aqui se preferir
+        routes.upload_controller = UploadController(redis_client)
+        
         yield
-        router.state.redis.close()
-    except Exception as e:
-        print(e)
+        
+    finally:
+        if 'redis_client' in locals():
+            redis_client.close()
 
 app = FastAPI(lifespan=lifespan)
 

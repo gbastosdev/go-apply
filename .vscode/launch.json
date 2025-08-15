@@ -9,8 +9,9 @@
             "type": "debugpy",
             "request": "launch",
             "cwd":"${workspaceFolder}",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "module": "uvicorn",
+            "console": "integratedTerminal",
+            "args": ["main:app", "--host", "localhost", "--port", "8000", "--reload"]
         }
     ]
 }

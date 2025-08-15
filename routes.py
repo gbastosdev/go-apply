@@ -1,17 +1,36 @@
 from typing import Dict
 from fastapi import HTTPException, status, Cookie, UploadFile, File, Form, FastAPI
 from fastapi.responses import JSONResponse
-from controllers import redis_controller
-import datetime
+from controllers import rag_controller
 
 router = FastAPI()
 
 @router.post("/resume_file/")
-async def upload_file_endpoint(
-    session_id: str = Cookie(None),
-    cv: UploadFile = File(...)
-):
-    return await redis_controller.handle_upload(session_id, cv)
+async def upload_file_endpoint(cv: UploadFile = File(...), opportunity: str = Form(...)):
+    """Process the opportunity and CV upload"""
+    if not opportunity:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Opportunity is required",
+        )
+
+    if cv.content_type != "application/pdf":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Only PDF files are allowed",
+        )
+
+    try:
+        contents = await cv.read()
+        
+        return {"message": await rag_controller.analyze_job_cv(opportunity, contents).get("response", "An error occurred while processing the CV.")}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Erro ao processar arquivo: {str(e)}"
+        )
+    # return await redis_controller.handle_upload(session_id, cv)
 
 @router.post("/load_opportunity")
 async def load_opportunity(session_id: str = Cookie(), opportunity: str = Form(...)) -> Dict[str, str]:

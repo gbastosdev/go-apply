@@ -37,13 +37,13 @@ def analyze_job_cv(job_description, resume_text):
     try:
         url = 'http://localhost:11434/api/chat'
         data = {
-            "model": "tinyllama",
+            "model": "mistral:instruct",  # ou tinyllama se estiver testando
             "messages": [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
             ],
             "stream": False,
-            "temperature": 0.1  # temperatura baixa para análise determinística
+            "temperature": 0.1
         }
         data_to_send = json.dumps(data).encode('utf-8')
         response = requests.post(url, data=data_to_send)

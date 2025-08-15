@@ -1,12 +1,19 @@
 version: '3.8'
+
 services:
-  redis:
-    container_name: redis
-    image: redis:latest
+  ollama:
+    image: ollama/ollama
     ports:
-      - "6379:6379"
+      - "11434:11434"
     volumes:
-      - redis_data:/data
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=1200
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 volumes:
-  redis_data:
+  ollama_data:

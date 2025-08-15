@@ -3,4 +3,5 @@ redis
 python-dotenv
 httpx
 uvicorn
-python-multipart    
+python-multipart
+pdfplumber

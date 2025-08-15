@@ -6,11 +6,11 @@ docker-compose up -d
 # 2. Aguarda o Ollama estar pronto (healthcheck)
 echo "Aguardando Ollama iniciar..."
 while ! curl -s http://localhost:11434 > /dev/null; do
-    sleep 2
+    sleep 1
 done
 
-# 3. Baixa e executa o TinyLlama
-echo "Baixando TinyLlama..."
-docker-compose exec ollama ollama pull tinyllama
+# 3. Baixa e executa o OpenHermes
+echo "Baixando OpenHermes..."
+docker-compose exec ollama ollama pull openhermes
 
-echo "TinyLlama está pronto!"
+echo "OpenHermes está pronto!"

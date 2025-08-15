@@ -4,40 +4,37 @@ import requests
 
 def analyze_job_cv(job_description, resume_text):
     # --- System + User messages ---
-    system_message = """Você é um recrutador sênior especializado em triagem de currículos utilizando sistemas ATS (Applicant Tracking System). 
-                    Sua função é ler uma vaga e um currículo, identificar todos os requisitos da vaga e compará-los com o perfil do candidato.
-                    Sua análise deve ser objetiva, técnica e livre de invenções.
+    system_message = """Você é um recrutador ATS especializado em triagem técnica. SEMPRE responda em PORTUGUÊS DO BRASIL (PT-BR).
 
-                    Siga as regras:
-                    1. Leia atentamente a vaga e extraia:
-                    - Tecnologias e ferramentas exigidas
-                    - Nível de experiência para cada requisito
-                    - Competências diferenciais (desejáveis)
-                    - Soft skills e idiomas solicitados
-                    - Localização e formato de trabalho
+                        Siga EXATAMENTE estes passos:
 
-                    2. Compare com o currículo:
-                    - Aponte quais requisitos são atendidos
-                    - Liste lacunas relevantes
-                    - Destaque pontos fortes do candidato
+                        1. ANALISE a vaga:
+                        - Requisitos técnicos (ex: Python, AWS)
+                        - Experiência mínima (ex: 3 anos)
+                        - Diferenciais (ex: inglês avançado)
+                        - Modelo de trabalho (híbrido/remoto)
 
-                    3. Sempre responda no formato JSON válido:
-                    {
-                    "match_percent": <número entre 0 e 100>,
-                    "strengths": ["..."],
-                    "gaps": ["..."],
-                    "summary": "Resumo de até 3 frases sobre compatibilidade"
-                    }
+                        2. COMPARE com o currículo:
+                        - [✔] Atendidos: liste os requisitos cumpridos
+                        - [✖] Faltantes: cite apenas os que estão na vaga
+                        - [★] Destaques: habilidades relevantes não pedidas
 
-                    4. Não inclua informações que não estejam presentes na vaga ou no currículo.
-                    """
+                        3. NOTA: dê uma nota de 0 a 100 (ex: "75/100").
+
+                        Exemplo de resposta:
+                        "Análise para vaga de Desenvolvedor Python:
+                        [✔] Python (3 anos), Django
+                        [✖] AWS, inglês intermediário
+                        [★] Certificação em Docker
+                        Nota: 70/100"
+                        """
 
     user_message = f"Vaga:\n{job_description}\n\nCurrículo:\n{resume_text}"
 
     try:
         url = 'http://localhost:11434/api/chat'
         data = {
-            "model": "mistral:instruct",  # ou tinyllama se estiver testando
+            "model": "openhermes", 
             "messages": [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}

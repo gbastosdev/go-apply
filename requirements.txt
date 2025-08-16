@@ -5,3 +5,4 @@ httpx
 uvicorn
 python-multipart
 pdfplumber
+requests

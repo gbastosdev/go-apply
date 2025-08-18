@@ -11,6 +11,6 @@ done
 
 # 3. Baixa e executa o OpenHermes
 echo "Baixando OpenHermes..."
-docker-compose exec ollama ollama pull openhermes
+docker-compose exec ollama ollama pull dolphin-phi
 
 echo "OpenHermes está pronto!"

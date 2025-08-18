@@ -1,7 +1,7 @@
-from typing import Dict
 from fastapi import HTTPException, status, Cookie, UploadFile, File, Form, FastAPI
 from controllers import rag_controller
 import pdfplumber
+import re
 
 router = FastAPI()
 
@@ -22,11 +22,17 @@ async def upload_file_endpoint(cv: UploadFile = File(...), opportunity: str = Fo
 
     try:
         with pdfplumber.open(cv.file) as pdf:
-            contents = b"".join(page.extract_text().encode('utf-8') for page in pdf.pages if page.extract_text())
+            contents = "\n".join(
+                page.extract_text() or "" for page in pdf.pages
+            )
+        contents = re.sub(r'(?i)(experiência|experiencia|experience|formação|formacao|education|habilidades|skills|projetos|projects|certificações|certifications)',
+        r'\n### \1\n',
+        contents
+        )
         # content_text = contents.decode('utf-8')
         response = rag_controller.analyze_job_cv(opportunity, contents)
 
-        return {"message": response['response']}
+        return response
 
     except Exception as e:
         raise HTTPException(

@@ -9,8 +9,8 @@ while ! curl -s http://localhost:11434 > /dev/null; do
     sleep 1
 done
 
-# 3. Baixa e executa o OpenHermes
-echo "Baixando OpenHermes..."
-docker-compose exec ollama ollama pull llama3
+# 3. Baixa e executa o GPT Oss
+echo "Baixando GPT Oss..."
+docker-compose exec ollama ollama pull llama3:8b-instruct-q4_K_M
 
-echo "OpenHermes está pronto!"
+echo "GPT Oss está pronto!"

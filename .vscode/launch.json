@@ -8,10 +8,8 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "cwd":"${workspaceFolder}",
-            "module": "uvicorn",
+            "program":"${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["main:app", "--host", "localhost", "--port", "8000", "--reload"]
         }
     ]
 }

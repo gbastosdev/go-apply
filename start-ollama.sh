@@ -13,20 +13,13 @@ done
 echo "Copiando Modelfile para o container..."
 docker cp "./Modelfile" $(docker-compose ps -q ollama):/Modelfile
 
-# ✅ CORREÇÃO: Baixa o modelo ESPECÍFICO do Modelfile (phi3:mini)
-echo "Baixando modelo base phi3:mini..."
-docker-compose exec ollama ollama pull phi3:mini
-
-# ✅ CORREÇÃO: Remove modelos duplicados se existirem
-docker-compose exec ollama ollama rm phi3 2>/dev/null || true
-docker-compose exec ollama ollama rm phi3:latest 2>/dev/null || true
+# Baixa APENAS o modelo específico do Modelfile
+echo "Baixando modelo base phi3..."
+docker-compose exec ollama ollama pull phi3
 
 # Cria o modelo customizado
 echo "Criando modelo recruiter-phi3..."
 docker-compose exec ollama sh -c "pwd && ls -la /Modelfile && ollama create recruiter-phi3 -f /Modelfile"
-
-# ✅ CORREÇÃO: Remove modelo duplicado se criou com tag errada
-docker-compose exec ollama ollama rm recruiter-phi3:latest 2>/dev/null || true
 
 echo "✅ Modelos disponíveis:"
 docker-compose exec ollama ollama list

@@ -1,12 +1,11 @@
-version: '3.8'
-
 services:
   ollama:
     image: ollama/ollama
     ports:
       - "11434:11434"
     volumes:
-      - ollama_data:/root/.ollama
+      - ollama_data:/root/.ollama  # Volume nomeado para modelos
+      - ./Modelfile:/Modelfile:ro  # Apenas o Modelfile, em outro caminho
     environment:
       - OLLAMA_KEEP_ALIVE=1200
     healthcheck:

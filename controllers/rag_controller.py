@@ -1,64 +1,99 @@
-from http.client import HTTPException
-import json
 import requests
+import json
 import time
+from fastapi import HTTPException
 
-def analyze_job_cv(job_description, resume_text):
-    # --- System + User messages ---
-    sys_msg = """Você é um recrutador especialista em análise de compatibilidade entre vagas e currículos.
-                Sua tarefa é comparar uma vaga com um currículo e retornar SEMPRE um JSON válido.
-                TODOS os valores devem estar OBRIGATORIAMENTE em português - incluindo nomes de tecnologias, skills e observações.
+def analyze_job_cv(job_description: str, resume_text: str):
+    # Prompt mais limpo e eficiente
+    user_message = f"""
+        Vaga: {job_description}
 
-                Regras obrigatórias:
-                - O JSON deve seguir exatamente este formato:
-                {
-                "role": "string",
-                "matched_requirements": ["string"],
-                "missing_requirements": ["string"],
-                "differentials": ["string"],
-                "score": 0,
-                "observation": "string"
-                }
+        Currículo: {resume_text}
 
-                - Só são permitidas exatamente estas chaves: role, matched_requirements, missing_requirements, differentials, score, observation.
-                - Todos os campos são obrigatórios. Se não houver valor, use "" para strings, [] para listas e 0 para score.
-                - Arrays devem ter no máximo 5 itens, sempre termos curtos e técnicos EM PORTUGUÊS (ex.: "Python", "Docker", "Rust", "Kubernetes", "Arquiteturas nativas da nuvem", "Sistemas distribuídos").
-                - O campo score deve ser um número inteiro de 0 a 100 (sem aspas).
-                - O campo observation deve ser escrito EM PORTUGUÊS, curto e técnico (ex.: "Lacuna em Rust e Go", "Experiência sólida em Python e tecnologias relacionadas"). Nunca deixe vazio.
-                - IMPORTANTE: Mantenha nomes de tecnologias populares como estão (Python, Docker, Go, Rust, FastAPI, Kubernetes), mas traduza conceitos técnicos (ex.: "Database internals" → "Estruturas internas de banco de dados", "Cloud-native architectures" → "Arquiteturas nativas da nuvem").
-                - Não escreva nada fora do JSON. Nenhum comentário, nenhum texto extra.
-                - Nunca crie chaves diferentes das listadas.
-                """
-    user_message = f"""Vaga:
-                        {job_description}
-
-                        Currículo:
-                        {resume_text}
-                    """
+        Gere UM JSON com EXATAMENTE estas chaves: role, matched_requirements, missing_requirements, score, observation.
+        """
 
     try:
         url = 'http://localhost:11434/api/chat'
+        
         data = {
-            "model": "llama3:8b-instruct-q4_K_M", 
+            "model": "recruiter-phi3",
             "messages": [
-                {"role": "system", "content": sys_msg},
-                {"role": "user", "content": user_message}
+                {
+                    "role": "system",
+                    "content": "Analise a compatibilidade da vaga com o currículo e siga as regras do modelo."
+                },
+                {
+                    "role": "user",
+                    "content": user_message
+                }
             ],
             "format": "json",
             "stream": False,
-            "temperature": 0.0,
-            "num_ctx": 2048,
-            "num_threads": 4
+            "options": {
+                "num_thread": 4
+            }
         }
-        data_to_send = json.dumps(data).encode('utf-8')
+        
         start_time = time.time()
-        response = requests.post(url, data=data_to_send)
-        print(time.time() - start_time)
+        
+        # Use json= em vez de data= para serialização automática
+        response = requests.post(
+            url, 
+            json=data,  # ✅ Corrigido: usa json= em vez de data=
+            headers={'Content-Type': 'application/json'}
+        )
+        
+        print(f"Tempo de resposta: {time.time() - start_time:.2f}s")
+        print("Resposta bruta da API Ollama:", response.text)  # <-- Adicionado para debug
+
+        if response.status_code != 200:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=f"Erro Ollama: {response.text}"
+            )
+        
         res = response.json()
-        content = res['message']['content']
+        content = res.get('message', {}).get('content', None)
+
+        if content is None:
+            raise HTTPException(
+                status_code=500,
+                detail="Resposta da API Ollama não contém campo 'content'"
+            )
+
+        # Se vier string, tenta fazer o parse
         if isinstance(content, str):
-            content = json.loads(content)
+            try:
+                content = json.loads(content)
+            except json.JSONDecodeError:
+                # Retorna a resposta bruta para análise
+                raise HTTPException(
+                    status_code=500, 
+                    detail=f"Resposta não é JSON válido: {content}"
+                )
+
+        # Se vier dict vazio
+        if not content:
+            raise HTTPException(
+                status_code=500,
+                detail="Resposta da API Ollama veio vazia ({}). Reveja o prompt ou o Modelfile."
+            )
+
+        # Validação básica da estrutura
+        required_keys = {"role","matched_requirements", "missing_requirements", 
+                         "score", "observation"}
+        if not isinstance(content, dict) or not all(key in content for key in required_keys):
+            raise HTTPException(
+                status_code=500,
+                detail=f"JSON não contém todos os campos obrigatórios: {content}"
+            )
+        
         return content
     
+    except requests.exceptions.Timeout:
+        raise HTTPException(status_code=504, detail="Timeout da API Ollama")
+    except requests.exceptions.ConnectionError:
+        raise HTTPException(status_code=503, detail="Ollama não disponível")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

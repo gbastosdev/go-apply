@@ -5,7 +5,7 @@ import re
 
 router = FastAPI()
 
-@router.post("/resume_file/")
+@router.post("/resume/")
 async def upload_file_endpoint(cv: UploadFile = File(...), opportunity: str = Form(...)):
     """Process the opportunity and CV upload"""
     if not opportunity:

@@ -10,7 +10,8 @@ def analyze_job_cv(job_description: str, resume_text: str):
 
         Currículo: {resume_text}
 
-        Gere UM JSON com EXATAMENTE estas chaves: role, matched_requirements, missing_requirements, score, observation.
+        Gere UM JSON com EXATAMENTE estas chaves: role, matched_requirements, missing_requirements, score, observation. 
+        Os valores dentro dessas chaves devem ser em Português (PT-BR)
         """
 
     try:

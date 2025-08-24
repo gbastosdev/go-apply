@@ -10,8 +10,16 @@ def analyze_job_cv(job_description: str, resume_text: str):
 
         Currículo: {resume_text}
 
-        Gere UM JSON com EXATAMENTE estas chaves: role, matched_requirements, missing_requirements, score, observation. 
-        Os valores dentro dessas chaves devem ser em Português (PT-BR)
+        Gere UM JSON EXATAMENTE desse jeito: 
+        {{
+        "role": "string",
+        "matched_requirements": ["string"],
+        "missing_requirements": ["string"],
+        "score": integer,
+        "observation": "string"
+        }}
+        Os valores dentro dessas chaves devem ser em Português (PT-BR).
+        Você não irá adicionar nenhum campo a mais nesse JSON.
         """
 
     try:
@@ -45,8 +53,7 @@ def analyze_job_cv(job_description: str, resume_text: str):
             headers={'Content-Type': 'application/json'}
         )
         
-        print(f"Tempo de resposta: {time.time() - start_time:.2f}s")
-        print("Resposta bruta da API Ollama:", response.text)  # <-- Adicionado para debug
+        print(f"Tempo de resposta: {time.time() - start_time:.2f}s")# <-- Adicionado para debug
 
         if response.status_code != 200:
             raise HTTPException(

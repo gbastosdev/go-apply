@@ -1,8 +1,10 @@
 import os
 from fastapi import HTTPException
+from dotenv import load_dotenv
 import json
 import requests
-import re
+
+load_dotenv()
 
 def extrair_json(texto):
     start = texto.find('{')

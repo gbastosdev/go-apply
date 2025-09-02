@@ -1,107 +1,96 @@
-import requests
-import json
-import time
+import os
 from fastapi import HTTPException
+import json
+import requests
+import re
+
+def extrair_json(texto):
+    start = texto.find('{')
+    end = texto.rfind('}')
+    if start != -1 and end != -1 and end > start:
+        return texto[start:end+1]
+    return texto  # fallback
 
 def analyze_job_cv(job_description: str, resume_text: str):
-    # Prompt mais limpo e eficiente
-    user_message = f"""
-        Vaga: {job_description}
 
-        Currículo: {resume_text}
+    perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
 
-        Gere UM JSON EXATAMENTE desse jeito: 
-        {{
-        "role": "string",
-        "matched_requirements": ["string"],
-        "missing_requirements": ["string"],
-        "score": integer,
-        "observation": "string"
-        }}
-        Os valores dentro dessas chaves devem ser em Português (PT-BR).
-        Você não irá adicionar nenhum campo a mais nesse JSON.
-        """
+    if not perplexity_api_key:
+        raise ValueError("A chave da API da Perplexity não foi encontrada.")
 
-    try:
-        url = 'http://localhost:11434/api/chat'
-        
-        data = {
-            "model": "recruiter-phi3",
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "Analise a compatibilidade da vaga com o currículo e siga as regras do modelo."
-                },
-                {
-                    "role": "user",
-                    "content": user_message
-                }
-            ],
-            "format": "json",
-            "stream": False,
-            "options": {
-                "num_thread": 4
+    system_message = """Você é um recrutador brasileiro especializado em ATS (Applicant Tracking System).
+
+            REGRAS ABSOLUTAS:
+            1. Analise estritamente o currículo e considere um requisito atendido SOMENTE se o termo exato, frase ou conceito estiver CLARAMENTE presente no texto do currículo.
+            2. NÃO faça inferências, suposições, interpretações ou use conhecimento externo.
+            3. Se a palavra ou requisito não estiver LITERALMENTE escrito no currículo, ele deve estar em 'missing_requirements'.
+            4. TODOS os valores do JSON devem estar em PORTUGUÊS BRASILEIRO.
+            5. Responda PRIMEIRO com seu raciocínio detalhado e DEPOIS com o JSON final.
+
+            FORMATO DA RESPOSTA:
+            [Seu raciocínio passo a passo aqui...]
+
+            ```json
+            {
+                "matched_requirements": ["..."],
+                "missing_requirements": ["..."],
+                "score": 75,
+                "observation": "..."
             }
+            ```"""
+
+    user_message = f"""
+        VAGA PARA ANÁLISE:
+        {job_description}
+
+        CURRÍCULO PARA ANÁLISE:
+        {resume_text}
+
+        Siga as regras do system message e gere sua resposta no formato solicitado.
+        """
+    try:
+        url = "https://api.perplexity.ai/chat/completions"
+
+        data = {
+            "model": "sonar-reasoning",
+            "messages": [
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message}
+            ],
+            "temperature": 0.1,
+            "max_tokens": 5000
         }
-        
-        start_time = time.time()
-        
-        # Use json= em vez de data= para serialização automática
-        response = requests.post(
-            url, 
-            json=data,  # ✅ Corrigido: usa json= em vez de data=
-            headers={'Content-Type': 'application/json'}
-        )
-        
-        print(f"Tempo de resposta: {time.time() - start_time:.2f}s")# <-- Adicionado para debug
+
+        headers = {
+            "Authorization": f"Bearer {perplexity_api_key}",
+            "Content-Type": "application/json"
+        }
+
+        response = requests.post(url, json=data, headers=headers)
 
         if response.status_code != 200:
-            raise HTTPException(
-                status_code=response.status_code,
-                detail=f"Erro Ollama: {response.text}"
-            )
-        
+            raise HTTPException(status_code=response.status_code, detail=f"Erro Perplexity: {response.text}")
+
         res = response.json()
-        content = res.get('message', {}).get('content', None)
+        content_raw = res.get('choices', [{}])[0].get('message', {}).get('content', None)
 
-        if content is None:
-            raise HTTPException(
-                status_code=500,
-                detail="Resposta da API Ollama não contém campo 'content'"
-            )
+        if content_raw is None:
+            raise HTTPException(status_code=500, detail="Resposta da API Perplexity não contém campo 'content'")
 
-        # Se vier string, tenta fazer o parse
-        if isinstance(content, str):
-            try:
-                content = json.loads(content)
-            except json.JSONDecodeError:
-                # Retorna a resposta bruta para análise
-                raise HTTPException(
-                    status_code=500, 
-                    detail=f"Resposta não é JSON válido: {content}"
-                )
+        json_puro = extrair_json(content_raw)
 
-        # Se vier dict vazio
-        if not content:
-            raise HTTPException(
-                status_code=500,
-                detail="Resposta da API Ollama veio vazia ({}). Reveja o prompt ou o Modelfile."
-            )
+        try:
+            content = json.loads(json_puro)
+        except json.JSONDecodeError:
+            raise HTTPException(status_code=500, detail=f"Resposta não é JSON válido!")
 
-        # Validação básica da estrutura
-        required_keys = {"role","matched_requirements", "missing_requirements", 
-                         "score", "observation"}
+        # Validar estrutura básica do JSON
+        required_keys = {"matched_requirements", "missing_requirements", "score", "observation"}
         if not isinstance(content, dict) or not all(key in content for key in required_keys):
-            raise HTTPException(
-                status_code=500,
-                detail=f"JSON não contém todos os campos obrigatórios: {content}"
-            )
-        
+            raise HTTPException(status_code=500, detail=f"JSON não contém todos os campos obrigatórios!")
+
+        # Retorna conteúdo sem filtro adicional
         return content
-    
-    except requests.exceptions.Timeout:
-        raise HTTPException(status_code=504, detail="Timeout da API Ollama")
-    except requests.exceptions.ConnectionError:
-        raise HTTPException(status_code=503, detail="Ollama não disponível")
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

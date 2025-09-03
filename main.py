@@ -1,24 +1,18 @@
-from fastapi import FastAPI
+from fastapi import FastAPI , Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import routes
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:3000",
-    "http://187.36.173.62"
-]
-
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+ALLOWED_IPS = {"187.36.173.62"}  # conjunto de IPs permitidos
+
+@app.middleware("http")
+async def restrict_ip_middleware(request: Request, call_next):
+    client_host = request.client.host
+    if client_host not in ALLOWED_IPS:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    return await call_next(request)
 app.mount('/api', routes.router)
 
 if __name__ == "__main__":

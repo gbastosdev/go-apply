@@ -7,6 +7,7 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:3000",
+    "https://go-apply-production.up.railway.app"
 ]
 
 app = FastAPI()

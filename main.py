@@ -6,15 +6,6 @@ import routes
 
 app = FastAPI()
 
-
-ALLOWED_ORIGINS = {"https://go-apply-frontend.vercel.app"}
-
-@app.middleware("http")
-async def restrict_origin_middleware(request: Request, call_next):
-    origin = request.headers.get("origin")
-    if origin not in ALLOWED_ORIGINS:
-        raise HTTPException(status_code=403, detail="Forbidden")
-    return await call_next(request)
 app.mount('/api', routes.router)
 
 if __name__ == "__main__":

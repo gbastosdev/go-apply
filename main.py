@@ -3,16 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import routes
 
-origins = [
-    "http://localhost",
-    "https://go-apply-production.up.railway.app"
-]
-
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

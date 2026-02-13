@@ -1,0 +1,28 @@
+INFO:     Started server process [36524]
+INFO:     Waiting for application startup.
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - main - INFO - GoApply starting up...
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - services.file_storage_service - INFO - File storage initialized at c:\Users\GabrielBastos\Desktop\git\go-apply\data
+2026-02-12 17:08:38 - main - INFO - [OK] File storage initialized
+2026-02-12 17:08:38 - services.scheduler_service - INFO - Scheduler started successfully
+2026-02-12 17:08:38 - services.scheduler_service - INFO - Next scheduled run: 6:00 AM Brazil time (America/Sao_Paulo)
+2026-02-12 17:08:38 - services.scheduler_service - INFO - Next run at: 2026-02-13 06:00:00-03:00
+2026-02-12 17:08:38 - main - INFO - [OK] Scheduler started
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - main - INFO - GoApply is ready!
+2026-02-12 17:08:38 - main - INFO - ============================================================
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] normalmente é permitida apenas uma utilização de cada endereço de soquete (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - main - INFO - GoApply shutting down...
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - services.scheduler_service - INFO - Scheduler stopped
+2026-02-12 17:08:38 - main - INFO - [OK] Scheduler stopped
+2026-02-12 17:08:38 - services.file_storage_service - INFO - File storage closed
+2026-02-12 17:08:38 - main - INFO - [OK] File storage closed
+2026-02-12 17:08:38 - main - INFO - ============================================================
+2026-02-12 17:08:38 - main - INFO - GoApply shut down successfully
+2026-02-12 17:08:38 - main - INFO - ============================================================
+INFO:     Application shutdown complete.

@@ -14,11 +14,14 @@ def extrair_json(texto):
     return texto  # fallback
 
 def analyze_job_cv(job_description: str, resume_text: str):
-
     perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
 
     if not perplexity_api_key:
-        raise ValueError("A chave da API da Perplexity não foi encontrada.")
+        # Erro de configuração, retorna 500 mas com mensagem amigável
+        raise HTTPException(
+            status_code=500,
+            detail="Internal error: Perplexity API key not configured."
+        )
 
     system_message = """Você é um recrutador brasileiro especializado em ATS (Applicant Tracking System).
 
@@ -71,28 +74,49 @@ def analyze_job_cv(job_description: str, resume_text: str):
         response = requests.post(url, json=data, headers=headers)
 
         if response.status_code != 200:
-            raise HTTPException(status_code=response.status_code, detail=f"Erro Perplexity: {response.text}")
+            raise HTTPException(
+                status_code=502,
+                detail="Error when querying external service. Please try again later."
+            )
 
         res = response.json()
         content_raw = res.get('choices', [{}])[0].get('message', {}).get('content', None)
 
         if content_raw is None:
-            raise HTTPException(status_code=500, detail="Resposta da API Perplexity não contém campo 'content'")
+            raise HTTPException(
+                status_code=502,
+                detail="Unexpected response from external service."
+            )
 
         json_puro = extrair_json(content_raw)
 
         try:
             content = json.loads(json_puro)
         except json.JSONDecodeError:
-            raise HTTPException(status_code=500, detail=f"Resposta não é JSON válido!")
+            raise HTTPException(
+                status_code=502,
+                detail="External service response is not in valid format."
+            )
 
-        # Validar estrutura básica do JSON
+        # Validate basic JSON structure
         required_keys = {"matched_requirements", "missing_requirements", "score", "observation"}
         if not isinstance(content, dict) or not all(key in content for key in required_keys):
-            raise HTTPException(status_code=500, detail=f"JSON não contém todos os campos obrigatórios!")
+            raise HTTPException(
+                status_code=502,
+                detail="External service response does not contain all required fields."
+            )
 
-        # Retorna conteúdo sem filtro adicional
-        return content
+        # Return standardized response
+        return {
+            "status": "success",
+            "data": content
+        }
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except HTTPException:
+        raise  # Re-raise already handled HTTPExceptions
+    except Exception:
+        # Unexpected error, do not expose internal details
+        raise HTTPException(
+            status_code=500,
+            detail="Internal error while processing the analysis. Please try again later."
+        )

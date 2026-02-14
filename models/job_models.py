@@ -7,7 +7,6 @@ class Job(BaseModel):
     id: str  # Format: {company}_{sanitized_title}_{hash}
     company: str  # kraken, posthog, coinbase, railway, airbnb
     title: str
-    description: str
     requirements: List[str]  # Extracted bullet points or key requirements
     location: str
     posting_date: Optional[str] = None  # ISO format or "N days ago" or None

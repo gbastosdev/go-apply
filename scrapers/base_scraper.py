@@ -40,7 +40,6 @@ class BaseScraper(ABC):
                 "id": str,
                 "company": str,
                 "title": str,
-                "description": str,
                 "requirements": List[str],
                 "location": str,
                 "posting_date": Optional[str],
@@ -112,7 +111,6 @@ class BaseScraper(ABC):
     def create_job_dict(
         self,
         title: str,
-        description: str,
         requirements: List[str],
         location: str,
         url: str,
@@ -123,7 +121,6 @@ class BaseScraper(ABC):
 
         Args:
             title: Job title
-            description: Full job description
             requirements: List of requirements/qualifications
             location: Job location
             url: Job posting URL
@@ -132,15 +129,14 @@ class BaseScraper(ABC):
         Returns:
             Standardized job dictionary
         """
-        # Extract tech stack from description and requirements
-        tech_text = f"{description} {' '.join(requirements)}"
+        # Extract tech stack from requirements
+        tech_text = ' '.join(requirements)
         tech_stack = self.extract_tech_stack(tech_text)
 
         return {
             "id": self.generate_job_id(title, self.COMPANY_NAME),
             "company": self.COMPANY_NAME,
             "title": title,
-            "description": description,
             "requirements": requirements,
             "location": location,
             "posting_date": posting_date,

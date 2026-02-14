@@ -137,7 +137,6 @@ class CoinbaseScraper(BaseScraper):
                         # Create job object
                         job = self.create_job_dict(
                             title=title,
-                            description=description[:5000],
                             requirements=requirements[:15],
                             location=location,
                             url=job_url,

@@ -123,7 +123,6 @@ class PostHogScraper(BaseScraper):
                         # Create job object
                         job = self.create_job_dict(
                             title=title,
-                            description=description[:5000],  # Limit description length
                             requirements=requirements,
                             location=location,
                             url=job_url,

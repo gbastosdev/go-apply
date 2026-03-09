@@ -1,5 +1,9 @@
+import asyncio
+import time
 from typing import List, Dict
-from playwright.async_api import async_playwright
+
+from selenium.webdriver.common.by import By
+
 from scrapers.base_scraper import BaseScraper
 from utils.logger import setup_logger
 
@@ -7,137 +11,96 @@ logger = setup_logger(__name__)
 
 
 class PostHogScraper(BaseScraper):
-    """Scraper for PostHog careers page"""
-
     COMPANY_NAME = "posthog"
     URL = "https://posthog.com/careers"
-    # XPath provided by user - filter for "build products"
-    ROLES_XPATH = '//*[@id="roles"]/div[1]/div/div[1]/div/div[2]/div/div/div/div/div[1]'
 
     async def scrape(self) -> List[Dict]:
-        """Scrape job listings from PostHog careers page"""
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(None, self._sync_scrape)
+
+    _BAD_TITLES = {"read more", "apply", "apply now", "learn more", "view job", "see more", "more", ""}
+
+    def _sync_scrape(self) -> List[Dict]:
         jobs = []
+        driver = self._create_driver()
+        try:
+            logger.info(f"{self.COMPANY_NAME}: Navigating to {self.URL}")
+            driver.get(self.URL)
+            time.sleep(5)
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            try:
-                page = await browser.new_page()
-                logger.info(f"{self.COMPANY_NAME}: Navigating to {self.URL}")
+            # Multi-pass scroll to trigger lazy loading
+            for _ in range(4):
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+                time.sleep(1)
+            driver.execute_script("window.scrollTo(0, 0)")
+            time.sleep(1)
 
-                await page.goto(self.URL, timeout=self.TIMEOUT, wait_until="networkidle")
-                logger.info(f"{self.COMPANY_NAME}: Page loaded successfully")
+            # Find all job links on the page — PostHog job detail pages are
+            # under /careers/<slug> (longer than just "/careers" or "/careers#...")
+            job_data = driver.execute_script("""
+                return Array.from(document.querySelectorAll('a[href]'))
+                    .map(a => ({href: a.href, title: a.textContent.trim()}))
+                    .filter(j => {
+                        if (!j.href) return false;
+                        try {
+                            const url = new URL(j.href);
+                            return url.hostname.includes('posthog.com') &&
+                                   /\\/careers\\/[a-z0-9-]+/.test(url.pathname);
+                        } catch { return false; }
+                    });
+            """) or []
 
-                # Wait for roles section to load
-                await page.wait_for_selector('#roles', timeout=self.TIMEOUT)
+            # Deduplicate by href
+            seen = set()
+            unique_jobs = []
+            for item in job_data:
+                if item["href"] not in seen:
+                    seen.add(item["href"])
+                    unique_jobs.append(item)
 
-                # Find the container using the provided XPath
-                container = await page.query_selector(f'xpath={self.ROLES_XPATH}')
+            logger.info(f"{self.COMPANY_NAME}: Found {len(unique_jobs)} job links")
 
-                if not container:
-                    logger.warning(f"{self.COMPANY_NAME}: Container not found at XPath {self.ROLES_XPATH}")
-                    return jobs
+            for item in unique_jobs:
+                try:
+                    driver.get(item["href"])
+                    time.sleep(2)
 
-                # Check if container has "build products" text
-                container_text = await container.text_content() or ""
-                if "build products" not in container_text.lower():
-                    logger.warning(f"{self.COMPANY_NAME}: Container doesn't contain 'build products', skipping")
-                    return jobs
-
-                logger.info(f"{self.COMPANY_NAME}: Found 'build products' section")
-
-                # Find all job items within the container
-                # PostHog likely uses cards or list items for jobs
-                job_elements = await container.query_selector_all('a[href*="/careers/"]')
-
-                if not job_elements:
-                    # Try alternative selectors
-                    job_elements = await container.query_selector_all('div[class*="job"], div[class*="position"]')
-
-                logger.info(f"{self.COMPANY_NAME}: Found {len(job_elements)} job elements")
-
-                for job_element in job_elements:
+                    # Always prefer h1 from the detail page for reliable title
                     try:
-                        # Extract job title
-                        title_el = await job_element.query_selector('h3, h4, h5, strong, [class*="title"]')
-                        title = await title_el.text_content() if title_el else "Unknown Position"
-                        title = title.strip()
+                        title = driver.find_element(By.CSS_SELECTOR, "h1").text.strip()
+                    except Exception:
+                        title = item["title"]
 
-                        # Extract job URL
-                        href = await job_element.get_attribute('href')
-                        if not href:
-                            # If parent is not a link, try finding a link child
-                            link_el = await job_element.query_selector('a')
-                            href = await link_el.get_attribute('href') if link_el else None
-
-                        if not href:
-                            logger.debug(f"{self.COMPANY_NAME}: No URL found for job {title}")
-                            continue
-
-                        # Make URL absolute if relative
-                        if href.startswith('/'):
-                            job_url = f"https://posthog.com{href}"
-                        else:
-                            job_url = href
-
-                        # Extract location (if available)
-                        location_el = await job_element.query_selector('[class*="location"], span:has-text("Remote")')
-                        location = await location_el.text_content() if location_el else "Remote"
-                        location = location.strip()
-
-                        # Extract description from current element
-                        description_el = await job_element.query_selector('p, [class*="description"]')
-                        description = await description_el.text_content() if description_el else ""
-
-                        # If description is short, navigate to job detail page
-                        if len(description) < 100:
-                            detail_page = await browser.new_page()
-                            try:
-                                await detail_page.goto(job_url, timeout=self.TIMEOUT)
-                                await detail_page.wait_for_load_state("networkidle", timeout=10000)
-
-                                # Extract full description
-                                desc_content = await detail_page.query_selector('main, article, [class*="content"]')
-                                if desc_content:
-                                    description = await desc_content.text_content() or ""
-                                    description = description.strip()
-
-                                # Extract requirements
-                                req_section = await detail_page.query_selector(
-                                    'section:has-text("Requirements"), section:has-text("Qualifications"), ul'
-                                )
-                                requirements = []
-                                if req_section:
-                                    req_items = await req_section.query_selector_all('li')
-                                    for item in req_items[:10]:  # Limit to first 10
-                                        req_text = await item.text_content()
-                                        if req_text:
-                                            requirements.append(req_text.strip())
-
-                            except Exception as e:
-                                logger.debug(f"{self.COMPANY_NAME}: Could not load detail page for {title}: {e}")
-                            finally:
-                                await detail_page.close()
-                        else:
-                            requirements = []
-
-                        # Create job object
-                        job = self.create_job_dict(
-                            title=title,
-                            requirements=requirements,
-                            location=location,
-                            url=job_url,
-                            posting_date=None
-                        )
-
-                        jobs.append(job)
-                        logger.debug(f"{self.COMPANY_NAME}: Scraped job - {title}")
-
-                    except Exception as e:
-                        logger.warning(f"{self.COMPANY_NAME}: Error scraping individual job: {e}")
+                    if not title or title.lower() in self._BAD_TITLES:
+                        logger.info(f"{self.COMPANY_NAME}: Skipping bad title '{title}' at {item['href']}")
                         continue
 
-            finally:
-                await browser.close()
-                logger.info(f"{self.COMPANY_NAME}: Browser closed")
+                    # Extract requirements from ul li
+                    requirements = driver.execute_script("""
+                        const results = [];
+                        for (const li of document.querySelectorAll('ul li')) {
+                            const t = li.textContent.trim();
+                            if (t.length > 10) results.push(t);
+                            if (results.length >= 20) break;
+                        }
+                        return results;
+                    """) or []
+
+                    job = self.create_job_dict(
+                        title=title,
+                        requirements=requirements[:15],
+                        location="Remote",
+                        url=item["href"],
+                    )
+                    jobs.append(job)
+                    logger.info(f"{self.COMPANY_NAME}: Scraped - {title} - {len(requirements)} reqs")
+
+                except Exception as e:
+                    logger.warning(f"{self.COMPANY_NAME}: Error scraping {item['href']}: {e}")
+                    continue
+
+        finally:
+            driver.quit()
+            logger.info(f"{self.COMPANY_NAME}: Driver closed. Total: {len(jobs)}")
 
         return jobs

@@ -1,5 +1,9 @@
+import asyncio
+import time
 from typing import List, Dict
-from playwright.async_api import async_playwright
+
+from selenium.webdriver.common.by import By
+
 from scrapers.base_scraper import BaseScraper
 from utils.logger import setup_logger
 
@@ -7,159 +11,107 @@ logger = setup_logger(__name__)
 
 
 class AirbnbScraper(BaseScraper):
-    """Scraper for Airbnb careers page (Engineering department, Brazil only)"""
-
     COMPANY_NAME = "airbnb"
-    # URL already filtered for Brazil engineering positions
     BASE_URL = "https://careers.airbnb.com/positions/?_departments=engineering&_where_you_work=brazil-63869%2Csao-paulo-brazil-176"
 
     async def scrape(self) -> List[Dict]:
-        """Scrape job listings from Airbnb Brazil engineering careers page"""
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(None, self._sync_scrape)
+
+    def _sync_scrape(self) -> List[Dict]:
         jobs = []
-
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            try:
-                # Scrape both pages
-                for page_num in [1, 2]:
-                    url = f"{self.BASE_URL}&page={page_num}" if page_num > 1 else self.BASE_URL
-                    logger.info(f"{self.COMPANY_NAME}: Scraping page {page_num} - {url}")
-
-                    page_jobs = await self.scrape_page(browser, url, page_num)
-                    jobs.extend(page_jobs)
-                    logger.info(f"{self.COMPANY_NAME}: Found {len(page_jobs)} jobs on page {page_num}")
-
-            finally:
-                await browser.close()
-                logger.info(f"{self.COMPANY_NAME}: Browser closed")
-
-        logger.info(f"{self.COMPANY_NAME}: Total jobs scraped: {len(jobs)}")
-        return jobs
-
-    async def scrape_page(self, browser, url: str, page_num: int) -> List[Dict]:
-        """Scrape a single page of job listings"""
-        jobs = []
-
-        page = await browser.new_page()
+        driver = self._create_driver()
         try:
-            await page.goto(url, timeout=self.TIMEOUT, wait_until="networkidle")
-            logger.info(f"{self.COMPANY_NAME}: Page {page_num} loaded successfully")
+            for page_num in [1, 2]:
+                url = f"{self.BASE_URL}&page={page_num}" if page_num > 1 else self.BASE_URL
+                logger.info(f"{self.COMPANY_NAME}: Scraping page {page_num} - {url}")
 
-            # Wait for page to be fully loaded
-            await page.wait_for_timeout(2000)
+                driver.get(url)
+                time.sleep(3)
+                logger.info(f"{self.COMPANY_NAME}: Page {page_num} loaded")
 
-            # Find all job links (they go to /positions/...)
-            job_links = await page.query_selector_all('a[href*="/positions/"]')
-            logger.info(f"{self.COMPANY_NAME}: Found {len(job_links)} job links on page {page_num}")
+                # Collect job links and basic info from listing page
+                links = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/positions/"]')
+                logger.info(f"{self.COMPANY_NAME}: Found {len(links)} job links on page {page_num}")
 
-            # Collect job URLs and basic info
-            job_data = []
-            for link in job_links:
-                try:
-                    href = await link.get_attribute('href')
-                    if not href or '/positions/?_' in href:  # Skip filter links
+                job_data = []
+                for link in links:
+                    try:
+                        href = link.get_attribute("href") or ""
+                        if not href or "/positions/?" in href:
+                            continue
+
+                        title = link.text.strip()
+                        if not title or href in [j["url"] for j in job_data]:
+                            continue
+
+                        # Get location from parent element text
+                        parent_text = driver.execute_script(
+                            "return arguments[0].parentElement.textContent", link
+                        ) or ""
+                        location = "Remote"
+                        if "Hybrid" in parent_text and "•" in parent_text:
+                            parts = parent_text.split("•")
+                            if len(parts) >= 2:
+                                loc = parts[1].strip()
+                                if title in loc:
+                                    loc = loc.replace(title, "").strip()
+                                location = loc or "Remote"
+
+                        job_data.append({"url": href, "title": title, "location": location})
+                    except Exception as e:
+                        logger.debug(f"{self.COMPANY_NAME}: Error reading link: {e}")
                         continue
 
-                    # Make URL absolute
-                    if href.startswith('/'):
-                        href = f"https://careers.airbnb.com{href}"
+                logger.info(f"{self.COMPANY_NAME}: Collected {len(job_data)} unique jobs on page {page_num}")
 
-                    # Get the link text (job title)
-                    link_text = await link.text_content()
-                    title = link_text.strip() if link_text else None
-
-                    if title and href not in [j['url'] for j in job_data]:
-                        # Try to get location from nearby text
-                        parent = await link.evaluate_handle('el => el.parentElement')
-                        parent_text = await parent.text_content()
-
-                        # Extract hiring type (look for keywords)
-                        location = "Remote"
-                        if "Hybrid" in parent_text:
-                            # Extract the hiring type after •
-                            if "•" in parent_text:
-                                parts = parent_text.split("•")
-                                if len(parts) >= 2:
-                                    location = parts[1].strip()
-                                    # Remove the job title if it's in there
-                                    if title in location:
-                                        location = location.replace(title, "").strip()
-
-                        job_data.append({
-                            'url': href,
-                            'title': title,
-                            'location': location
-                        })
-                        logger.debug(f"{self.COMPANY_NAME}: Found job - {title} ({location})")
-
-                except Exception as e:
-                    logger.debug(f"{self.COMPANY_NAME}: Error extracting link data: {e}")
-                    continue
-
-            logger.info(f"{self.COMPANY_NAME}: Collected {len(job_data)} unique jobs on page {page_num}")
-
-            # Visit each job detail page
-            for job_info in job_data:
-                try:
-                    detail_page = await browser.new_page()
+                # Visit each detail page
+                for job_info in job_data:
                     try:
-                        await detail_page.goto(job_info['url'], timeout=self.TIMEOUT)
-                        await detail_page.wait_for_load_state("networkidle", timeout=30000)
+                        driver.get(job_info["url"])
+                        time.sleep(2)
 
-                        # Extract requirements from "Your Expertise" section
-                        requirements = []
+                        # Extract from "Your Expertise" section
+                        requirements = driver.execute_script("""
+                            const results = [];
+                            const headings = document.querySelectorAll('h2, h3, h4, strong');
+                            let expertiseHeading = null;
+                            for (const h of headings) {
+                                if (h.textContent.trim().toLowerCase().includes('your expertise')) {
+                                    expertiseHeading = h;
+                                    break;
+                                }
+                            }
+                            if (!expertiseHeading) return results;
+                            const next = expertiseHeading.nextElementSibling
+                                || expertiseHeading.parentElement.nextElementSibling;
+                            if (!next) return results;
+                            const items = next.querySelectorAll('li, p');
+                            for (const item of items) {
+                                const t = item.textContent.trim();
+                                if (t.length > 10) results.push(t);
+                            }
+                            return results;
+                        """)
 
-                        # Look for "Your Expertise" section
-                        expertise_sections = await detail_page.query_selector_all(
-                            'h2:has-text("Your Expertise"), h3:has-text("Your Expertise"), '
-                            'h4:has-text("Your Expertise"), strong:has-text("Your Expertise")'
-                        )
-
-                        for section in expertise_sections:
-                            try:
-                                # Get the next sibling or parent element containing the list
-                                next_element = await section.evaluate_handle(
-                                    'el => el.nextElementSibling || el.parentElement.nextElementSibling'
-                                )
-                                req_items = await next_element.query_selector_all('li, p')
-                                for item in req_items:
-                                    req_text = await item.text_content()
-                                    if req_text and len(req_text.strip()) > 10:
-                                        requirements.append(req_text.strip())
-                            except Exception:
-                                continue
-
-                        # Extract posting date if available
-                        posting_date = await self.safe_get_text(
-                            detail_page,
-                            '[class*="posted"], [class*="date"], time',
-                            None
-                        )
-
-                        # Create job object
                         job = self.create_job_dict(
-                            title=job_info['title'],
-                            requirements=requirements[:15],
-                            location=job_info['location'],
-                            url=job_info['url'],
-                            posting_date=posting_date
+                            title=job_info["title"],
+                            requirements=(requirements or [])[:15],
+                            location=job_info["location"],
+                            url=job_info["url"],
                         )
-
                         jobs.append(job)
-                        logger.info(f"{self.COMPANY_NAME}: Scraped job - {job_info['title']} ({job_info['location']}) - {len(requirements)} requirements")
+                        logger.info(f"{self.COMPANY_NAME}: Scraped job - {job_info['title']} ({job_info['location']}) - {len(requirements or [])} requirements")
 
                     except Exception as e:
-                        logger.warning(f"{self.COMPANY_NAME}: Error scraping job at {job_info['url']}: {e}")
-                    finally:
-                        await detail_page.close()
+                        logger.warning(f"{self.COMPANY_NAME}: Error scraping {job_info['url']}: {e}")
+                        continue
 
-                except Exception as e:
-                    logger.warning(f"{self.COMPANY_NAME}: Could not process job: {e}")
-                    continue
+                logger.info(f"{self.COMPANY_NAME}: Found {len(job_data)} jobs on page {page_num}")
 
-        except Exception as e:
-            logger.error(f"{self.COMPANY_NAME}: Error scraping page {page_num}: {e}")
         finally:
-            await page.close()
+            driver.quit()
+            logger.info(f"{self.COMPANY_NAME}: Driver closed")
 
+        logger.info(f"{self.COMPANY_NAME}: Total jobs scraped: {len(jobs)}")
         return jobs

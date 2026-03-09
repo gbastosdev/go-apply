@@ -1,8 +1,8 @@
+[phases.setup]
+aptPkgs = ["chromium-browser", "chromium-chromedriver"]
+
 [phases.build]
-cmds = [
-    "pip install -r requirements.txt",
-    "playwright install --with-deps chromium"
-]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
 cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"

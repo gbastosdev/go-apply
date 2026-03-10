@@ -75,10 +75,13 @@ class AirbnbScraper(BaseScraper):
                                 loc = parts[-1].strip()
                                 location = loc or "Remote"
 
-                        # Extract from "Your Expertise" section
+                        # Extract from "Your Expertise" section.
+                        # Airbnb uses <p><strong>Your Expertise</strong></p> followed
+                        # by a sibling <ul>. Walk up to 5 ancestor levels to find LI
+                        # elements in a sibling container.
                         requirements = driver.execute_script("""
                             var results = [];
-                            var headings = document.querySelectorAll('h2, h3, h4, strong');
+                            var headings = document.querySelectorAll('h1,h2,h3,h4,h5,h6,strong,b,p');
                             var found = null;
                             for (var i = 0; i < headings.length; i++) {
                                 if (headings[i].textContent.trim().toLowerCase().indexOf('your expertise') !== -1) {
@@ -87,21 +90,41 @@ class AirbnbScraper(BaseScraper):
                                 }
                             }
                             if (!found) return results;
-                            var next = found.nextElementSibling || found.parentElement.nextElementSibling;
-                            if (!next) return results;
-                            var items = next.querySelectorAll('li, p');
-                            for (var j = 0; j < items.length; j++) {
-                                var t = items[j].textContent.trim();
-                                if (t.length > 10) results.push(t);
+                            var el = found;
+                            for (var depth = 0; depth < 5; depth++) {
+                                var sib = el.nextElementSibling;
+                                while (sib) {
+                                    var lis = sib.querySelectorAll('li');
+                                    if (lis.length > 0) {
+                                        for (var k = 0; k < lis.length; k++) {
+                                            var t = lis[k].textContent.trim();
+                                            if (t.length > 10) results.push(t);
+                                        }
+                                        return results;
+                                    }
+                                    if (sib.tagName === 'LI') {
+                                        var t2 = sib.textContent.trim();
+                                        if (t2.length > 10) results.push(t2);
+                                    }
+                                    sib = sib.nextElementSibling;
+                                }
+                                if (!el.parentElement) break;
+                                el = el.parentElement;
                             }
                             return results;
                         """) or []
+
+                        # Full page text for tech_stack (catches tech not in requirements)
+                        description = driver.execute_script(
+                            "return document.body.innerText"
+                        ) or ""
 
                         job = self.create_job_dict(
                             title=item["title"],
                             requirements=requirements[:15],
                             location=location,
                             url=item["href"],
+                            description=description,
                         )
                         jobs.append(job)
                         logger.info(f"{self.COMPANY_NAME}: Scraped - {item['title']} ({location}) - {len(requirements)} reqs")

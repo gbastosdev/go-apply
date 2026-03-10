@@ -79,11 +79,18 @@ class RailwayScraper(BaseScraper):
                         return results;
                     """)
 
+                    # Use full page text for tech_stack (requirements section alone
+                    # rarely names specific technologies explicitly)
+                    description = driver.execute_script(
+                        "return document.body.innerText"
+                    ) or ""
+
                     job = self.create_job_dict(
                         title=job_info["title"],
                         requirements=(requirements or [])[:15],
                         location=job_info["location"],
                         url=job_info["url"],
+                        description=description,
                     )
                     jobs.append(job)
                     logger.info(f"{self.COMPANY_NAME}: Scraped job - {job_info['title']} ({job_info['location']}) - {len(requirements or [])} requirements")

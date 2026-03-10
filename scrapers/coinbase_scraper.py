@@ -52,11 +52,16 @@ class CoinbaseScraper(BaseScraper):
                 content_html = html.unescape(raw.get("content", ""))
                 requirements = self._extract_requirements(content_html)
 
+                # Strip all HTML tags for full-text tech_stack extraction
+                description = re.sub(r"<[^>]+>", " ", content_html)
+                description = re.sub(r"\s+", " ", description).strip()
+
                 job = self.create_job_dict(
                     title=title,
                     requirements=requirements[:15],
                     location=location,
                     url=job_url,
+                    description=description,
                 )
                 jobs.append(job)
                 logger.info(f"{self.COMPANY_NAME}: Scraped - {title} - {len(requirements)} reqs")

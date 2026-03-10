@@ -78,16 +78,21 @@ class BaseScraper(ABC):
         location: str,
         url: str,
         posting_date: str = None,
+        description: str = None,
     ) -> Dict:
-        tech_text = " ".join(requirements)
+        tech_text = description if description else " ".join(requirements)
+        tech_stack = self.extract_tech_stack(tech_text)
+        # Combine requirements + tech keywords into one searchable `skills` list.
+        # Requirements come first (human-readable context); tech keywords are
+        # appended so callers can filter/search by exact technology name.
+        skills = list(dict.fromkeys(requirements + tech_stack))
         return {
             "id": self.generate_job_id(title, self.COMPANY_NAME),
             "company": self.COMPANY_NAME,
             "title": title,
-            "requirements": requirements,
+            "skills": skills,
             "location": location,
             "posting_date": posting_date,
-            "tech_stack": self.extract_tech_stack(tech_text),
             "url": url,
             "scraped_at": datetime.now(),
         }

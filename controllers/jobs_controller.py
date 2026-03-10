@@ -191,12 +191,12 @@ def apply_filters(
         location_lower = location.lower()
         filtered = [j for j in filtered if location_lower in j.get("location", "").lower()]
 
-    # Filter by tech stack
+    # Filter by tech stack (searches the unified `skills` field)
     if tech_stack:
         tech_lower = tech_stack.lower()
         filtered = [
             j for j in filtered
-            if any(tech_lower in t.lower() for t in j.get("tech_stack", []))
+            if any(tech_lower in s.lower() for s in j.get("skills", []))
         ]
 
     return filtered

@@ -78,8 +78,9 @@ class BaseScraper(ABC):
         location: str,
         url: str,
         posting_date: str = None,
+        description: str = None,
     ) -> Dict:
-        tech_text = " ".join(requirements)
+        tech_text = description if description else " ".join(requirements)
         return {
             "id": self.generate_job_id(title, self.COMPANY_NAME),
             "company": self.COMPANY_NAME,

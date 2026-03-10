@@ -74,9 +74,17 @@ class KrakenScraper(BaseScraper):
                         return results;
                     """)
 
+                    # Deduplicate while preserving order (JS double-collects when
+                    # both target headings share the same parent container)
+                    seen_reqs: set = set()
+                    unique_reqs = [
+                        r for r in (requirements or [])
+                        if not (r in seen_reqs or seen_reqs.add(r))
+                    ]
+
                     job = self.create_job_dict(
                         title=job_info["title"],
-                        requirements=(requirements or [])[:15],
+                        requirements=unique_reqs[:15],
                         location=location,
                         url=job_info["url"],
                     )

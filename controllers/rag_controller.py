@@ -22,33 +22,33 @@ def analyze_job_cv(job_description: str, resume_text: str):
             detail="Internal error: Anthropic API key not configured."
         )
 
-    system_message = """Você é um sistema ATS (Applicant Tracking System) de análise de compatibilidade entre vagas e currículos.
+    system_message = """You are an ATS (Applicant Tracking System) for analyzing compatibility between job postings and resumes.
 
-    TAREFA:
-    Compare os requisitos da vaga com o conteúdo literal do currículo e retorne um JSON de análise.
+    TASK:
+    Compare the job requirements with the literal content of the resume and return a JSON analysis.
 
-    REGRAS DE MATCHING (siga rigorosamente):
-    - Um requisito está ATENDIDO apenas se o termo, tecnologia ou conceito aparecer EXPLICITAMENTE no currículo.
-    - NÃO faça inferências. Exemplo: "experiência com cloud" NÃO implica "AWS" se AWS não estiver escrito.
-    - NÃO use conhecimento externo. Analise apenas o texto fornecido.
-    - Se houver dúvida, classifique como missing.
+    MATCHING RULES (follow strictly):
+    - A requirement is MET only if the term, technology, or concept appears EXPLICITLY in the resume.
+    - DO NOT make inferences. Example: "cloud experience" does NOT imply "AWS" if AWS is not written.
+    - DO NOT use external knowledge. Analyze only the provided text.
+    - If in doubt, classify as missing.
 
-    REGRAS DE SCORE:
-    - Calcule: (total de matched_requirements / total de requisitos da vaga) * 100
-    - Arredonde para inteiro.
-    - Requisitos obrigatórios valem 2x na conta se estiverem explícitos na vaga como obrigatórios.
+    SCORING RULES:
+    - Calculate: (total matched_requirements / total job requirements) * 100
+    - Round to integer.
+    - Mandatory requirements count 2x in the calculation if explicitly marked as mandatory in the job posting.
 
-    IDIOMA: Todos os valores do JSON em português brasileiro.
+    LANGUAGE: All JSON values in English.
 
-    FORMATO DE SAÍDA:
-    Retorne SOMENTE o objeto JSON abaixo, sem texto antes ou depois, sem markdown, sem explicações:
+    OUTPUT FORMAT:
+    Return ONLY the JSON object below, with no text before or after, no markdown, no explanations:
 
-    {"matched_requirements":["requisito atendido 1","requisito atendido 2"],"missing_requirements":["requisito ausente 1"],"score":75,"observation":"observação objetiva sobre o perfil em relação à vaga"}"""
+    {"matched_requirements":["matched requirement 1","matched requirement 2"],"missing_requirements":["missing requirement 1"],"score":75,"observation":"objective observation about the candidate profile relative to the job posting"}"""
 
-    user_message = f"""VAGA:
+    user_message = f"""JOB DESCRIPTION:
     {job_description}
 
-    CURRÍCULO:
+    RESUME:
     {resume_text}"""
 
     try:

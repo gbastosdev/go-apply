@@ -53,10 +53,11 @@ class PostHogScraper(BaseScraper):
                         requirements = page.evaluate("""() => {
                             const results = [];
                             const keywords = [
-                                "what you'll do", "what you will do", "you'll",
-                                "what we're looking for", "who you are",
+                                "what you'll work on", "what you'll do", "what you will do",
+                                "what we're looking for", "who we're looking for", "who you are",
                                 "requirements", "qualifications", "responsibilities",
-                                "you have", "you bring", "you should"
+                                "you have", "you bring", "you should", "you'll be",
+                                "the role", "about the role"
                             ];
                             // Find a requirements-like heading, then grab its sibling LI items
                             const headings = document.querySelectorAll('h1,h2,h3,h4,h5,h6,strong');
@@ -65,35 +66,25 @@ class PostHogScraper(BaseScraper):
                                 const t = h.textContent.trim().toLowerCase();
                                 if (keywords.some(k => t.includes(k))) { found = h; break; }
                             }
-                            if (found) {
-                                // Walk siblings/ancestor siblings to find LI container
-                                let el = found;
-                                for (let d = 0; d < 5; d++) {
-                                    let sib = el.nextElementSibling;
-                                    while (sib) {
-                                        const lis = sib.querySelectorAll('li');
-                                        if (lis.length > 0) {
-                                            for (const li of lis) {
-                                                const t = li.textContent.trim();
-                                                if (t.length > 15) results.push(t);
-                                                if (results.length >= 20) return results;
-                                            }
-                                            return results;
+                            if (!found) return results;
+                            // Walk siblings/ancestor siblings to find LI container
+                            let el = found;
+                            for (let d = 0; d < 5; d++) {
+                                let sib = el.nextElementSibling;
+                                while (sib) {
+                                    const lis = sib.querySelectorAll('li');
+                                    if (lis.length > 0) {
+                                        for (const li of lis) {
+                                            const t = li.textContent.trim();
+                                            if (t.length > 15) results.push(t);
+                                            if (results.length >= 20) return results;
                                         }
-                                        sib = sib.nextElementSibling;
+                                        return results;
                                     }
-                                    if (!el.parentElement) break;
-                                    el = el.parentElement;
+                                    sib = sib.nextElementSibling;
                                 }
-                            }
-                            // Fallback: all LI in main/article longer than 40 chars
-                            if (!results.length) {
-                                const root = document.querySelector('main, article') || document.body;
-                                for (const li of root.querySelectorAll('ul li')) {
-                                    const t = li.textContent.trim();
-                                    if (t.length > 40) results.push(t);
-                                    if (results.length >= 15) break;
-                                }
+                                if (!el.parentElement) break;
+                                el = el.parentElement;
                             }
                             return results;
                         }""") or []

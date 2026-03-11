@@ -1,8 +1,5 @@
 import asyncio
-import time
 from typing import List, Dict
-
-from selenium.webdriver.common.by import By
 
 from scrapers.base_scraper import BaseScraper
 from utils.logger import setup_logger
@@ -22,103 +19,139 @@ class PostHogScraper(BaseScraper):
 
     def _sync_scrape(self) -> List[Dict]:
         jobs = []
-        driver = self._create_driver()
-        try:
-            logger.info(f"{self.COMPANY_NAME}: Navigating to {self.URL}")
-            driver.get(self.URL)
-            time.sleep(5)
+        with self._browser() as browser:
+            page = browser.new_page()
+            try:
+                logger.info(f"{self.COMPANY_NAME}: Navigating to {self.URL}")
+                page.goto(self.URL, wait_until="domcontentloaded")
+                page.wait_for_timeout(4000)
 
-            # Scroll to ensure all roles load (Next.js lazy rendering)
-            for _ in range(4):
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-                time.sleep(1)
-            driver.execute_script("window.scrollTo(0, 0)")
-            time.sleep(1)
+                # Scroll to ensure all roles load (Next.js lazy rendering)
+                for _ in range(4):
+                    page.evaluate("() => window.scrollTo(0, document.body.scrollHeight)")
+                    page.wait_for_timeout(800)
+                page.evaluate("() => window.scrollTo(0, 0)")
+                page.wait_for_timeout(500)
 
-            # Collect all "Read more" hrefs from the roles ul via XPath
-            job_links = self._collect_job_links(driver)
-            logger.info(f"{self.COMPANY_NAME}: Found {len(job_links)} job links")
+                job_links = self._collect_job_links(page)
+                logger.info(f"{self.COMPANY_NAME}: Found {len(job_links)} job links")
 
-            for href in job_links:
-                try:
-                    driver.get(href)
-                    time.sleep(2)
-
-                    # Title from h1
+                for href in job_links:
                     try:
-                        title = driver.find_element(By.CSS_SELECTOR, "h1").text.strip()
-                    except Exception:
-                        title = ""
+                        page.goto(href, wait_until="domcontentloaded")
+                        page.wait_for_timeout(1500)
 
-                    if not title:
-                        logger.info(f"{self.COMPANY_NAME}: No h1 found at {href}, skipping")
+                        try:
+                            title = page.locator("h1").first.inner_text().strip()
+                        except Exception:
+                            title = ""
+
+                        if not title:
+                            logger.info(f"{self.COMPANY_NAME}: No h1 at {href}, skipping")
+                            continue
+
+                        requirements = page.evaluate("""() => {
+                            const results = [];
+                            const keywords = [
+                                "what you'll do", "what you will do", "you'll",
+                                "what we're looking for", "who you are",
+                                "requirements", "qualifications", "responsibilities",
+                                "you have", "you bring", "you should"
+                            ];
+                            // Find a requirements-like heading, then grab its sibling LI items
+                            const headings = document.querySelectorAll('h1,h2,h3,h4,h5,h6,strong');
+                            let found = null;
+                            for (const h of headings) {
+                                const t = h.textContent.trim().toLowerCase();
+                                if (keywords.some(k => t.includes(k))) { found = h; break; }
+                            }
+                            if (found) {
+                                // Walk siblings/ancestor siblings to find LI container
+                                let el = found;
+                                for (let d = 0; d < 5; d++) {
+                                    let sib = el.nextElementSibling;
+                                    while (sib) {
+                                        const lis = sib.querySelectorAll('li');
+                                        if (lis.length > 0) {
+                                            for (const li of lis) {
+                                                const t = li.textContent.trim();
+                                                if (t.length > 15) results.push(t);
+                                                if (results.length >= 20) return results;
+                                            }
+                                            return results;
+                                        }
+                                        sib = sib.nextElementSibling;
+                                    }
+                                    if (!el.parentElement) break;
+                                    el = el.parentElement;
+                                }
+                            }
+                            // Fallback: all LI in main/article longer than 40 chars
+                            if (!results.length) {
+                                const root = document.querySelector('main, article') || document.body;
+                                for (const li of root.querySelectorAll('ul li')) {
+                                    const t = li.textContent.trim();
+                                    if (t.length > 40) results.push(t);
+                                    if (results.length >= 15) break;
+                                }
+                            }
+                            return results;
+                        }""") or []
+
+                        description = page.evaluate("() => document.body.innerText") or ""
+
+                        job = self.create_job_dict(
+                            title=title,
+                            requirements=requirements[:15],
+                            location="Remote",
+                            url=href,
+                            description=description,
+                        )
+                        jobs.append(job)
+                        logger.info(f"{self.COMPANY_NAME}: Scraped - {title} - {len(requirements)} reqs")
+
+                    except Exception as e:
+                        logger.warning(f"{self.COMPANY_NAME}: Error scraping {href}: {e}")
                         continue
 
-                    # Requirements from ul li on the detail page
-                    requirements = driver.execute_script("""
-                        var results = [];
-                        var items = document.querySelectorAll('ul li');
-                        for (var i = 0; i < items.length; i++) {
-                            var t = items[i].textContent.trim();
-                            if (t.length > 10) results.push(t);
-                            if (results.length >= 20) break;
-                        }
-                        return results;
-                    """) or []
-
-                    # Full page text for tech_stack extraction
-                    description = driver.execute_script(
-                        "return document.body.innerText"
-                    ) or ""
-
-                    job = self.create_job_dict(
-                        title=title,
-                        requirements=requirements[:15],
-                        location="Remote",
-                        url=href,
-                        description=description,
-                    )
-                    jobs.append(job)
-                    logger.info(f"{self.COMPANY_NAME}: Scraped - {title} - {len(requirements)} reqs")
-
-                except Exception as e:
-                    logger.warning(f"{self.COMPANY_NAME}: Error scraping {href}: {e}")
-                    continue
-
-        finally:
-            driver.quit()
-            logger.info(f"{self.COMPANY_NAME}: Driver closed. Total: {len(jobs)}")
+            finally:
+                logger.info(f"{self.COMPANY_NAME}: Done. Total: {len(jobs)}")
 
         return jobs
 
-    def _collect_job_links(self, driver) -> List[str]:
-        """Find all 'Read more' links inside the roles ul. Falls back to page-wide scan."""
+    def _collect_job_links(self, page) -> List[str]:
+        """Find all 'Read more' links in the roles ul via XPath; fallback to page scan."""
         links = []
+
+        # XPath strategy
         try:
-            ul = driver.find_element(By.XPATH, self.ROLES_UL_XPATH)
-            anchors = ul.find_elements(By.TAG_NAME, "a")
-            for a in anchors:
-                href = a.get_attribute("href") or ""
-                if href and href not in links:
-                    links.append(href)
-            logger.info(f"{self.COMPANY_NAME}: XPath found {len(links)} links in roles ul")
+            ul = page.locator(f"xpath={self.ROLES_UL_XPATH}")
+            if ul.count() > 0:
+                anchors = ul.first.locator("a")
+                count = anchors.count()
+                for i in range(count):
+                    href = anchors.nth(i).get_attribute("href") or ""
+                    if href and href not in links:
+                        links.append(href if href.startswith("http") else f"https://posthog.com{href}")
+                logger.info(f"{self.COMPANY_NAME}: XPath found {len(links)} links")
         except Exception as e:
-            logger.warning(f"{self.COMPANY_NAME}: XPath strategy failed ({e}), falling back to page scan")
+            logger.warning(f"{self.COMPANY_NAME}: XPath strategy failed ({e})")
 
         if not links:
-            # Fallback: any /careers/<slug> link on the page
-            links = driver.execute_script("""
-                return Array.from(document.querySelectorAll('a[href]'))
-                    .map(function(a) { return a.href; })
-                    .filter(function(h) {
-                        try {
-                            var url = new URL(h);
-                            return url.hostname.includes('posthog.com') &&
-                                   /\\/careers\\/[a-z0-9-]+/.test(url.pathname);
-                        } catch(e) { return false; }
-                    })
-                    .filter(function(h, i, arr) { return arr.indexOf(h) === i; });
-            """) or []
+            # Fallback: page-wide /careers/<slug> scan
+            links = page.evaluate("""() => {
+                return [...new Set(
+                    Array.from(document.querySelectorAll('a[href]'))
+                        .map(a => a.href)
+                        .filter(h => {
+                            try {
+                                const u = new URL(h);
+                                return u.hostname.includes('posthog.com') &&
+                                       /\\/careers\\/[a-z0-9-]+/.test(u.pathname);
+                            } catch { return false; }
+                        })
+                )];
+            }""") or []
             logger.info(f"{self.COMPANY_NAME}: Fallback found {len(links)} links")
 
         return links

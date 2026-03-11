@@ -1,79 +1,53 @@
 {
   "jobs": [
     {
-      "id": "kraken_technical_project_manager_growthengineering_united_5066dab3",
-      "company": "kraken",
-      "title": "Technical Project Manager - GrowthEngineering • United Kingdom; Canada; Portugal; Ireland; United Arab Emirates; Australia; Brazil; Cyprus; Singapore; Europe • Full time • Remote",
+      "id": "posthog_product_engineer_7f76c186",
+      "company": "posthog",
+      "title": "Product Engineer",
       "requirements": [
-        "Drive end-to-end execution of complex, cross-functional technical projects within the acquisition, engagement, and onboarding domains",
-        "Drive end-to-end execution of complex, cross-functional technical projects within the acquisition, engagement, and onboarding domains",
-        "Build and manage project plans, roadmaps, dashboards, and release timelines",
-        "Build and manage project plans, roadmaps, dashboards, and release timelines",
-        "Coordinate cross-functional teams around strategic priorities and outcomes",
-        "Coordinate cross-functional teams around strategic priorities and outcomes",
-        "Identify dependencies, manage risks, and unblock teams through creative problem-solving",
-        "Identify dependencies, manage risks, and unblock teams through creative problem-solving",
-        "Facilitate standups, retrospectives, planning sessions, and stakeholder reviews",
-        "Facilitate standups, retrospectives, planning sessions, and stakeholder reviews",
-        "Track KPIs and project health via metrics and dashboards, iterating on reporting for clarity and impact",
-        "Track KPIs and project health via metrics and dashboards, iterating on reporting for clarity and impact",
-        "Partner with Engineering Managers, Compliance Leads, and Product Managers to align on requirements, timelines, and project planning",
-        "Partner with Engineering Managers, Compliance Leads, and Product Managers to align on requirements, timelines, and project planning",
-        "Communicate effectively across technical and non-technical audiences—including executives—with clear summaries and actionable insights"
+        "customers.mdx",
+        "Talk to a human",
+        "Ask a question",
+        "Switch to website mode",
+        "Why PostHog?",
+        "Company handbook",
+        "Product EngineerMultiple teams",
+        "AI Product EngineerMultiple teams",
+        "AI Research EngineerPostHog AI Team",
+        "Application Security EngineerInfrastructure Team",
+        "Backend Engineer — BillingBilling Team",
+        "ClickHouse Operations Engineer ClickHouse Team",
+        "FinOps EngineerInfrastructure Team",
+        "Mobile EngineerClient Libraries Team",
+        "Product Manager (ex-founder or ex-product engineer)"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
-        "AWS"
+        "AWS",
+        "ClickHouse",
+        "Django",
+        "GitHub",
+        "Go",
+        "Python",
+        "React",
+        "Spark",
+        "TypeScript"
       ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/ea22a049-8063-4f90-ad1d-cafa2e6a1246?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:16.444141"
+      "url": "https://posthog.com/careers/product-engineer",
+      "scraped_at": "2026-03-09 21:36:30.320314"
     },
     {
-      "id": "kraken_sr_staff_ai_ml_engineerai_machine_learning_united__9417dbd6",
+      "id": "kraken_senior_software_engineer_backend_growth_platform_b_70e323cd",
       "company": "kraken",
-      "title": "Sr. Staff AI/ML EngineerAI & Machine Learning • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
-      "requirements": [
-        "Set long-term technical direction for Kraken’s AI/ML strategy, influencing multiple teams and initiatives.",
-        "Set long-term technical direction for Kraken’s AI/ML strategy, influencing multiple teams and initiatives.",
-        "Own the architecture and evolution of core AI/ML systems, including training, feature management, serving, experimentation, and monitoring.",
-        "Own the architecture and evolution of core AI/ML systems, including training, feature management, serving, experimentation, and monitoring.",
-        "Lead cross-team efforts to standardize ML development and operational practices across the company.",
-        "Lead cross-team efforts to standardize ML development and operational practices across the company.",
-        "Drive the design and delivery of complex, high-impact ML systems for use cases such as fraud, risk, personalization, and recommendations.",
-        "Drive the design and delivery of complex, high-impact ML systems for use cases such as fraud, risk, personalization, and recommendations.",
-        "Partner with senior engineering, product, and data leaders to identify where ML can unlock step-change improvements in scalability and efficiency.",
-        "Partner with senior engineering, product, and data leaders to identify where ML can unlock step-change improvements in scalability and efficiency.",
-        "Balance hands-on technical contributions with architectural leadership and design review responsibilities.",
-        "Balance hands-on technical contributions with architectural leadership and design review responsibilities.",
-        "Evaluate emerging ML and GenAI technologies and lead their adoption when they provide durable platform-level value.",
-        "Evaluate emerging ML and GenAI technologies and lead their adoption when they provide durable platform-level value.",
-        "Mentor Staff and Senior engineers, shaping technical culture and raising the overall quality of ML engineering at Kraken."
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://jobs.ashbyhq.com/kraken.com/ddd03a00-7a0c-46ff-ae56-6140ff530c89?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:19.632275"
-    },
-    {
-      "id": "kraken_senior_software_engineer_backend_growth_platformba_1b7ff309",
-      "company": "kraken",
-      "title": "Senior Software Engineer - Backend - Growth PlatformBackend • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Australia; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Software Engineer - Backend - Growth Platform\nBackend • United Kingdom; Australia; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "5+ years of software engineering experience, including building and maintaining backend systems or developer-facing tools.",
-        "5+ years of software engineering experience, including building and maintaining backend systems or developer-facing tools.",
-        "Proficiency in building scalable applications and developer tooling using one of the following: TypeScript, Rust, Go, Python, or Ruby.",
         "Proficiency in building scalable applications and developer tooling using one of the following: TypeScript, Rust, Go, Python, or Ruby.",
         "Experience designing and maintaining APIs, SDKs, or internal services consumed by other engineering teams.",
-        "Experience designing and maintaining APIs, SDKs, or internal services consumed by other engineering teams.",
-        "Understanding of distributed systems, scalability, reliability, and secure software design.",
         "Understanding of distributed systems, scalability, reliability, and secure software design.",
         "Experience with infrastructure and tooling such as Docker, Kubernetes, Terraform, MySQL/MariaDB, Redis, or GitLab CI/CD.",
-        "Experience with infrastructure and tooling such as Docker, Kubernetes, Terraform, MySQL/MariaDB, Redis, or GitLab CI/CD.",
         "Strong communication and documentation skills — you can make complex systems approachable to other developers.",
-        "Strong communication and documentation skills — you can make complex systems approachable to other developers.",
-        "Nice to have: familiarity with React or React Native, especially when building front-end SDKs or shared components.",
         "Nice to have: familiarity with React or React Native, especially when building front-end SDKs or shared components.",
         "Ability to operate autonomously in a globally distributed, remote-first environment."
       ],
@@ -96,268 +70,220 @@
         "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/f0c42602-2d2e-48a9-b30b-d5d062c0ef36?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:22.736402"
+      "scraped_at": "2026-03-09 21:36:20.378480"
     },
     {
-      "id": "kraken_senior_software_engineer_c_exchangebackend_united__3d278eb6",
+      "id": "kraken_senior_software_engineer_rust_core_engineering_bac_1d08a659",
       "company": "kraken",
-      "title": "Senior Software Engineer - C++ - ExchangeBackend • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Software Engineer - Rust - Core Engineering\nBackend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
-        "Develop and maintain core framework and key software components for the Kraken trading engine",
-        "Develop and maintain core framework and key software components for the Kraken trading engine",
-        "Build and design solutions that mitigate risk, implement security, and protect both systems and data",
-        "Build and design solutions that mitigate risk, implement security, and protect both systems and data",
-        "Improve site performance by designing and implementing low-latency and high-availability applications",
-        "Improve site performance by designing and implementing low-latency and high-availability applications",
-        "Construct dynamically scalable platforms capable of heavy transaction volume",
-        "Construct dynamically scalable platforms capable of heavy transaction volume",
-        "Write reusable, testable, and efficient code",
-        "Write reusable, testable, and efficient code",
-        "Collaborate with cross-functional teams and contribute to product roadmap accomplishment",
-        "Collaborate with cross-functional teams and contribute to product roadmap accomplishment",
-        "Work collaboratively on a distributed team leveraging soft skills to effectively communicate and engage with stakeholders",
-        "Work collaboratively on a distributed team leveraging soft skills to effectively communicate and engage with stakeholders",
-        "Prior experience in at least one of the following using Linux - distributed and/or highly-concurrent systems; low-latency and/or high-volume transaction environments"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "Linux"
-      ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/6c6e6515-9f3c-4923-bcec-c68cf971f589?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:26.032516"
-    },
-    {
-      "id": "kraken_senior_software_engineer_rust_backend_consumerback_1f3e6c8c",
-      "company": "kraken",
-      "title": "Senior Software Engineer - Rust - Backend - ConsumerBackend • Europe; Canada; United Kingdom; Brazil • Full time • Remote",
-      "requirements": [
-        "Design and implement robust Rust services and libraries",
-        "Design and implement robust Rust services and libraries",
-        "Write reusable, testable, and highly efficient codebase",
-        "Write reusable, testable, and highly efficient codebase",
-        "Collaborate on large scale distributed systems architecture",
-        "Collaborate on large scale distributed systems architecture",
-        "Work side by side with hundreds of experienced Rust engineers",
-        "Work side by side with hundreds of experienced Rust engineers",
+        "Design and implement robust Rust services and foundational libraries that power Kraken’s core infrastructure, prioritizing correctness, security, and long-term maintainability.",
+        "Write reusable, testable, and highly efficient code built for scale, observability, and operational resilience in production environments.",
+        "Collaborate on large-scale distributed systems architecture, shaping low-latency, fault-tolerant services that support global trading and internal platforms.",
+        "Work alongside hundreds of experienced Rust engineers, contributing to a high-bar engineering culture grounded in ownership, rigor, and craftsmanship.",
         "7+ years of software engineering experience",
-        "7+ years of software engineering experience",
-        "Proficient in writing network services or asynchronous code in Rust",
+        "Experience building and scaling shared systems, internal platforms, and supporting multiple product roadmaps",
         "Proficient in writing network services or asynchronous code in Rust",
         "Have a security-first mindset during system design to ensure robustness",
+        "Demonstrate the ability to autonomously debug issues across the stack (OS, network, application)",
+        "Apply a solid understanding of distributed systems and technologies, including RPC protocols, Kafka, and Event-Driven Systems, to design scalable solutions",
+        "Collaborate effectively with product teams to gather requirements and constraints for designing appropriate systems",
+        "Take complete end-to-end ownership of systems and libraries"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Kafka",
+        "Rust"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/6a7ec3ee-feda-42c7-a1d4-3baf1e3a0fc9?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:22.720185"
+    },
+    {
+      "id": "kraken_senior_software_engineer_rust_product_engineering__b66b26b1",
+      "company": "kraken",
+      "title": "Senior Software Engineer - Rust - Product Engineering\nBackend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
+      "requirements": [
+        "Design and implement robust Rust services and libraries that power trading, payments, and crypto experiences with a focus on reliability, performance, and user impact.",
+        "Write reusable, testable, and highly efficient code that scales across teams and supports revenue-critical systems without compromising safety or security.",
+        "Collaborate on large-scale distributed systems architecture, translating evolving product requirements into resilient, low-latency solutions.",
+        "Work alongside hundreds of experienced Rust engineers, contributing to a high-performance, product-driven engineering culture.",
+        "7+ years of software engineering experience",
+        "Experience building customer focused products, ideally in the fintech or crypto space",
+        "Proficient in writing network services or asynchronous code in Rust",
         "Have a security-first mindset during system design to ensure robustness",
-        "Demonstrate the ability to autonomously debug issues across the stack (OS, network, application)"
+        "Demonstrate the ability to autonomously debug issues across the stack (OS, network, application)",
+        "Apply a solid understanding of distributed systems and technologies, including RPC protocols, Kafka, and Event-Driven Systems, to design scalable solutions",
+        "Collaborate effectively with product teams to gather requirements and constraints for designing appropriate systems",
+        "Take complete end-to-end ownership of systems and libraries",
+        "Provide mentorship to other engineers while contributing to defining the technical culture"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
+        "Kafka",
         "Rust"
       ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/33161932-c387-42f9-8a41-36ae1ef5d116?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:29.015623"
+      "url": "https://jobs.ashbyhq.com/kraken.com/99182c62-31c0-4e31-b028-5efc431c7eac?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:25.096567"
     },
     {
-      "id": "kraken_senior_software_engineer_rust_backend_probackend_e_2be4702c",
+      "id": "kraken_software_engineer_rust_backend_consumer_backend_eu_b039c305",
       "company": "kraken",
-      "title": "Senior Software Engineer - Rust - Backend - ProBackend • Europe; Canada; United Kingdom; Brazil; Mexico • Full time • Remote",
+      "title": "Software Engineer - Rust - Backend - Consumer\nBackend • Europe; Brazil; Canada; Mexico; United Kingdom • Full time • Remote",
       "requirements": [
-        "Express your crypto passion",
-        "Express your crypto passion",
-        "Design and implement robust Rust services and libraries",
-        "Design and implement robust Rust services and libraries",
-        "Collaborate with cross-functional teams, including Product, Design, and Fronted Engineering to ensure seamless integration of new features and improvements",
-        "Collaborate with cross-functional teams, including Product, Design, and Fronted Engineering to ensure seamless integration of new features and improvements",
-        "Write reusable, testable, and highly efficient code",
-        "Write reusable, testable, and highly efficient code",
-        "Collaborate on large scale distributed systems architecture",
-        "Collaborate on large scale distributed systems architecture",
-        "Work side by side with hundreds of experienced Rust engineers",
-        "Work side by side with hundreds of experienced Rust engineers",
-        "7+ years of software engineering experience",
-        "7+ years of software engineering experience",
-        "Proficiently in writing network services or asynchronous code in Rust"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "Express",
-        "Express.js",
-        "Rust"
-      ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/c0d90cde-96ab-455a-b613-16b2f395e683?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:32.078579"
-    },
-    {
-      "id": "kraken_senior_software_engineer_typescript_onchainbackend_4644c4da",
-      "company": "kraken",
-      "title": "Senior Software Engineer - Typescript - OnchainBackend • United Kingdom; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Canada • Full time • Remote",
-      "requirements": [
-        "Design, develop, and maintain scalable, high-quality applications using TypeScript",
-        "Design, develop, and maintain scalable, high-quality applications using TypeScript",
-        "Collaborate with product managers, designers, and team members to deliver features end-to-end",
-        "Collaborate with product managers, designers, and team members to deliver features end-to-end",
-        "Write clean, maintainable code with a strong emphasis on type safety and performance",
-        "Write clean, maintainable code with a strong emphasis on type safety and performance",
-        "Review code, provide constructive feedback, and uphold engineering best practicesDebug, troubleshoot, and resolve complex technical issues",
-        "Review code, provide constructive feedback, and uphold engineering best practicesDebug, troubleshoot, and resolve complex technical issues",
-        "Contribute to architecture decisions and technical roadmaps",
-        "Contribute to architecture decisions and technical roadmaps",
-        "7+ years of full-time engineering experience within a large technology organization or fast growing startup",
-        "7+ years of full-time engineering experience within a large technology organization or fast growing startup",
-        "7+ years of experience building backend services with Node.js, Typescript",
-        "7+ years of experience building backend services with Node.js, Typescript",
-        "Experience working with GraphQL, SQL, RESTful APIs and WebSockets"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "GraphQL",
-        "Node.js",
-        "TypeScript"
-      ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/19011e5f-1e9b-4fda-80b5-391876e34f7d?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:35.197699"
-    },
-    {
-      "id": "kraken_software_engineer_exchange_c_backend_united_kingdo_81f93184",
-      "company": "kraken",
-      "title": "Software Engineer - Exchange - C++Backend • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
-      "requirements": [
-        "Develop and maintain core framework and key software components for the Kraken trading engine",
-        "Develop and maintain core framework and key software components for the Kraken trading engine",
-        "Build and design solutions that mitigate risk, implement security, and protect both systems and data",
-        "Build and design solutions that mitigate risk, implement security, and protect both systems and data",
-        "Improve site performance by designing and implementing low-latency and high-availability applications",
-        "Improve site performance by designing and implementing low-latency and high-availability applications",
-        "Construct dynamically scalable platforms capable of heavy transaction volume",
-        "Construct dynamically scalable platforms capable of heavy transaction volume",
-        "Write reusable, testable, and efficient code",
-        "Write reusable, testable, and efficient code",
-        "Collaborate with cross-functional teams and contribute to product roadmap accomplishment",
-        "Collaborate with cross-functional teams and contribute to product roadmap accomplishment",
-        "Work collaboratively on a distributed team leveraging soft skills to effectively communicate and engage with stakeholders",
-        "Work collaboratively on a distributed team leveraging soft skills to effectively communicate and engage with stakeholders",
-        "Prior experience in at least one of the following using Linux - distributed and/or highly-concurrent systems; low-latency and/or high-volume transaction environments"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "Linux"
-      ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/22c3f2c2-23b8-4622-bcf9-57b716a4ce64?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:38.362315"
-    },
-    {
-      "id": "kraken_software_engineer_rust_backend_consumerbackend_eur_de175f36",
-      "company": "kraken",
-      "title": "Software Engineer - Rust - Backend - ConsumerBackend • Europe; Canada; United Kingdom; Brazil; Mexico • Full time • Remote",
-      "requirements": [
-        "Design and implement robust Rust services and libraries",
         "Design and implement robust Rust services and libraries",
         "Write reusable, testable, and highly efficient codebase",
-        "Write reusable, testable, and highly efficient codebase",
-        "Collaborate on large scale distributed systems architecture",
         "Collaborate on large scale distributed systems architecture",
         "Work side by side with hundreds of experienced Rust engineers",
-        "Work side by side with hundreds of experienced Rust engineers",
-        "3+ years of experience in software engineering",
         "3+ years of experience in software engineering",
         "Proficiency in writing network services or asynchronous code in Rust",
-        "Proficiency in writing network services or asynchronous code in Rust",
         "Demonstrated commitment to a security-first mindset when designing systems",
-        "Demonstrated commitment to a security-first mindset when designing systems",
-        "Capability to autonomously debug issues across the stack, including OS, network, and application layers"
+        "Capability to autonomously debug issues across the stack, including OS, network, and application layers",
+        "Familiarity with distributed systems and technologies, including RPC protocols, Kafka, and Event Driven Systems"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
+        "Kafka",
         "Rust"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/bc85fc5f-1a2f-4a61-b74c-e0609d6e2f7b?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:41.175606"
+      "scraped_at": "2026-03-09 21:36:27.519756"
     },
     {
-      "id": "kraken_software_engineer_typescript_onchainbackend_united_3b142b03",
+      "id": "kraken_software_engineer_rust_core_engineering_backend_un_82a77811",
       "company": "kraken",
-      "title": "Software Engineer - Typescript - OnchainBackend • United Kingdom; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Canada • Full time • Remote",
+      "title": "Software Engineer - Rust - Core Engineering\nBackend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
-        "Design, develop, and maintain scalable, high-quality applications using TypeScript",
-        "Design, develop, and maintain scalable, high-quality applications using TypeScript",
-        "Collaborate with product managers, designers, and team members to deliver features end-to-end",
-        "Collaborate with product managers, designers, and team members to deliver features end-to-end",
-        "Write clean, maintainable code with a strong emphasis on type safety and performance",
-        "Write clean, maintainable code with a strong emphasis on type safety and performance",
-        "Review code, provide constructive feedback, and uphold engineering best practicesDebug, troubleshoot, and resolve complex technical issues",
-        "Review code, provide constructive feedback, and uphold engineering best practicesDebug, troubleshoot, and resolve complex technical issues",
-        "Contribute to architecture decisions and technical roadmaps",
-        "Contribute to architecture decisions and technical roadmaps",
-        "3-5 years of full-time engineering experience within a large technology organization or fast growing startup",
-        "3-5 years of full-time engineering experience within a large technology organization or fast growing startup",
-        "3-5 years of experience building backend services with Node.js, Typescript",
-        "3-5 years of experience building backend services with Node.js, Typescript",
-        "Experience working with GraphQL, SQL, RESTful APIs and WebSockets"
+        "Design and implement robust Rust services and foundational libraries that power Kraken’s core infrastructure, prioritizing correctness, security, and long-term maintainability.",
+        "Write reusable, testable, and highly efficient code built for scale, observability, and operational resilience in production environments.",
+        "Collaborate on large-scale distributed systems architecture, shaping low-latency, fault-tolerant services that support global trading and internal platforms.",
+        "Work alongside hundreds of experienced Rust engineers, contributing to a high-bar engineering culture grounded in ownership, rigor, and craftsmanship.",
+        "3+ years of experience in software engineering, ideally building and scaling shared systems, internal platforms, and supporting multiple product roadmaps",
+        "Proficiency in writing network services or asynchronous code in Rust",
+        "Demonstrated commitment to a security-first mindset when designing systems",
+        "Capability to autonomously debug issues across the stack, including OS, network, and application layers",
+        "Familiarity with distributed systems and technologies, including RPC protocols, Kafka, and Event Driven Systems"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
-        "GraphQL",
-        "Node.js",
-        "TypeScript"
+        "Kafka",
+        "Rust"
       ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/0169a99d-e2cd-4766-aa05-9fe24578f7b5?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:44.101004"
+      "url": "https://jobs.ashbyhq.com/kraken.com/62d3b1c1-10e7-452b-b045-ea0c6dd80108?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:29.876969"
     },
     {
-      "id": "kraken_data_analyst_productdata_analytics_united_kingdom__be25d73a",
+      "id": "kraken_software_engineer_rust_product_engineering_backend_3829e921",
       "company": "kraken",
-      "title": "Data Analyst, ProductData Analytics • United Kingdom; Canada; Poland; Ireland; Singapore; Romania; Lithuania; Switzerland; Portugal; Spain; Germany; United Arab Emirates; Mexico; Brazil; Cyprus; Hong Kong • Full time • Remote",
+      "title": "Software Engineer - Rust - Product Engineering\nBackend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
+      "requirements": [
+        "Design and implement robust Rust services and libraries that power trading, payments, and crypto experiences with a focus on reliability, performance, and user impact.",
+        "Write reusable, testable, and highly efficient code that scales across teams and supports revenue-critical systems without compromising safety or security.",
+        "Collaborate on large-scale distributed systems architecture, translating evolving product requirements into resilient, low-latency solutions.",
+        "Work alongside hundreds of experienced Rust engineers, contributing to a high-performance, product-driven engineering culture.",
+        "3+ years of experience in software engineering, ideally building consumer facing products",
+        "Proficiency in writing network services or asynchronous code in Rust",
+        "Demonstrated commitment to a security-first mindset when designing systems",
+        "Capability to autonomously debug issues across the stack, including OS, network, and application layers",
+        "Familiarity with distributed systems and technologies, including RPC protocols, Kafka, and Event Driven Systems"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Kafka",
+        "Rust"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/afb1e171-b3c9-4a9e-bac1-2c28330152d6?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:32.530655"
+    },
+    {
+      "id": "kraken_data_analyst_product_data_analytics_united_kingdom_850804f4",
+      "company": "kraken",
+      "title": "Data Analyst, Product\nData Analytics • United Kingdom; Brazil; Canada; Cyprus; Germany; Hong Kong; Ireland; Lithuania; Poland; Portugal; Singapore; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Act as a trusted business advisor who influences decision-making for the growth team and deeply understands the business, both inside and out",
-        "Act as a trusted business advisor who influences decision-making for the growth team and deeply understands the business, both inside and out",
-        "Own the design of dashboards, metrics, and reports, turning data into actionable insights for the growth team, cross functional partners, and the leadership team",
         "Own the design of dashboards, metrics, and reports, turning data into actionable insights for the growth team, cross functional partners, and the leadership team",
         "Dive into large, complex datasets/logs to turn your findings into scalable data models necessary to facilitate reporting, analytics and ML models",
-        "Dive into large, complex datasets/logs to turn your findings into scalable data models necessary to facilitate reporting, analytics and ML models",
-        "Lead cross-functional projects with analysts, scientists, engineers, and product teams to build data pipelines using Airflow, Python, and modern ETL frameworks",
         "Lead cross-functional projects with analysts, scientists, engineers, and product teams to build data pipelines using Airflow, Python, and modern ETL frameworks",
         "Be at the forefront of data innovation by experimenting, testing hypotheses, and translating insights into action",
-        "Be at the forefront of data innovation by experimenting, testing hypotheses, and translating insights into action",
-        "Develop and automate reporting of key performance indicators of various Kraken’s products at scale",
         "Develop and automate reporting of key performance indicators of various Kraken’s products at scale",
         "Develop high-quality code for pipelines and dashboards, incorporating software engineering best practices",
-        "Develop high-quality code for pipelines and dashboards, incorporating software engineering best practices",
-        "Deliver insights that shape growth direction through clear, data-driven storytelling."
+        "Deliver insights that shape growth direction through clear, data-driven storytelling.",
+        "5+ years of experience in data analysis and data management within the financial services industry, ideally gained in a fast-paced, high-growth environment",
+        "Hands-on experience trading derivatives (such as perpetuals, futures, or similar instruments) is required, whether gained professionally or through personal trading as a hobby or passion",
+        "Experience working closely with product teams to analyze and optimize performance across the product funnel and related business metrics, ideally within a trading environment.",
+        "This role requires expert SQL skills—including complex joins, CTEs, and analytical functions—paired with familiarity in Python libraries such as pandas, matplotlib, and plotly.",
+        "Hands-on experience using dbt (data build tool) to model and organize marketing, product, or performance data for reporting and decision-making",
+        "Experience setting up and managing data pipelines, with a strong understanding of data workflow orchestration",
+        "Capable of creating intuitive dashboards and visualizations to communicate complex insights clearly"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
         "AWS",
         "Airflow",
-        "Python"
+        "Pandas",
+        "Python",
+        "dbt"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/136f42a3-6342-4dcf-9e00-ea362b107129?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:47.209751"
+      "scraped_at": "2026-03-09 21:36:34.931006"
     },
     {
-      "id": "kraken_site_reliability_engineer_data_platformdata_engine_27565597",
+      "id": "kraken_data_analyst_risk_and_operational_performance_data_c2fe4670",
       "company": "kraken",
-      "title": "Site Reliability Engineer - Data PlatformData Engineering • Canada; Brazil; Argentina; Chile; Colombia; Costa Rica; LATAM; Puerto Rico; Uruguay; Mexico • Full time • Remote",
+      "title": "Data Analyst, Risk and Operational Performance\nData Analytics • Canada; Brazil • Full time • Remote",
+      "requirements": [
+        "Act as a trusted business advisor to the Core Service team, proactively identifying trends and driving efficiency improvements",
+        "Own the design of dashboards, metrics, and reports, turning data into actionable insights for the fraud, funding, risk and support experience teams",
+        "Dive into large, complex datasets/logs to turn your findings into scalable data models necessary to facilitate reporting, analytics and ML models",
+        "Lead cross-functional projects with analysts, scientists, engineers, and product teams to build data pipelines using Airflow, Python, and DBT",
+        "Develop and automate reporting of key performance indicators across core services teams",
+        "Be at the forefront of data innovation by experimenting, testing hypotheses, and translating insights into action.",
+        "Develop high-quality code for pipelines and dashboards, incorporating software engineering best practices",
+        "5+ years of experience in data analysis and data management within the Fintech industry gained in a fast-paced, high-growth environment",
+        "Experience working with fraud, funding, finance and customer support teams to analyze and optimize operational performance across the business systems",
+        "This role requires expert SQL skills and hands-on experience in Python",
+        "Hands-on experience using dbt (data build tool) to model and organize data for reporting and decision-making",
+        "Experience setting up and managing data pipelines, with a strong understanding of data workflow orchestration",
+        "Capable of creating intuitive dashboards and visualizations to communicate complex insights clearly",
+        "Strong communicator who can simplify complex data ideas for both technical and non-technical audiences",
+        "You believe wholeheartedly in the values outlined in Kraken’s Tentaclements document"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "AWS",
+        "Airflow",
+        "Python",
+        "dbt"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/b945fdbe-a4f0-4e87-abc8-1e4bf8b9bc25?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:37.515999"
+    },
+    {
+      "id": "kraken_site_reliability_engineer_data_platform_data_engin_355361fe",
+      "company": "kraken",
+      "title": "Site Reliability Engineer - Data Platform\nData Engineering • Canada; Argentina; Brazil; Chile; Colombia; Costa Rica; LATAM; Mexico; Puerto Rico; Uruguay • Full time • Remote",
       "requirements": [
         "Implement data infrastructure solutions (self service)  that support the needs of 10+ business units and over 100 engineering and data analysts",
-        "Implement data infrastructure solutions (self service)  that support the needs of 10+ business units and over 100 engineering and data analysts",
-        "Utilize Infrastructure as Code (IaC) principles to design, provision, and manage both on-premises and cloud (AWS) infrastructure components using tools such as Terraform",
         "Utilize Infrastructure as Code (IaC) principles to design, provision, and manage both on-premises and cloud (AWS) infrastructure components using tools such as Terraform",
         "Develop and maintain automation scripts using bash/shell scripting and to automate operational tasks and deployments",
-        "Develop and maintain automation scripts using bash/shell scripting and to automate operational tasks and deployments",
-        "Enhance and manage CI/CD pipelines to facilitate consistent software deployments across the data infrastructure",
         "Enhance and manage CI/CD pipelines to facilitate consistent software deployments across the data infrastructure",
         "Implement robust data monitoring and alerting solutions to proactively detect anomalies and performance issues",
-        "Implement robust data monitoring and alerting solutions to proactively detect anomalies and performance issues",
-        "Manage and implement role-based access control (RBAC) and permissions for a multitude of user groups and machine workflows across different environments",
         "Manage and implement role-based access control (RBAC) and permissions for a multitude of user groups and machine workflows across different environments",
         "Manage and maintain real-time streaming data architecture using technologies like Kafka and Debezium Change Data Capture (CDC)",
-        "Manage and maintain real-time streaming data architecture using technologies like Kafka and Debezium Change Data Capture (CDC)",
-        "Ensure the timely and accurate processing of streaming data, enabling data analysts and engineers to gain insights from up-to-date information"
+        "Ensure the timely and accurate processing of streaming data, enabling data analysts and engineers to gain insights from up-to-date information",
+        "Utilize Kubernetes to manage containerized applications within the data infrastructure, ensuring efficient deployment, scaling, and orchestration",
+        "Implement effective incident response procedures and participate in on-call rotations",
+        "Collaborate with data analysts, engineers, and cross-functional teams to understand requirements and implement appropriate solutions",
+        "Document architecture, processes, and best practices to enable knowledge sharing and support continuous improvement",
+        "Support AI/ML teams with their infra requests",
+        "Proven experience (5+ years) working as a Site Reliability Engineer, Infrastructure Engineer, Data Infrastructure Engineer, or similar roles, with a focus on data infrastructure and security",
+        "Experience with maintaining real-time data processing technologies, such as Kafka and Flink clusters and Debezium instances"
       ],
       "location": "Remote",
       "posting_date": null,
@@ -365,59 +291,57 @@
         "AWS",
         "Bash",
         "Kafka",
+        "Kubernetes",
         "Shell",
         "Terraform"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/ab20fa04-94c9-46b0-b736-d9078ba24bcc?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:50.722735"
+      "scraped_at": "2026-03-09 21:36:39.873041"
     },
     {
-      "id": "kraken_senior_software_engineer_frontend_react_react_nati_00336f94",
+      "id": "kraken_senior_software_engineer_frontend_growth_insights__797c5691",
       "company": "kraken",
-      "title": "Senior Software Engineer - Frontend (React/React Native) - Experimentation & DataFrontend • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Software Engineer - Frontend - Growth Insights\nFrontend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
-        "Implement high-impact experiments and increase the throughput of the experimentation program to directly drive revenue",
-        "Implement high-impact experiments and increase the throughput of the experimentation program to directly drive revenue",
-        "Support Kraken’s experimentation platform by enabling reliable exposure logging, metric collection, and experiment guardrails on the frontend",
-        "Support Kraken’s experimentation platform by enabling reliable exposure logging, metric collection, and experiment guardrails on the frontend",
-        "Partner with Data Engineering and Analytics to ensure experimental data aligns with canonical definitions and supports statistically sound analysis",
-        "Partner with Data Engineering and Analytics to ensure experimental data aligns with canonical definitions and supports statistically sound analysis",
-        "Implement validation, monitoring, and alerting to proactively detect issues in experiment and product event data",
-        "Implement validation, monitoring, and alerting to proactively detect issues in experiment and product event data",
-        "Document and evangelize best practices for experimentation and analytics implementation, creating clear guidance for product and engineering teams",
-        "Document and evangelize best practices for experimentation and analytics implementation, creating clear guidance for product and engineering teams",
-        "Collaborate with product teams to support experiment design needs, including metric feasibility, instrumentation tradeoffs, and implementation patterns",
-        "Collaborate with product teams to support experiment design needs, including metric feasibility, instrumentation tradeoffs, and implementation patterns",
-        "Improve and simplify event data flows to reduce redundancy, improve transparency, and lower long‑term maintenance costs",
-        "Improve and simplify event data flows to reduce redundancy, improve transparency, and lower long‑term maintenance costs",
-        "Contribute to the evolution of Kraken’s experimentation frameworks, enabling faster iteration while preserving analytical rigor"
+        "Develop and maintain shared libraries and best practices for event tracking across multiple codebases, ensuring consistency, reducing duplication, and enabling high-quality data collection across Kraken’s frontend platforms",
+        "Ensure data quality and consistency by building robust validation, monitoring, and alerting systems that detect and prevent data issues proactively",
+        "Document and evangelize best practices for analytics implementation, creating a clear and accessible knowledge base for engineers and analysts",
+        "Collaborate with Data Engineering and Analytics to ensure event data is aligned with our source of truth and supports reliable decision-making",
+        "Continuously optimize our MarTech stack, evaluating and integrating tools that enhance tracking, attribution, and customer insights",
+        "Improve event and attribution modeling, enabling more accurate insights into user journeys, marketing performance, and product engagement",
+        "Map and refine event data flows to reduce redundancy and improve efficiency, transparency, and cost-effectiveness across our analytics architecture",
+        "Support experimentation infrastructure, helping teams design and implement A/B testing frameworks as needed",
+        "6+ years of experience in frontend development with strong expertise in React.js (web or React Native) and TypeScript",
+        "Deep understanding of web and mobile tracking technologies and analytics platforms, such as Google Tag Manager, Google Analytics, Segment, Mixpanel, and AppsFlyer",
+        "Proven ability to audit, troubleshoot, and resolve data discrepancies in complex tracking systems",
+        "Experience working across multiple teams and codebases to implement consistent tracking strategies",
+        "Strong communication and collaboration skills, with the ability to align engineering, marketing, and analytics on tracking best practices"
       ],
       "location": "Remote",
       "posting_date": null,
-      "tech_stack": [],
-      "url": "https://jobs.ashbyhq.com/kraken.com/13790422-bc2c-4df7-8f58-18e053c5b7e1?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:53.714005"
+      "tech_stack": [
+        "React",
+        "TypeScript"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/15ae214c-366d-41bc-8420-4c1e666d1a03?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:42.286599"
     },
     {
-      "id": "kraken_senior_software_engineer_react_native_consumerfron_5f0e8b36",
+      "id": "kraken_senior_software_engineer_react_native_consumer_fro_cf6c00ca",
       "company": "kraken",
-      "title": "Senior Software Engineer - React Native - ConsumerFrontend • Europe; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; United Kingdom • Full time • Remote",
+      "title": "Senior Software Engineer - React Native - Consumer\nFrontend • Europe; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates; United Kingdom • Full time • Remote",
       "requirements": [
         "Design, develop, and maintain high-quality mobile applications using React Native",
-        "Design, develop, and maintain high-quality mobile applications using React Native",
-        "6+ years of experience in software development, with a focus on web and mobile applications",
         "6+ years of experience in software development, with a focus on web and mobile applications",
         "Deep understanding of JavaScript/TypeScript and proficiency with React Native frameworks",
-        "Deep understanding of JavaScript/TypeScript and proficiency with React Native frameworks",
-        "Strong experience of API design, security, and performance optimization",
         "Strong experience of API design, security, and performance optimization",
         "Experience with Next.js and WebSockets",
-        "Experience with Next.js and WebSockets",
-        "Experience with frontend testing frameworks",
         "Experience with frontend testing frameworks",
         "Familiarity with modern front-end build pipelines and tooling",
-        "Familiarity with modern front-end build pipelines and tooling",
-        "Strong understanding of UI/UX best practices and principles"
+        "Strong understanding of UI/UX best practices and principles",
+        "Experience within a large technology organization or fast growing startup",
+        "Hands-on experience in consumer payments, crypto or fintech mobile applications",
+        "Strong written and verbal communication skills in English"
       ],
       "location": "Remote",
       "posting_date": null,
@@ -428,111 +352,114 @@
         "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/6ced1648-3389-41f3-87d9-212b7e7c7d87?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:00:56.963478"
+      "scraped_at": "2026-03-09 21:36:44.690937"
     },
     {
-      "id": "kraken_senior_software_engineer_frontend_onchainmobile_un_d6fe1d36",
+      "id": "kraken_senior_software_engineer_react_native_growth_front_06dfa081",
       "company": "kraken",
-      "title": "Senior Software Engineer - Frontend - OnchainMobile • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Australia; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Singapore • Full time • Remote",
-      "requirements": [
-        "Collaborate with designers and product managers to understand business needs",
-        "Collaborate with designers and product managers to understand business needs",
-        "Work jointly with devOps all along the software development lifecycle from the writeup of technical specifications in the form of RFCs, to feature development and testing.",
-        "Work jointly with devOps all along the software development lifecycle from the writeup of technical specifications in the form of RFCs, to feature development and testing.",
-        "Develop and maintain services that power onchain experiences.",
-        "Develop and maintain services that power onchain experiences.",
-        "Integrate 3rd party APIs and multiple blockchain networks into our products.",
-        "Integrate 3rd party APIs and multiple blockchain networks into our products.",
-        "Design and implementation of low-latency, high-availability scalable applications",
-        "Design and implementation of low-latency, high-availability scalable applications",
-        "Write reusable, testable, and efficient code",
-        "Write reusable, testable, and efficient code",
-        "Create optimized database schemas",
-        "Create optimized database schemas",
-        "Mentoring of engineers and contribution to hiring"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://jobs.ashbyhq.com/kraken.com/42862625-290c-436f-bff8-18c63deff388?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:00.401775"
-    },
-    {
-      "id": "kraken_senior_software_engineer_react_native_growthmobile_3a5a3a4e",
-      "company": "kraken",
-      "title": "Senior Software Engineer - React Native - GrowthMobile • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Software Engineer - React Native - Growth\nFrontend • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Design, develop, and maintain high-quality mobile applications using React Native",
-        "Design, develop, and maintain high-quality mobile applications using React Native",
-        "Design and execute onboarding experiences that captivate new users and streamline their journey.",
         "Design and execute onboarding experiences that captivate new users and streamline their journey.",
         "Optimize the activation process to ensure users quickly realize the value of our platform.",
-        "Optimize the activation process to ensure users quickly realize the value of our platform.",
-        "Create and refine a first-time user experience that sets the gold standard in our industry.",
         "Create and refine a first-time user experience that sets the gold standard in our industry.",
         "Develop innovative features to incentivise engagement and loyalty.",
-        "Develop innovative features to incentivise engagement and loyalty.",
-        "Continuously test, learn, and improve strategies based on user behaviour and feedback.",
         "Continuously test, learn, and improve strategies based on user behaviour and feedback.",
         "Set the standard for high-quality code and lead complex software systems development",
-        "Set the standard for high-quality code and lead complex software systems development",
-        "Significantly influence technical decisions, contribute to technical strategy discussions, and shape product/domain decisions with an expert understanding of engineering best practices"
+        "Significantly influence technical decisions, contribute to technical strategy discussions, and shape product/domain decisions with an expert understanding of engineering best practices",
+        "Mentor junior and senior engineers and provide constructive feedback",
+        "Master multiple technologies and stay ahead of the curve with new tools and trends",
+        "Design and implement scalable, maintainable, and fault-tolerant systems, with a deep understanding of complex software development architecture and design patterns",
+        "Lead and collaborate on complex initiatives, and drive feedback and growth across teams",
+        "Drive process improvements and lead by example with advanced experience in multiple software development processes",
+        "6+ years of experience in software development, with a focus on web and mobile applications",
+        "Deep understanding of JavaScript/TypeScript and proficiency with React Native frameworks"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
-        "React"
+        "JavaScript",
+        "React",
+        "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/f70ffd00-7784-4915-9888-94c17070b0ee?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:03.430764"
+      "scraped_at": "2026-03-09 21:36:47.129094"
     },
     {
-      "id": "kraken_staff_software_engineer_mobile_frontend_consumermo_06d53b13",
+      "id": "kraken_senior_software_engineer_frontend_onchain_mobile_u_13c17872",
       "company": "kraken",
-      "title": "Staff Software Engineer - Mobile/Frontend - ConsumerMobile • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Software Engineer - Frontend - Onchain\nMobile • United Kingdom; Australia; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Singapore; Spain; Switzerland; United Arab Emirates • Full time • Remote",
+      "requirements": [
+        "Collaborate with designers and product managers to understand business needs",
+        "Work jointly with devOps all along the software development lifecycle from the writeup of technical specifications in the form of RFCs, to feature development and testing.",
+        "Develop and maintain services that power onchain experiences.",
+        "Integrate 3rd party APIs and multiple blockchain networks into our products.",
+        "Design and implementation of low-latency, high-availability scalable applications",
+        "Write reusable, testable, and efficient code",
+        "Create optimized database schemas",
+        "Mentoring of engineers and contribution to hiring",
+        "5+ years of full-time engineering experience within a large technology organization or fast growing startup",
+        "Experience working with blockchain technology and DeFi",
+        "Experience building backend services with Node.js, Typescript",
+        "Experience building and maintaining high volume production quality applications using React or React Native, with good knowledge of state management and client side systems design",
+        "Experience working with GraphQL, SQL, RESTful APIs and WebSockets",
+        "Good understanding of best practices with version control and continuous integration.",
+        "Solid understanding of engineering and design principles behind distributed and scalable applications"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "GraphQL",
+        "Node.js",
+        "React",
+        "TypeScript"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/42862625-290c-436f-bff8-18c63deff388?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:49.481095"
+    },
+    {
+      "id": "kraken_staff_software_engineer_mobile_frontend_consumer_m_d3e22793",
+      "company": "kraken",
+      "title": "Staff Software Engineer - Mobile/Frontend - Consumer\nMobile • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Architect, build, and maintain scalable, maintainable, high-performance frontend applications across React / Next.js / React Native (or similar) stacks",
-        "Architect, build, and maintain scalable, maintainable, high-performance frontend applications across React / Next.js / React Native (or similar) stacks",
-        "Build reusable UI components, shared libraries/styles, and abstractions to support multiple apps and platforms",
         "Build reusable UI components, shared libraries/styles, and abstractions to support multiple apps and platforms",
         "Optimize web/mobile performance, reliability, load-times — especially critical for financial and crypto features involving real-time data",
-        "Optimize web/mobile performance, reliability, load-times — especially critical for financial and crypto features involving real-time data",
-        "Ensure UX consistency and quality (design system adherence, responsive/mobile-first, accessibility, edge-case handling)",
         "Ensure UX consistency and quality (design system adherence, responsive/mobile-first, accessibility, edge-case handling)",
         "Define and enforce frontend testing, monitoring, and quality standards",
-        "Define and enforce frontend testing, monitoring, and quality standards",
-        "Collaborate across teams — backend, devops, services, design, product — to shape APIs, data flows, error-handling, and user flows, particularly for Earn features and DeFi integrations",
         "Collaborate across teams — backend, devops, services, design, product — to shape APIs, data flows, error-handling, and user flows, particularly for Earn features and DeFi integrations",
         "Serve as a senior technical voice in architecture, tech-strategy, and long-term frontend planning",
-        "Serve as a senior technical voice in architecture, tech-strategy, and long-term frontend planning",
-        "6+ years (or equivalent) professional experience delivering complex web and/or mobile applications"
+        "6+ years (or equivalent) professional experience delivering complex web and/or mobile applications",
+        "Deep expertise with JavaScript/TypeScript, React (or equivalent component-based framework), and modern frontend ecosystems (e.g. Next.js, React Native, consistent build pipelines)",
+        "Strong foundation in HTML5, CSS3 (or CSS-in-JS / styling solutions), responsive layout, cross-browser/device compatibility, accessibility, UI/UX best practices",
+        "Experience architecting large-scale, maintainable frontend systems — component libraries, shared modules, code reuse, scalable state management, performance tuning",
+        "Proven ability to lead technical direction, influence design and architecture decisions, and deliver across multiple applications or codebases",
+        "Excellent collaboration skills — able to work closely with backend/service teams, design, product, and other stakeholders to deliver cross-functional features",
+        "Strong problem-solving, analytical thinking, and ability to trade off short-term needs with long-term architecture/maintainability",
+        "Experience building or maintaining shared UI component libraries or SDKs across multiple platforms (web & mobile)"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
         "AWS",
+        "JavaScript",
         "Next.js",
-        "React"
+        "React",
+        "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/06486996-ecde-497a-90fb-2c2a7d4ee767?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:06.439633"
+      "scraped_at": "2026-03-09 21:36:51.929399"
     },
     {
-      "id": "kraken_senior_software_engineer_full_stack_growth_product_d05815cb",
+      "id": "kraken_senior_software_engineer_full_stack_growth_product_291a3ddf",
       "company": "kraken",
-      "title": "Senior Software Engineer - Full-stack - Growth ProductFull-Stack  • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Australia; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Singapore • Full time • Remote",
+      "title": "Senior Software Engineer - Full-stack - Growth Product\nFull-Stack • United Kingdom; Australia; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Singapore; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "5+ years of software engineering experience, including building and maintaining production systems at scale.",
-        "5+ years of software engineering experience, including building and maintaining production systems at scale.",
-        "Proficiency in building full-stack applications using one of the following: TypeScript, Rust, Go, Python, or Ruby, and React or React Native.",
         "Proficiency in building full-stack applications using one of the following: TypeScript, Rust, Go, Python, or Ruby, and React or React Native.",
         "Understanding of distributed systems, performance optimization, debugging, and secure software design.",
-        "Understanding of distributed systems, performance optimization, debugging, and secure software design.",
-        "Familiarity with infrastructure and tooling such as Docker, Kubernetes, Terraform, MySQL/MariaDB, Redis, or GitLab CI/CD.",
         "Familiarity with infrastructure and tooling such as Docker, Kubernetes, Terraform, MySQL/MariaDB, Redis, or GitLab CI/CD.",
         "A product mindset — you care about how your work moves key metrics, not just about the code itself.",
-        "A product mindset — you care about how your work moves key metrics, not just about the code itself.",
-        "Ability to operate autonomously in a globally distributed, remote-first environment.",
         "Ability to operate autonomously in a globally distributed, remote-first environment."
       ],
       "location": "Remote",
@@ -554,28 +481,22 @@
         "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/9d322024-6c50-4280-aa0f-f15d266b1d6a?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:09.317407"
+      "scraped_at": "2026-03-09 21:36:54.296410"
     },
     {
-      "id": "kraken_staff_software_engineer_growthfull_stack_united_ki_3b102f15",
+      "id": "kraken_staff_software_engineer_growth_full_stack_united_k_c1231c2a",
       "company": "kraken",
-      "title": "Staff Software Engineer – GrowthFull-Stack  • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Staff Software Engineer – Growth\nFull-Stack • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Proven experience leading large-scale technical projects or owning critical systems end to end.",
-        "Proven experience leading large-scale technical projects or owning critical systems end to end.",
-        "Deep expertise in TypeScript or Rust, our core languages — and the versatility to work confidently across the full stack. Experience with other languages such as Go, Python, or Ruby is a plus and demonstrates your ability to adapt quickly.",
         "Deep expertise in TypeScript or Rust, our core languages — and the versatility to work confidently across the full stack. Experience with other languages such as Go, Python, or Ruby is a plus and demonstrates your ability to adapt quickly.",
         "Broad technical range and curiosity — you’re comfortable diving into any layer of the stack, from front-end performance to backend architecture and infrastructure.",
-        "Broad technical range and curiosity — you’re comfortable diving into any layer of the stack, from front-end performance to backend architecture and infrastructure.",
-        "Strong understanding of distributed systems, scalability, reliability, and performance optimization.",
         "Strong understanding of distributed systems, scalability, reliability, and performance optimization.",
         "Experience designing systems that balance experimentation velocity with long-term maintainability.",
-        "Experience designing systems that balance experimentation velocity with long-term maintainability.",
-        "A product mindset — you think in terms of outcomes and user impact, not just code.",
         "A product mindset — you think in terms of outcomes and user impact, not just code.",
         "Excellent collaboration and communication skills across engineering, product, and design.",
-        "Excellent collaboration and communication skills across engineering, product, and design.",
-        "Experience operating autonomously in a distributed, remote-first environment."
+        "Experience operating autonomously in a distributed, remote-first environment.",
+        "You set the bar for technical excellence and embody the ownership, craftsmanship, and accountability we expect across the organization."
       ],
       "location": "Remote",
       "posting_date": null,
@@ -587,28 +508,57 @@
         "TypeScript"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/c6bfad99-1516-45a5-88d4-b14005a467ad?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:12.331215"
+      "scraped_at": "2026-03-09 21:36:56.945223"
     },
     {
-      "id": "kraken_engineering_manager_enterprise_security_core_servi_4cb95ae9",
+      "id": "kraken_engineering_manager_earn_leadership_united_kingdom_1b0e4fdb",
       "company": "kraken",
-      "title": "Engineering Manager - Enterprise Security - Core ServicesLeadership • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Australia; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Singapore • Full time • Remote",
+      "title": "Engineering Manager - Earn\nLeadership • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
+      "requirements": [
+        "Own the core earnings service that drives reward calculation, rate setting, and distribution across all Earn products",
+        "Lead development and operation of asynchronous systems that power earnings pipelines, including background jobs, event processing, and reward distribution flows",
+        "Own all blockchain and staking services, including on-chain integrations and off-chain coordination for staking flows",
+        "Drive correctness, scalability, resiliency, and recovery of reward pipelines, including reconciliation and monitoring",
+        "Own the Earn Control Center (Admin/ECC) surface used to safely configure, operate, and audit earnings systems",
+        "Partner with other Earn squads and platform teams to define ownership boundaries and ensure reliable system integration",
+        "Set and uphold engineering standards for distributed systems, asynchronous architectures, and blockchain integrations",
+        "Lead incident response, postmortems, and long-term reliability improvements for core earnings infrastructure",
+        "Coordinate necessary changes across Krak, Consumer, and Pro applications to support Core Pod initiatives",
+        "Proven experience leading backend or platform-focused engineering teams",
+        "Deep experience owning and operating mission-critical distributed systems in production",
+        "Strong understanding of asynchronous architectures, event-driven systems, and background processing",
+        "Experience designing and running high-throughput, fault-tolerant pipelines with strong correctness guarantees",
+        "Hands-on experience with blockchain integrations and on-chain/off-chain coordination",
+        "Strong understanding of staking mechanisms, reward calculation, and yield-generating systems"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "AWS"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/0fcd8329-fead-46e4-9f76-fa001c7120b2?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:36:59.507945"
+    },
+    {
+      "id": "kraken_engineering_manager_enterprise_security_core_servi_84613dbc",
+      "company": "kraken",
+      "title": "Engineering Manager - Enterprise Security - Core Services\nLeadership • United Kingdom; Australia; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Singapore; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Lead an engineering team building client-facing enterprise security features for Kraken’s largest clients and Payward portfolio",
-        "Lead an engineering team building client-facing enterprise security features for Kraken’s largest clients and Payward portfolio",
-        "Design and implement libraries and microservices in Rust",
         "Design and implement libraries and microservices in Rust",
         "Deliver bring-your-own IdP integrations and modern enterprise authentication flows",
-        "Deliver bring-your-own IdP integrations and modern enterprise authentication flows",
-        "Build provisioning and access automation capabilities (e.g., SCIM) integrated with the organizations and permissioning stack",
         "Build provisioning and access automation capabilities (e.g., SCIM) integrated with the organizations and permissioning stack",
         "Establish high-quality engineering standards and lead complex systems development, using powerful AI tools to your advantage.",
-        "Establish high-quality engineering standards and lead complex systems development, using powerful AI tools to your advantage.",
-        "Partner cross-functionally to deliver enterprise-grade security features that meet customer and regulatory expectations",
         "Partner cross-functionally to deliver enterprise-grade security features that meet customer and regulatory expectations",
         "6+ years of experience in software engineering",
-        "6+ years of experience in software engineering",
-        "2+ years of experience in hands-on engineering management of a team from 4-8 people"
+        "2+ years of experience in hands-on engineering management of a team from 4-8 people",
+        "Experience with security-sensitive backend systems (authentication, authorization, identity, permissions, auditability)",
+        "Familiarity with enterprise security and identity standards and integrations (e.g., SSO)",
+        "Track record leading delivery and operation of multi-tenant backend systems in production environments",
+        "Direct experience with Rust in production",
+        "Proactive and results-oriented mindset with the ability to prioritize tasks",
+        "Excellent and collaborative communication and stakeholder management skills",
+        "Passion for solving complex engineering problems"
       ],
       "location": "Remote",
       "posting_date": null,
@@ -617,55 +567,49 @@
         "Rust"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/f7325f3c-ce1e-4e92-8269-b7f087345248?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:15.178472"
+      "scraped_at": "2026-03-09 21:37:01.939723"
     },
     {
-      "id": "kraken_engineering_manager_payments_blockchainleadership__b49d22e5",
+      "id": "kraken_engineering_manager_krak_leadership_united_kingdom_851a4812",
       "company": "kraken",
-      "title": "Engineering Manager - Payments & BlockchainLeadership • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Australia; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico; Singapore • Full time • Remote",
+      "title": "Engineering Manager - Krak\nLeadership • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
-        "Lead a cross-functional team of backend and frontend engineers building our payments and B2B API experiences.",
-        "Lead a cross-functional team of backend and frontend engineers building our payments and B2B API experiences.",
-        "Drive the delivery of high-quality, reliable, and scalable applications.",
-        "Drive the delivery of high-quality, reliable, and scalable applications.",
+        "Lead a cross-functional team of frontend and backend engineers responsible for core Krak consumer experiences.",
+        "Own the end-to-end UX for key Krak features across mobile and client platforms.",
+        "Guide the delivery of high-quality consumer applications, with a focus on usability, performance, and scale.",
         "Partner with Product Managers and Designers to define and deliver high-impact features with measurable business and customer value.",
-        "Partner with Product Managers and Designers to define and deliver high-impact features with measurable business and customer value.",
-        "Collaborate with other Engineering Managers and Tech Leads to maintain consistency in engineering standards and architecture across platforms.",
-        "Collaborate with other Engineering Managers and Tech Leads to maintain consistency in engineering standards and architecture across platforms.",
-        "Champion engineering excellence, maintainable systems, and code quality.",
-        "Champion engineering excellence, maintainable systems, and code quality.",
-        "Mentor engineers and foster a culture of technical growth, ownership, and collaboration.",
-        "Mentor engineers and foster a culture of technical growth, ownership, and collaboration.",
-        "Strengthen team organization and delivery through agile processes, project tracking, and metrics (e.g., DORA, cycle time).",
-        "Strengthen team organization and delivery through agile processes, project tracking, and metrics (e.g., DORA, cycle time).",
-        "Proven experience leading engineering teams delivering products at scale."
+        "Collaborate with other Engineering Managers and Tech Leads to maintain consistent engineering standards across services and client platforms.",
+        "Champion engineering excellence, maintainable architectures, and code quality.",
+        "Mentor engineers and foster a culture of technical growth, collaboration, and inclusivity.",
+        "Strengthen team organization and delivery using agile processes, project tracking, and engineering metrics (e.g., DORA, cycle time).",
+        "Proven experience leading engineering teams delivering customer-facing products at scale.",
+        "Experience managing combined frontend and backend engineering teams.",
+        "Deep technical background in React Native with a solid understanding of modern frontend architectures.",
+        "Strong cross-functional leadership — able to align frontend and backend efforts in a complex, multi-platform environment.",
+        "Excellent communication and stakeholder management skills.",
+        "Empathy for the customer and a passion for building intuitive, performant consumer experiences.",
+        "Experience building large-scale consumer or financial products."
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
-        "AWS"
+        "AWS",
+        "React"
       ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/2712daaa-9cd0-4ad4-9ab3-df4aa52b2bad?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:17.883156"
+      "url": "https://jobs.ashbyhq.com/kraken.com/10228a5a-c815-408c-8fa5-937ae97c8fca?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:37:04.331820"
     },
     {
-      "id": "kraken_senior_engineering_manager_growth_acquireleadershi_bca5f13e",
+      "id": "kraken_senior_engineering_manager_growth_leadership_unite_8f370647",
       "company": "kraken",
-      "title": "Senior Engineering Manager – Growth AcquireLeadership • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Engineering Manager – Growth\nLeadership • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Experience leading multiple engineering teams delivering measurable impact in acquisition, engagement, or growth.",
-        "Experience leading multiple engineering teams delivering measurable impact in acquisition, engagement, or growth.",
-        "Strong technical fluency with React (including server-side rendering) and front-end architecture.",
         "Strong technical fluency with React (including server-side rendering) and front-end architecture.",
         "Ability to contribute directly to and guide architecture, performance, and implementation decisions.",
-        "Ability to contribute directly to and guide architecture, performance, and implementation decisions.",
-        "Familiarity with experimentation frameworks, analytics pipelines, and CMS-driven systems.",
         "Familiarity with experimentation frameworks, analytics pipelines, and CMS-driven systems.",
         "Understanding of full-stack architecture, scalability, and secure software design principles.",
-        "Understanding of full-stack architecture, scalability, and secure software design principles.",
         "Experience improving SEO, page performance, and visibility through emerging AI-driven channels.",
-        "Experience improving SEO, page performance, and visibility through emerging AI-driven channels.",
-        "Commitment to engineering quality through testing, observability, and reliability.",
         "Commitment to engineering quality through testing, observability, and reliability.",
         "Strong collaboration, communication, and coaching skills across remote, global teams."
       ],
@@ -675,28 +619,28 @@
         "React"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/74e79fd7-c55d-4e1b-9d4c-b554d604c7a0?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:20.585830"
+      "scraped_at": "2026-03-09 21:37:06.665579"
     },
     {
-      "id": "kraken_sr_qa_automation_engineer_proqa_testing_united_kin_dce49b38",
+      "id": "kraken_sr_qa_automation_engineer_pro_qa_testing_united_ki_88337b6a",
       "company": "kraken",
-      "title": "Sr. QA Automation Engineer - ProQA / Testing • United Kingdom; Canada; Portugal; Ireland; United Arab Emirates; Brazil; Cyprus; Europe • Full time • Remote",
+      "title": "Sr. QA Automation Engineer - Pro\nQA / Testing • United Kingdom; Brazil; Canada; Cyprus; Europe; Ireland; Portugal; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Create comprehensive test plans before feature development, defining manual and automated testing strategies.",
-        "Create comprehensive test plans before feature development, defining manual and automated testing strategies.",
-        "Perform hands-on manual testing during development cycles to validate new features before automation.",
         "Perform hands-on manual testing during development cycles to validate new features before automation.",
         "Balance manual exploratory testing with automation to catch edge cases that scripts might miss.",
-        "Balance manual exploratory testing with automation to catch edge cases that scripts might miss.",
-        "Collaborate with engineers, product managers, and designers to define QA processes for a mission-critical trading platform.",
         "Collaborate with engineers, product managers, and designers to define QA processes for a mission-critical trading platform.",
         "Lead automation initiatives end-to-end: strategy, implementation, CI/CD integration, and scaling coverage.",
-        "Lead automation initiatives end-to-end: strategy, implementation, CI/CD integration, and scaling coverage.",
-        "Drive performance, security, and accessibility testing to deliver a top-tier experience for traders.",
         "Drive performance, security, and accessibility testing to deliver a top-tier experience for traders.",
         "Proactively document, report, and triage bugs to improve release quality and velocity.",
-        "Proactively document, report, and triage bugs to improve release quality and velocity.",
-        "Strong programming skills in Python, Rust or another automation-oriented language."
+        "Strong programming skills in Python, Rust or another automation-oriented language.",
+        "Trading knowledge and experience - understanding of order types, trade execution, margin trading, and general financial markets (we'll support deepening your expertise, but foundational knowledge is essential).",
+        "Proven ability to design comprehensive test plans before implementation, identifying what should be manually tested vs. automated.",
+        "Experience designing, implementing, and maintaining test automation frameworks on complex applications.",
+        "Strong manual testing skills and ability to think creatively to uncover edge cases and unexpected bugs.",
+        "Solid understanding of QA principles, including exploratory testing, regression testing, and bug tracking.",
+        "Comfort with CI/CD integration and automation at scale.",
+        "Detail-oriented mindset with a passion for building high-quality software and ability to think outside the box."
       ],
       "location": "Remote",
       "posting_date": null,
@@ -705,58 +649,28 @@
         "Rust"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/355a8c6d-97da-464f-bcf4-91f01aaf7b40?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:23.327478"
+      "scraped_at": "2026-03-09 21:37:09.045333"
     },
     {
-      "id": "kraken_data_governance_engineersre_devops_united_kingdom__3ae35a5b",
+      "id": "kraken_senior_technical_project_manager_core_infrastructu_b97bbf3e",
       "company": "kraken",
-      "title": "Data Governance EngineerSRE / Devops • United Kingdom; Colombia; Chile; Argentina; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
-      "requirements": [
-        "Support metadata and catalog initiatives, including column-level tagging, dataset documentation, and ownership attribution",
-        "Support metadata and catalog initiatives, including column-level tagging, dataset documentation, and ownership attribution",
-        "Contribute to data lineage and governance practices, helping improve audit readiness and visibility across pipelines and products",
-        "Contribute to data lineage and governance practices, helping improve audit readiness and visibility across pipelines and products",
-        "Support and maintain Airflow DAGs, including simple pipeline changes, operational fixes, and automation tasks",
-        "Support and maintain Airflow DAGs, including simple pipeline changes, operational fixes, and automation tasks",
-        "Assist with CI/CD workflows related to data pipelines, deployments, and platform tooling",
-        "Assist with CI/CD workflows related to data pipelines, deployments, and platform tooling",
-        "Help improve data pipeline reliability and consistency, partnering with senior engineers on enhancements and fixes",
-        "Help improve data pipeline reliability and consistency, partnering with senior engineers on enhancements and fixes",
-        "Contribute to automation of reports and dashboards, enabling self-serve analytics for internal teams",
-        "Contribute to automation of reports and dashboards, enabling self-serve analytics for internal teams",
-        "Support adoption of data governance standards across teams, including documentation, processes, and tooling",
-        "Support adoption of data governance standards across teams, including documentation, processes, and tooling",
-        "Assist internal stakeholders with ad-hoc data questions, process improvements, and platform-related enhancements"
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "AWS",
-        "Airflow"
-      ],
-      "url": "https://jobs.ashbyhq.com/kraken.com/5860f65f-0339-4d31-886f-b53f21e89420?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:26.108160"
-    },
-    {
-      "id": "kraken_senior_technical_project_manager_core_infrastructu_047ed832",
-      "company": "kraken",
-      "title": "Senior Technical Project Manager - Core InfrastructureSRE / Devops • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Senior Technical Project Manager - Core Infrastructure\nSRE / Devops • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Project Management & ExecutionDrive end-to-end execution of complex, cross-functional technical projects within the engineering, security, compliance, facility and datacenters operations.Build and manage project plans, roadmaps, dashboards, and release timelines.Coordinate cross-functional teams around strategic priorities and outcomes.Identify dependencies, manage risks, and unblock teams through creative problem-solving.Facilitate meetings, retrospectives, planning sessions and lead planning for big initiatives, coordination with stakeholders.Track KPIs and project health via metrics and dashboards, iterating on reporting for clarity and impact.Manage intake workflows (feature requests, support channels, KTLO) and ensure requests are dealt with efficiently and in a timely manner.Cross-Team Collaboration & CommunicationPartner with Engineering Managers, Engineering Leads, and Product Managers to align on requirements, timelines, and project planning.Communicate effectively across technical and non-technical audiences—including executives—with clear summaries and actionable insights.Work closely with external vendors when required, ensuring compliance and technical standards.Process Improvement & ToolingImprove internal workflows through enhanced Atlassian workflows, AI, automation, self-service and consistent reporting mechanisms.Drive continuous improvement by identifying inefficiencies and recommending scalable process changes.Cultivate a high-performing team environment by sharing project management best practices across teams.",
         "Project Management & Execution",
         "Drive end-to-end execution of complex, cross-functional technical projects within the engineering, security, compliance, facility and datacenters operations.",
-        "Drive end-to-end execution of complex, cross-functional technical projects within the engineering, security, compliance, facility and datacenters operations.",
-        "Build and manage project plans, roadmaps, dashboards, and release timelines.",
         "Build and manage project plans, roadmaps, dashboards, and release timelines.",
         "Coordinate cross-functional teams around strategic priorities and outcomes.",
-        "Coordinate cross-functional teams around strategic priorities and outcomes.",
-        "Identify dependencies, manage risks, and unblock teams through creative problem-solving.",
         "Identify dependencies, manage risks, and unblock teams through creative problem-solving.",
         "Facilitate meetings, retrospectives, planning sessions and lead planning for big initiatives, coordination with stakeholders.",
-        "Facilitate meetings, retrospectives, planning sessions and lead planning for big initiatives, coordination with stakeholders.",
         "Track KPIs and project health via metrics and dashboards, iterating on reporting for clarity and impact.",
-        "Track KPIs and project health via metrics and dashboards, iterating on reporting for clarity and impact.",
-        "Manage intake workflows (feature requests, support channels, KTLO) and ensure requests are dealt with efficiently and in a timely manner."
+        "Manage intake workflows (feature requests, support channels, KTLO) and ensure requests are dealt with efficiently and in a timely manner.",
+        "Cross-Team Collaboration & Communication",
+        "Partner with Engineering Managers, Engineering Leads, and Product Managers to align on requirements, timelines, and project planning.",
+        "Communicate effectively across technical and non-technical audiences—including executives—with clear summaries and actionable insights.",
+        "Work closely with external vendors when required, ensuring compliance and technical standards.",
+        "Process Improvement & Tooling",
+        "Improve internal workflows through enhanced Atlassian workflows, AI, automation, self-service and consistent reporting mechanisms."
       ],
       "location": "Remote",
       "posting_date": null,
@@ -764,93 +678,190 @@
         "AWS"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/5858101b-0cc8-4a7f-b49d-9d21d524a707?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:28.879945"
+      "scraped_at": "2026-03-09 21:37:11.445453"
     },
     {
-      "id": "kraken_sr_staff_core_infrastructure_engineer_core_platfor_dc2add3b",
+      "id": "kraken_sr_site_reliability_engineer_cie_sre_devops_latam__4aff6761",
       "company": "kraken",
-      "title": "Sr. Staff Core Infrastructure Engineer - Core PlatformSRE / Devops • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "Sr. Site Reliability Engineer - CIE\nSRE / Devops • LATAM; Brazil • Full time",
       "requirements": [
-        "Help design and architect Kraken’s OpenStack-based compute platform",
-        "Help design and architect Kraken’s OpenStack-based compute platform",
-        "Lead the deployment, configuration, and scaling of OpenStack across multiple datacenters",
-        "Lead the deployment, configuration, and scaling of OpenStack across multiple datacenters",
-        "Manage, optimize, and maintain Kraken’s OpenStack environments and lifecycle workflows",
-        "Manage, optimize, and maintain Kraken’s OpenStack environments and lifecycle workflows",
-        "Build and evolve bare-metal and Virtual Machines provisioning using OpenStack components",
-        "Build and evolve bare-metal and Virtual Machines provisioning using OpenStack components",
-        "Help integrate our Kubernetes platform with OpenStack to provide a unified compute foundation",
-        "Help integrate our Kubernetes platform with OpenStack to provide a unified compute foundation",
-        "Partner with networking, security, engineering, platform and SRE  teams to define long-term datacenter strategy",
-        "Partner with networking, security, engineering, platform and SRE  teams to define long-term datacenter strategy",
-        "Mentor engineers and contribute to roadmaps for private-cloud and datacenter evolution",
-        "Mentor engineers and contribute to roadmaps for private-cloud and datacenter evolution",
-        "Participate in an on-call rotation to ensure the reliability of the core infrastructure platform"
+        "Own and operate Kraken’s Core Infrastructure Platform, supporting a highly resilient, low-latency, distributed exchange environment across on-prem and cloud.",
+        "Deliver, monitor, and support staging and production systems in a 24/7 environment.",
+        "Participate in an on-call rotation to ensure the reliability and availability of mission-critical systems.",
+        "Design, build, and maintain infrastructure tooling, CI/CD pipelines, and self-service platforms to improve developer velocity and autonomy.",
+        "Lead migrations across cloud and on-prem environments and drive adoption of Infrastructure as Code (Terraform).",
+        "Manage container orchestration platforms (Kubernetes, Nomad) and service deployments.",
+        "Implement infrastructure security best practices to ensure availability, integrity, and compliance.",
+        "Operate and optimize distributed systems (Kafka, Redis, Elasticsearch, MariaDB) and ingress infrastructure (proxies, CDNs), troubleshooting performance and reliability issues in collaboration with cross-functional teams.",
+        "5+ years in SRE, DevOps, or backend infrastructure engineering roles.",
+        "3+ years programming in Rust, Golang, or Python.",
+        "Strong expertise in AWS and cloud infrastructure architecture.",
+        "Deep experience with Docker and orchestration platforms (Kubernetes or Nomad).",
+        "Hands-on experience with Infrastructure as Code (Terraform) and related tooling (e.g., Vault, Consul, Salt).",
+        "Strong monitoring and observability experience (Grafana, VictoriaMetrics, Splunk, AlertManager).",
+        "Solid Linux systems knowledge, networking fundamentals, and advanced debugging skills."
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
-        "Kubernetes"
+        "AWS",
+        "Docker",
+        "Elasticsearch",
+        "Go",
+        "Golang",
+        "Grafana",
+        "Kafka",
+        "Kubernetes",
+        "Linux",
+        "MariaDB",
+        "Python",
+        "Redis",
+        "Rust",
+        "Terraform"
+      ],
+      "url": "https://jobs.ashbyhq.com/kraken.com/7f9a1c08-126b-419a-8263-c4b6b129bf60?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
+      "scraped_at": "2026-03-09 21:37:13.938266"
+    },
+    {
+      "id": "kraken_sr_staff_core_infrastructure_engineer_core_platfor_d1cd98de",
+      "company": "kraken",
+      "title": "Sr. Staff Core Infrastructure Engineer - Core Platform\nSRE / Devops • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
+      "requirements": [
+        "Help design and architect Kraken’s OpenStack-based compute platform",
+        "Lead the deployment, configuration, and scaling of OpenStack across multiple datacenters",
+        "Manage, optimize, and maintain Kraken’s OpenStack environments and lifecycle workflows",
+        "Build and evolve bare-metal and Virtual Machines provisioning using OpenStack components",
+        "Help integrate our Kubernetes platform with OpenStack to provide a unified compute foundation",
+        "Partner with networking, security, engineering, platform and SRE  teams to define long-term datacenter strategy",
+        "Mentor engineers and contribute to roadmaps for private-cloud and datacenter evolution",
+        "Participate in an on-call rotation to ensure the reliability of the core infrastructure platform",
+        "7+ years of hands-on OpenStack experience (deployment, configuration, troubleshooting), at scale",
+        "Expert-level proficiency of OpenStack architecture, reliability, optimization, and operations",
+        "Proficient with Openstack's Nova, Ironic, Neutron for host provisioning, networking and virtual machines management at scale in on-premises datacenters",
+        "Strong background in Linux, networking fundamentals, and distributed systems",
+        "Experience with automation tools (Salt, Terraform) and infrastructure-as-code practices",
+        "Strong security mindset with experience enforcing best practices in complex environments",
+        "Proficiency in two or more languages: Python, Go, Bash"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Bash",
+        "Go",
+        "Kubernetes",
+        "Linux",
+        "Python",
+        "Terraform"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/03e29845-0de4-4ce1-b187-9549365b5692?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:31.690233"
+      "scraped_at": "2026-03-09 21:37:16.486408"
     },
     {
-      "id": "kraken_sre_devops_engineersre_devops_united_kingdom_canad_ffb6b916",
+      "id": "kraken_sre_devops_engineer_sre_devops_united_kingdom_braz_c5beba9c",
       "company": "kraken",
-      "title": "SRE / DevOps EngineerSRE / Devops • United Kingdom; Canada; Portugal; Spain; Poland; Ireland; Germany; United Arab Emirates; Brazil; Romania; Czech Republic; Cyprus; Lithuania; Switzerland; Mexico • Full time • Remote",
+      "title": "SRE / DevOps Engineer\nSRE / Devops • United Kingdom; Brazil; Canada; Cyprus; Czech Republic; Germany; Ireland; Lithuania; Mexico; Poland; Portugal; Romania; Spain; Switzerland; United Arab Emirates • Full time • Remote",
       "requirements": [
         "Build and support infrastructure and tools, on-prem and in the cloud",
-        "Build and support infrastructure and tools, on-prem and in the cloud",
-        "Drive standardisation: Author RFCs and internal guides covering process improvements,  reliability patterns, and best practices",
         "Drive standardisation: Author RFCs and internal guides covering process improvements,  reliability patterns, and best practices",
         "Support, and guide engineers on SRE related topics",
-        "Support, and guide engineers on SRE related topics",
-        "Partner with product-development teams to identify, and eliminate friction",
         "Partner with product-development teams to identify, and eliminate friction",
         "3+ years in a DevOps role (DevOps, SRE, etc)",
-        "3+ years in a DevOps role (DevOps, SRE, etc)",
-        "3+ years experience with a systems programming language (e.g. Rust)",
         "3+ years experience with a systems programming language (e.g. Rust)",
         "Proficient in Git source version-control",
-        "Proficient in Git source version-control",
-        "Thorough knowledge of Docker, experience with Terraform"
+        "Thorough knowledge of Docker, experience with Terraform",
+        "Passion for improving process and products",
+        "Experience configuring Continuous Integration (CI)",
+        "Ability to thrive while working independently and remotely in a team-based environment",
+        "Experience with monitoring / alerting (primarily with Prometheus / Grafana) and knowledge of best practices in the area",
+        "Self-starter, ability to context-switch between various projects, codebases and concepts",
+        "Ability to independently debug problems involving the network and operating system",
+        "Well-versed in scripting languages (e.g. Bash and/or Python), building and administration of Linux"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
+        "Bash",
         "Docker",
         "Git",
+        "Grafana",
+        "Linux",
+        "Prometheus",
+        "Python",
         "Rust",
         "Terraform"
       ],
       "url": "https://jobs.ashbyhq.com/kraken.com/59f80f49-0fa8-432e-bbb6-7b8fac4cb920?departmentId=5f67bd79-103b-4ac1-8d79-952b45ea47c9&employmentType=FullTime&locationId=0ae979f7-78d9-4e42-8cf1-831610586017",
-      "scraped_at": "2026-02-14 06:01:34.662863"
+      "scraped_at": "2026-03-09 21:37:19.127767"
     },
     {
-      "id": "railway_senior_infra_engineer_networking_b7f4472a",
-      "company": "railway",
-      "title": "Senior Infra Engineer: Networking",
+      "id": "coinbase_software_engineer_customer_agent_interactions_syst_7aabc132",
+      "company": "coinbase",
+      "title": "Software Engineer - Customer Agent Interactions System",
       "requirements": [
-        "Experience with overlay networking technologies (VXLAN, WireGuard, etc)",
-        "Experience writing eBPF code to mux packets around a network",
-        "Hands-on experience operating and troubleshooting production-grade datacenter networks",
-        "A solid intuition about how long your solutions will last. All systems age. In startups, we can hope for 2-3 orders of magnitude, or 12-18mo.",
-        "The tact to implement your solution, creator monitors for it’s error boundaries, and document any requirements for when you’re not around",
-        "A great sense of direction and prioritization when it comes to dealing with the ambiguity of an early stage startup",
-        "A sense of grit to dive into a problem, implement a solution, scale that solution, and replace it when needed",
-        "A great set of communication skills for getting your point across, solution implemented, and beyond",
-        "Familiarity with the Linux networking stack and its various knobs and dials that require tuning because the out of the box settings are not suitable for our scale",
-        "Network latency charts excite you as you look for opportunities to make things faster/more reliable",
-        "Familiarity with BGP and internet routing (understanding of L1, especially in a DC is a huge plus!)s"
+        "You have at least 3 years of experience in software engineering, with a focus in the development of web applications and delivery of user-facing features.",
+        "You’ve built, scaled and maintained production services, and know how to compose a service oriented architecture.",
+        "You write high quality, well tested code to meet the needs of your customers.",
+        "You enjoy and have experience with large-scale, high-traffic platforms and implementing scalable, robust services in the real world.",
+        "You have experience in authoring and contributing to technical architecture and implementing them.",
+        "Knowledge of or experience with rate limiters, caching, metrics, logging, and debugging",
+        "Experience in event driven architectures (Kafka, MQ etc.), proficiency in either SQL or NoSQL DBs, understanding of concepts like gRPC, GraphQL, ETL.",
+        "Proficiency in Go."
       ],
-      "location": "Anywhere",
+      "location": "Remote - Brazil",
       "posting_date": null,
       "tech_stack": [
-        "Linux"
+        "AWS",
+        "GitHub",
+        "GitHub Actions",
+        "Go",
+        "Golang",
+        "GraphQL",
+        "Kafka",
+        "Kubernetes",
+        "Python",
+        "R",
+        "Ruby",
+        "Terraform",
+        "gRPC"
       ],
-      "url": "https://railway.com/careers/platform-engineer-networking",
-      "scraped_at": "2026-02-14 06:00:22.013279"
+      "url": "https://www.coinbase.com/careers/positions/7539703?gh_jid=7539703",
+      "scraped_at": "2026-03-09 21:36:12.209330"
+    },
+    {
+      "id": "coinbase_software_engineer_full_stack_eaa_6dee91b4",
+      "company": "coinbase",
+      "title": "Software Engineer, Full Stack (EAA)",
+      "requirements": [
+        "You have at least 3 years of experience in software engineering and at least 3 years of experience in developing web apps and shipping user-facing features with JavaScript and modern, component-based JS frameworks like React.",
+        "Experience with third-party vendor integrations.",
+        "You enjoy and have experience with large-scale, high-traffic platforms and implementing scalable, robust services in the real world.",
+        "Experience in AWS, Kubernetes, Terraform, BuildKite or similar.",
+        "Experience in rate limiters, caching, load balancing, circuit breakers, metrics, logging, tracing, debugging etc.",
+        "Experience in event driven architectures (Kafka, MQ etc.), proficiency in either SQL or NoSQL DBs, understanding of concepts like gRPC, GraphQL, ETL.",
+        "Proficiency in Go."
+      ],
+      "location": "Remote - Brazil",
+      "posting_date": null,
+      "tech_stack": [
+        "AWS",
+        "Go",
+        "Golang",
+        "GraphQL",
+        "JavaScript",
+        "Kafka",
+        "Kubernetes",
+        "MongoDB",
+        "Python",
+        "R",
+        "React",
+        "Ruby",
+        "Snowflake",
+        "Terraform",
+        "TypeScript",
+        "gRPC"
+      ],
+      "url": "https://www.coinbase.com/careers/positions/7584070?gh_jid=7584070",
+      "scraped_at": "2026-03-09 21:36:12.237889"
     },
     {
       "id": "railway_senior_infra_engineer_datacenters_9d530be3",
@@ -859,9 +870,19 @@
       "requirements": [],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "AWS",
+        "GitHub",
+        "Go",
+        "Golang",
+        "Heroku",
+        "PostgreSQL",
+        "REST",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/dc-engineer",
-      "scraped_at": "2026-02-14 06:00:25.951715"
+      "scraped_at": "2026-03-09 21:36:22.507059"
     },
     {
       "id": "railway_senior_infra_engineer_orchestration_80a4655a",
@@ -877,9 +898,22 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "Ansible",
+        "GitHub",
+        "Go",
+        "Golang",
+        "GraphQL",
+        "Heroku",
+        "REST",
+        "Rust",
+        "Terraform",
+        "TypeScript",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/platform-engineer-orchestration",
-      "scraped_at": "2026-02-14 06:00:29.283685"
+      "scraped_at": "2026-03-09 21:36:25.479707"
     },
     {
       "id": "railway_senior_infra_engineer_observability_218843ac",
@@ -887,6 +921,7 @@
       "title": "Senior Infra Engineer: Observability",
       "requirements": [
         "A strong understanding of distributed systems. You enjoy building fault tolerant, resilient, and scalable services",
+        "Interests in VictoriaMetrics, ClickHouse, and other systems for building observability stacks from the ground up",
         "A solid intuition about how long your solutions will last. All systems age. In startups, we can hope for 2-3 orders of magnitude, or 12-18mo.",
         "The tact to implement your solution, creator monitors for it’s error boundaries, and document any requirements for when you’re not around",
         "A great sense of direction and prioritization when it comes to dealing with the ambiguity of an early stage startup",
@@ -895,9 +930,23 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "Ansible",
+        "ClickHouse",
+        "GitHub",
+        "Go",
+        "Golang",
+        "GraphQL",
+        "Heroku",
+        "REST",
+        "Rust",
+        "Terraform",
+        "TypeScript",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/platform-engineer-instrumentation",
-      "scraped_at": "2026-02-14 06:00:32.672723"
+      "scraped_at": "2026-03-09 21:36:29.199075"
     },
     {
       "id": "railway_senior_infra_engineer_compute_d551ad81",
@@ -913,9 +962,18 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Golang",
+        "Heroku",
+        "Linux",
+        "REST",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/systems-engineer",
-      "scraped_at": "2026-02-14 06:00:36.080597"
+      "scraped_at": "2026-03-09 21:36:32.354314"
     },
     {
       "id": "railway_senior_infra_engineer_storage_efe23f64",
@@ -933,9 +991,16 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/platform-engineer-storage",
-      "scraped_at": "2026-02-14 06:00:39.398024"
+      "scraped_at": "2026-03-09 21:36:35.329093"
     },
     {
       "id": "railway_senior_infra_engineer_platform_a2a65a7a",
@@ -944,9 +1009,20 @@
       "requirements": [],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "AWS",
+        "ClickHouse",
+        "GitHub",
+        "Go",
+        "Golang",
+        "Heroku",
+        "PostgreSQL",
+        "REST",
+        "Vercel",
+        "gRPC"
+      ],
       "url": "https://railway.com/careers/infra-platform",
-      "scraped_at": "2026-02-14 06:00:43.294851"
+      "scraped_at": "2026-03-09 21:36:38.545930"
     },
     {
       "id": "railway_senior_growth_marketer_7cffe092",
@@ -955,9 +1031,15 @@
       "requirements": [],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/growth-marketer",
-      "scraped_at": "2026-02-14 06:00:46.626964"
+      "scraped_at": "2026-03-09 21:36:41.408558"
     },
     {
       "id": "railway_senior_product_marketer_b2136c41",
@@ -966,9 +1048,15 @@
       "requirements": [],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/product-marketer",
-      "scraped_at": "2026-02-14 06:00:49.899526"
+      "scraped_at": "2026-03-09 21:36:44.318343"
     },
     {
       "id": "railway_senior_full_stack_engineer_product_01ccee41",
@@ -983,9 +1071,20 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "ClickHouse",
+        "Git",
+        "GitHub",
+        "Go",
+        "GraphQL",
+        "Heroku",
+        "REST",
+        "Rust",
+        "TypeScript",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/full-stack",
-      "scraped_at": "2026-02-14 06:00:53.113271"
+      "scraped_at": "2026-03-09 21:36:47.356310"
     },
     {
       "id": "railway_community_engineer_4313bca8",
@@ -1000,9 +1099,15 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/community-manager",
-      "scraped_at": "2026-02-14 06:00:56.492740"
+      "scraped_at": "2026-03-09 21:36:50.330450"
     },
     {
       "id": "railway_senior_devrel_engineer_growth_454b7791",
@@ -1018,9 +1123,15 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/developer-relations-growth",
-      "scraped_at": "2026-02-14 06:00:59.955266"
+      "scraped_at": "2026-03-09 21:36:53.235654"
     },
     {
       "id": "railway_senior_devrel_engineer_product_449daf3a",
@@ -1035,9 +1146,15 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/developer-relations",
-      "scraped_at": "2026-02-14 06:01:03.403546"
+      "scraped_at": "2026-03-09 21:36:56.169269"
     },
     {
       "id": "railway_senior_solutions_engineer_09d93f6c",
@@ -1052,30 +1169,27 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "AWS",
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/solutions-architect",
-      "scraped_at": "2026-02-14 06:01:06.594615"
+      "scraped_at": "2026-03-09 21:37:00.251441"
     },
     {
       "id": "railway_brand_designer_0d75ce77",
       "company": "railway",
       "title": "Brand Designer",
-      "requirements": [
-        "4-5+ years of experience creating outstanding digital experiences",
-        "Strong visual/interaction skills. You can come up with novel things that we haven’t yet imagined.",
-        "Prior experience of owning a full brand identity end-to-end",
-        "You’re a systems thinker. You not only can create a logo or website but systems, if its a branding system, you have considered all the applications across several mediums, if its a website, you know how different pieces work together to achieve a goal.",
-        "You like to experiment with new technology, conduct unique interactive experiments to push the boundaries and experiment.",
-        "You have a great sense for animation details, timing, rhythm, etc—and you like to use it whenever you can.",
-        "In addition to make something great and beautiful, you know how a website or campaign contributes to a bigger business goal. Pretty things aren't just decoration in the end.",
-        "You know how to communicate effectively, you post updates, ask questions, and share work without being afraid of being wrong.",
-        "Even when the work is creative, you can find ways to make your work more efficient. For example, a branding or illustration system for the brand, so you don't have to reinvent the wheel every time."
-      ],
+      "requirements": [],
       "location": "Anywhere",
       "posting_date": null,
       "tech_stack": [],
       "url": "https://railway.com/careers/brand-designer",
-      "scraped_at": "2026-02-14 06:01:09.939829"
+      "scraped_at": "2026-03-09 21:37:03.473093"
     },
     {
       "id": "railway_product_designer_96d20e03",
@@ -1093,20 +1207,37 @@
       ],
       "location": "Anywhere",
       "posting_date": null,
-      "tech_stack": [],
+      "tech_stack": [
+        "GitHub",
+        "Go",
+        "Heroku",
+        "REST",
+        "Vercel"
+      ],
       "url": "https://railway.com/careers/Product-designer",
-      "scraped_at": "2026-02-14 06:01:13.494020"
+      "scraped_at": "2026-03-09 21:37:06.393946"
     },
     {
-      "id": "airbnb_contractor_roles_e0ce1b4f",
+      "id": "airbnb_business_solutions_engineer_agentic_ai_1a6d372d",
       "company": "airbnb",
-      "title": "Contractor Roles",
+      "title": "Business Solutions Engineer, (Agentic AI)",
       "requirements": [],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/#non-permanent-contractor",
-      "scraped_at": "2026-02-14 06:00:17.183570"
+      "url": "https://careers.airbnb.com/positions/7541082/",
+      "scraped_at": "2026-03-09 21:36:27.117792"
+    },
+    {
+      "id": "airbnb_engineering_manager_client_products_emerging_tech_a805df8f",
+      "company": "airbnb",
+      "title": "Engineering Manager, Client Products & Emerging Tech",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7522011/",
+      "scraped_at": "2026-03-09 21:36:34.347301"
     },
     {
       "id": "airbnb_engineering_manager_cloud_networking_brazil_395de30e",
@@ -1117,7 +1248,49 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7381450/",
-      "scraped_at": "2026-02-14 06:00:22.779597"
+      "scraped_at": "2026-03-09 21:36:41.691933"
+    },
+    {
+      "id": "airbnb_engineering_manager_control_plane_distributed_tran_35f61dbd",
+      "company": "airbnb",
+      "title": "Engineering Manager, Control Plane – Distributed Transactional Database",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7525334/",
+      "scraped_at": "2026-03-09 21:36:49.183079"
+    },
+    {
+      "id": "airbnb_engineering_manager_core_foundation_d393df80",
+      "company": "airbnb",
+      "title": "Engineering Manager, Core Foundation",
+      "requirements": [
+        "10+ years of industry experience with 5+ years in engineering management; demonstrated success leading cross‑functional or cross‑platform foundation/platform teams.",
+        "Proven track record establishing client‑side performance/health practices and observability, and driving adoption of paved‑path tooling and standards at scale.",
+        "Hands‑on background in at least one client platform (iOS, Android, or Web) with fluency in modern app and feature architecture patterns; comfort collaborating across all three.",
+        "Experience building or stewarding event logging/instrumentation platforms and improving data quality for analytics and experimentation.",
+        "Strong cross‑org influence and stakeholder management with Platform, Product, Design, and Data partners; clear, persuasive written and verbal communication.",
+        "Commitment to inclusive leadership, talent development, and building psychologically safe, high‑ownership teams."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "AWS"
+      ],
+      "url": "https://careers.airbnb.com/positions/7630719/",
+      "scraped_at": "2026-03-09 21:36:56.495844"
+    },
+    {
+      "id": "airbnb_engineering_manager_guest_host_6fd4cabf",
+      "company": "airbnb",
+      "title": "Engineering Manager, Guest & Host",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7532824/",
+      "scraped_at": "2026-03-09 21:37:03.677325"
     },
     {
       "id": "airbnb_engineering_manager_mobile_quality_engineering_c4430a46",
@@ -1138,7 +1311,122 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7434498/",
-      "scraped_at": "2026-02-14 06:00:27.556232"
+      "scraped_at": "2026-03-09 21:37:11.165819"
+    },
+    {
+      "id": "airbnb_engineering_manager_network_infrastructure_cloud_f7d281fa",
+      "company": "airbnb",
+      "title": "Engineering Manager, Network Infrastructure (Cloud)",
+      "requirements": [
+        "3+ years of engineering management experience, with 6+ years of relevant software development experience in a fast paced tech environment",
+        "Experience with a public cloud provider (AWS, GCP, Azure) and their networking service offerings",
+        "Experience running large scale networking systems and software (e.g. proxies, CDN, DNS, gateways)",
+        "Experience with Istio service mesh, k8s and cloud native technologies is a plus",
+        "Excellent communication skills and the ability to work well with teams across the engineering organization (e.g. reliability, compute, security, etc.)",
+        "Strong problem-solving skills and experience leading teams on-call for production infrastructure",
+        "Passionate about efficiency, availability, technical quality and system quality"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "url": "https://careers.airbnb.com/positions/7343909/",
+      "scraped_at": "2026-03-09 21:37:18.058381"
+    },
+    {
+      "id": "airbnb_engineering_manager_trust_platform_a65b94ef",
+      "company": "airbnb",
+      "title": "Engineering Manager, Trust Platform",
+      "requirements": [
+        "9+ years of industry experience with 3+ years of people management experience, including experience managing technical leads",
+        "Strong coding skills in programming languages such as Java. Familiarity with Scala is a plus.",
+        "Experience with the Trust/Risk domain.",
+        "Experience with platform architecture patterns and best practices.  Passionate about efficiency, availability, technical quality and system quality.",
+        "Retained, mentored and hired senior engineers and leaders with a track record of building productive, world-class engineering teams.",
+        "Effectively worked with senior leadership in setting strategic 12+ month direction.",
+        "Experience with effectively creating alignments with multiple teams and operating well in ambiguity",
+        "Shipped several large scale projects with multiple dependencies across teams",
+        "Experience with knowledge graphs and/or GraphML is a plus",
+        "Experience with building and leading infrastructure is a plus."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Java",
+        "Scala"
+      ],
+      "url": "https://careers.airbnb.com/positions/7688415/",
+      "scraped_at": "2026-03-09 21:37:24.897875"
+    },
+    {
+      "id": "airbnb_frontend_engineer_payments_a68a1252",
+      "company": "airbnb",
+      "title": "Frontend Engineer, Payments",
+      "requirements": [
+        "3+ years of industry engineering experience",
+        "Fluency in HTML, CSS, JavaScript, Typescript, React and related web technologies",
+        "Experience with modern JavaScript libraries and tooling (e.g. React, npm, webpack...)",
+        "Strong communication and organizational skills",
+        "Ability to work in areas outside of your usual comfort zone and show motivation for personal growth without a dedicated product manager",
+        "Fluency in English is essential."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "JavaScript",
+        "React",
+        "TypeScript"
+      ],
+      "url": "https://careers.airbnb.com/positions/7546721/",
+      "scraped_at": "2026-03-09 21:37:32.242678"
+    },
+    {
+      "id": "airbnb_manager_machine_learning_engineering_relevance_and_e3f7c64e",
+      "company": "airbnb",
+      "title": "Manager, Machine Learning Engineering – Relevance and Personalization",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7665266/",
+      "scraped_at": "2026-03-09 21:37:47.015749"
+    },
+    {
+      "id": "airbnb_manager_machine_learning_community_support_product_da17c61f",
+      "company": "airbnb",
+      "title": "Manager, Machine Learning, Community Support Products",
+      "requirements": [
+        "Expertise in ML & AI: Deep knowledge of various machine learning and AI methodologies, including LLMs and non-LLMs, tailored for user-facing products.",
+        "Leadership in ML Development: Proven experience in leading teams that develop large-scale ML models and systems to improve online user experiences.",
+        "Management and Mentorship: Strong leadership skills with a track record of nurturing an innovative and collaborative team environment.",
+        "Communication Excellence: Exceptional verbal and written communication abilities, with a keen eye for detail.",
+        "Collaborative Spirit: Demonstrated capability to work effectively with stakeholders at all organizational levels, both internally and externally.",
+        "Problem Solving: Skilled in navigating and resolving ambiguous challenges through proactive and strategic approaches.",
+        "Educational Background: PhD, or Master's degree in Computer Science,  Mathematics, Statistics, or related technical field.",
+        "Industry Experience: 9+ years of experience in building and shipping AI models and products, including 2+ years of experience with LLMs.",
+        "Leadership Experience: 2+ years managing machine learning teams that deliver large impact.",
+        "Technical Proficiency: Expert knowledge of machine learning algorithms and techniques.",
+        "Continuous Learner: Ability to absorb new concepts quickly and integrate them effectively into business processes."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7672101/",
+      "scraped_at": "2026-03-09 21:37:53.926614"
+    },
+    {
+      "id": "airbnb_senior_android_automation_engineer_quality_enginee_8c1cb760",
+      "company": "airbnb",
+      "title": "Senior Android Automation Engineer, Quality Engineering",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7380262/",
+      "scraped_at": "2026-03-09 21:38:01.701130"
     },
     {
       "id": "airbnb_senior_android_software_engineer_quality_ce062baf",
@@ -1149,7 +1437,61 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7380149/",
-      "scraped_at": "2026-02-14 06:00:31.860716"
+      "scraped_at": "2026-03-09 21:38:09.562904"
+    },
+    {
+      "id": "airbnb_senior_android_software_engineer_quality_engineeri_a0665671",
+      "company": "airbnb",
+      "title": "Senior Android Software Engineer, Quality Engineering",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/6602436/",
+      "scraped_at": "2026-03-09 21:38:17.036121"
+    },
+    {
+      "id": "airbnb_senior_backend_engineer_graphql_294319e1",
+      "company": "airbnb",
+      "title": "Senior Backend Engineer, GraphQL",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7547843/",
+      "scraped_at": "2026-03-09 21:38:24.188414"
+    },
+    {
+      "id": "airbnb_senior_data_engineer_biztech_428d0f60",
+      "company": "airbnb",
+      "title": "Senior Data Engineer, BizTech",
+      "requirements": [
+        "9+ years of relevant experience with a Bachelor's/Master’s degree in CS/EE (or 6+ years with a PhD).",
+        "Extensive experience in designing, building, and operating distributed data platforms (e.g., Spark, Kafka, Flink) at a large scale.",
+        "Proficiency in Java, Scala, or Python, along with strong skills in data processing and SQL querying.",
+        "Proven track record of designing and optimizing batch and real-time data pipelines.",
+        "Strong collaboration skills with the ability to work with product managers, data scientists, and engineers.",
+        "Advanced problem-solving and analytical skills, with a focus on data quality, governance, and system reliability.",
+        "Excellent written and verbal communication, with the ability to influence stakeholders and convey complex technical concepts.",
+        "Expertise in data modeling, warehousing, and working with relational and columnar databases (e.g., PostgreSQL, MySQL, Redshift, BigQuery).",
+        "Experience with integrating machine learning models into data systems (preferred).",
+        "Strong leadership and mentorship capabilities, with experience guiding teams on best practices and technical strategies.",
+        "Flexible and innovative, with the ability to adopt new technologies to enhance data systems and processes."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "BigQuery",
+        "Java",
+        "Kafka",
+        "MySQL",
+        "PostgreSQL",
+        "Python",
+        "Scala",
+        "Spark"
+      ],
+      "url": "https://careers.airbnb.com/positions/7640881/",
+      "scraped_at": "2026-03-09 21:38:31.753902"
     },
     {
       "id": "airbnb_senior_frontend_engineer_reliability_experience_a710e3da",
@@ -1160,7 +1502,29 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7378231/",
-      "scraped_at": "2026-02-14 06:00:36.730514"
+      "scraped_at": "2026-03-09 21:38:38.979568"
+    },
+    {
+      "id": "airbnb_senior_fullstack_engineer_app_foundation_0608d16c",
+      "company": "airbnb",
+      "title": "Senior Fullstack Engineer, App Foundation",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7551863/",
+      "scraped_at": "2026-03-09 21:38:46.641145"
+    },
+    {
+      "id": "airbnb_senior_fullstack_engineer_trust_aa24b905",
+      "company": "airbnb",
+      "title": "Senior Fullstack Engineer, Trust",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7381159/",
+      "scraped_at": "2026-03-09 21:38:54.768905"
     },
     {
       "id": "airbnb_senior_ios_automation_engineer_quality_engineering_03c5c0e2",
@@ -1184,172 +1548,263 @@
         "Swift"
       ],
       "url": "https://careers.airbnb.com/positions/7453190/",
-      "scraped_at": "2026-02-14 06:00:40.667430"
+      "scraped_at": "2026-03-09 21:39:09.434207"
     },
     {
-      "id": "airbnb_senior_software_engineer_cloud_networking_brazil_a0923a7e",
+      "id": "airbnb_senior_ios_engineer_client_media_foundation_15a17184",
       "company": "airbnb",
-      "title": "Senior Software Engineer, Cloud Networking (Brazil)",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7391864/",
-      "scraped_at": "2026-02-14 06:00:44.788237"
-    },
-    {
-      "id": "airbnb_senior_software_engineer_reliability_engineering_77061a4b",
-      "company": "airbnb",
-      "title": "Senior Software Engineer, Reliability Engineering",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7565550/",
-      "scraped_at": "2026-02-14 06:00:48.384777"
-    },
-    {
-      "id": "airbnb_senior_software_engineer_service_tools_ded3653c",
-      "company": "airbnb",
-      "title": "Senior Software Engineer, Service Tools",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7490348/",
-      "scraped_at": "2026-02-14 06:00:52.174659"
-    },
-    {
-      "id": "airbnb_software_engineer_search_infrastructure_f0551661",
-      "company": "airbnb",
-      "title": "Software Engineer, Search Infrastructure",
+      "title": "Senior iOS Engineer, Client Media Foundation",
       "requirements": [
-        "Proficiency with Java for building scalable, maintainable systems",
-        "BS, MS, or PhD in Computer Science, a related field, or equivalent work experience.",
-        "4+ years of industry experience with a bachelor’s or master’s degree. No prior industry experience required for candidates with a PhD.",
-        "Familiarity with ElasticSearch or OpenSearch is a plus.",
-        "Strong communication skills with a demonstrated ability to collaborate effectively across teams and stakeholders.",
-        "Professional proficiency in English (reading, writing, and speaking)."
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [
-        "Elasticsearch",
-        "Java"
-      ],
-      "url": "https://careers.airbnb.com/positions/7365942/",
-      "scraped_at": "2026-02-14 06:00:56.676891"
-    },
-    {
-      "id": "airbnb_staff_android_automation_engineer_bf46cc64",
-      "company": "airbnb",
-      "title": "Staff Android Automation Engineer",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7380185/",
-      "scraped_at": "2026-02-14 06:01:01.124182"
-    },
-    {
-      "id": "airbnb_contractor_roles_e0ce1b4f",
-      "company": "airbnb",
-      "title": "Contractor Roles",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/#non-permanent-contractor",
-      "scraped_at": "2026-02-14 06:01:07.729045"
-    },
-    {
-      "id": "airbnb_engineering_manager_cloud_networking_brazil_395de30e",
-      "company": "airbnb",
-      "title": "Engineering Manager, Cloud Networking (Brazil)",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7381450/",
-      "scraped_at": "2026-02-14 06:01:12.158324"
-    },
-    {
-      "id": "airbnb_engineering_manager_mobile_quality_engineering_c4430a46",
-      "company": "airbnb",
-      "title": "Engineering Manager, Mobile Quality Engineering",
-      "requirements": [
-        "3+ years of engineering management and 7+ years of industry experience with a strong focus on iOS and/or Android developer tooling, testing, or quality engineering.",
-        "Strong familiarity with software engineering principles, including object-oriented and functional programming paradigms, design patterns, and code quality practices.",
-        "Hands-on technical leadership leading multiple teams and setting technical direction",
-        "Led projects with notable risk and complexity; develops the strategy for project execution",
-        "Proven experience leading distributed or regional engineering teams and driving technical outcomes.",
-        "Skilled in mentoring engineers and creating strong team dynamics across cultural and geographic boundaries.",
-        "Be an agent of change inside the organization and be comfortable leading through ambiguity",
-        "Excellent communication and collaboration skills, with the ability to align local execution to a global strategy.",
-        "Fluent in English; Portuguese proficiency preferred."
-      ],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7434498/",
-      "scraped_at": "2026-02-14 06:01:15.999246"
-    },
-    {
-      "id": "airbnb_senior_android_software_engineer_quality_ce062baf",
-      "company": "airbnb",
-      "title": "Senior Android Software Engineer, Quality",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7380149/",
-      "scraped_at": "2026-02-14 06:01:19.763044"
-    },
-    {
-      "id": "airbnb_senior_frontend_engineer_reliability_experience_a710e3da",
-      "company": "airbnb",
-      "title": "Senior Frontend Engineer, Reliability Experience",
-      "requirements": [],
-      "location": "Remote",
-      "posting_date": null,
-      "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7378231/",
-      "scraped_at": "2026-02-14 06:01:23.840031"
-    },
-    {
-      "id": "airbnb_senior_ios_automation_engineer_quality_engineering_03c5c0e2",
-      "company": "airbnb",
-      "title": "Senior iOS Automation Engineer, Quality Engineering",
-      "requirements": [
-        "5+ years of industry experience in software testing and automation",
-        "Demonstrable knowledge in Swift and XCUITest",
-        "Strong  hands-on experience with automation methodologies, tools, and frameworks",
-        "Experience integrating automated tests into CI/CD pipelines (e.g., Buildkite, Spinnaker, Jenkins) and version control systems (Git)",
-        "Excellent communication skills towards facilitating interactions with cross-functional teams",
-        "Expertise developing solutions to ambiguous problems, and integrations across multiple teams with significant impact",
-        "Bachelor’s degree in computer science/engineering or equivalent"
+        "5-9+ years of experience in iOS software development, with a strong focus on media-related technologies (e.g. media processing libraries / frameworks, knowledge of industry standards and best practices for media encoding and compression, and a passion for creating engaging user experiences through media)",
+        "Proficiency in Swift and Objective-C programming languages",
+        "Deep understanding of iOS frameworks such as UIKit, SwiftUI, Core Animation, Core Graphics, Core Audio, and AVFoundation. OpenGL and Metal experience are a plus.",
+        "Experience building and maintaining complex, high-performance, and scalable iOS applications",
+        "Excellent problem-solving, debugging, and optimization skills",
+        "Strong collaboration and communication abilities, with the ability to work effectively with cross-functional teams and understand"
       ],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [
         "AWS",
-        "Git",
-        "Jenkins",
+        "Objective-C",
         "Swift"
       ],
-      "url": "https://careers.airbnb.com/positions/7453190/",
-      "scraped_at": "2026-02-14 06:01:27.127255"
+      "url": "https://careers.airbnb.com/positions/7558530/",
+      "scraped_at": "2026-03-09 21:39:17.261158"
     },
     {
-      "id": "airbnb_senior_software_engineer_cloud_networking_brazil_a0923a7e",
+      "id": "airbnb_senior_ios_engineer_guest_displays_platforms_42bcec2a",
       "company": "airbnb",
-      "title": "Senior Software Engineer, Cloud Networking (Brazil)",
+      "title": "Senior iOS Engineer, Guest Displays & Platforms",
+      "requirements": [
+        "Bachelor’s or Master’s degree in Computer Science or a related field, or equivalent practical experience",
+        "6+ years of experience building, scaling, and maintaining iOS applications for large user bases, with strong attention to design quality and detail",
+        "Advanced proficiency in Swift and Objective-C, with hands-on experience using UIKit, SwiftUI, and modern iOS UI architectures, emphasizing performance and maintainability",
+        "Extensive experience integrating and consuming GraphQL APIs in production",
+        "Demonstrated success shipping high-quality iOS applications to the App Store, with strong technical execution and product judgment",
+        "Strong computer science fundamentals, including data structures, asynchronous programming, and mobile engineering best practices",
+        "Proven ability to independently design and deliver solutions in ambiguous problem spaces, including cross-team and cross-system integrations",
+        "Strong collaboration and communication skills, with experience partnering closely with product, design, and other non-engineering stakeholders",
+        "Solid product sense and passion for UI/UX, with the ability to translate product vision into polished, user-focused experiences",
+        "Experience leading technical initiatives within a team, contributing to planning and execution, and solving complex engineering challenges",
+        "Commitment to continuous learning and staying current with evolving mobile technologies and platform trends",
+        "Demonstrated desire to mentor teammates and elevate code quality through reviews, design discussions, and technical guidance"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "GraphQL",
+        "Objective-C",
+        "Swift"
+      ],
+      "url": "https://careers.airbnb.com/positions/7531251/",
+      "scraped_at": "2026-03-09 21:39:24.694635"
+    },
+    {
+      "id": "airbnb_senior_ios_engineer_on_trip_8d26b0b5",
+      "company": "airbnb",
+      "title": "Senior iOS Engineer, On Trip",
+      "requirements": [
+        "Bachelor’s and/or master’s degree, preferably in CS, or equivalent experience",
+        "5+ years of mobile development experience",
+        "Demonstrable knowledge in Swift UI",
+        "Demonstrated expertise in developing iOS applications at a large scale",
+        "iOS product feature development experience",
+        "Excellent communication and collaboration skills with experience working well within engineering and across functions",
+        "Passionate about design and building UX products",
+        "Pushing boundaries of design and product features by balancing tradeoffs and iterating to the ideal solution",
+        "Experience working on a product engineering team or customer-centric platform team",
+        "Motivation for personal growth and learning new technologies"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Swift"
+      ],
+      "url": "https://careers.airbnb.com/positions/7577001/",
+      "scraped_at": "2026-03-09 21:39:31.991541"
+    },
+    {
+      "id": "airbnb_senior_machine_learning_engineer_community_support_0f4484b3",
+      "company": "airbnb",
+      "title": "Senior Machine Learning Engineer, Community Support Engineering",
+      "requirements": [
+        "PhD/Master’s degree, preferably in CS, or equivalent experience",
+        "5-9 years of ML engineering experience, with ownership responsibility over large-scale software systems",
+        "Background in the design and development of AI and ML systems and services, and a deep passion for building efficient and scalable ML-powered products",
+        "Experience with LLM driven chatbot and Agentic AI products would be a big plus",
+        "Excellent communication skills and the ability to work well within a team and with teams across the engineering, product & design organizations",
+        "Fluency in both English and Mandarin is essential."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7693033/",
+      "scraped_at": "2026-03-09 21:39:38.886217"
+    },
+    {
+      "id": "airbnb_senior_machine_learning_engineer_community_support_0f4484b3",
+      "company": "airbnb",
+      "title": "Senior Machine Learning Engineer, Community Support Engineering",
       "requirements": [],
       "location": "Remote",
       "posting_date": null,
       "tech_stack": [],
-      "url": "https://careers.airbnb.com/positions/7391864/",
-      "scraped_at": "2026-02-14 06:01:30.754423"
+      "url": "https://careers.airbnb.com/positions/7560504/",
+      "scraped_at": "2026-03-09 21:39:46.137002"
+    },
+    {
+      "id": "airbnb_senior_machine_learning_engineer_listing_and_host__86463950",
+      "company": "airbnb",
+      "title": "Senior Machine Learning Engineer, Listing and Host Tools Data and AI",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7623458/",
+      "scraped_at": "2026-03-09 21:39:53.044621"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_payments_9ddc17a3",
+      "company": "airbnb",
+      "title": "Senior Software Engineer -Payments",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7581839/",
+      "scraped_at": "2026-03-09 21:40:00.301654"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_quality_payments_d030ac56",
+      "company": "airbnb",
+      "title": "Senior Software Engineer (Quality), Payments",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7668022/",
+      "scraped_at": "2026-03-09 21:40:07.503492"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_biztech_8613aea4",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, BizTech",
+      "requirements": [
+        "6+ years of experience with a BS/Masters or 4+ years with a PhD",
+        "Experience building & launching high-impact systems",
+        "3 years of experience with design and architecture; and testing/launching software products.",
+        "Previous experience with domain driven design and context mapping",
+        "You are a full-cycle developer: strong ownership and experience building and operating  high-scale, distributed systems across the full software life cycle.",
+        "You have excellent communication skills and the ability to work well within a team and across engineering teams.",
+        "You are a strong problem solver and have solid production debugging skills.",
+        "End-to-end “big picture” perspective that connects technical decisions to real user impact",
+        "Good judgment in making tradeoffs to balance short-term business needs with long-term technical quality"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7175614/",
+      "scraped_at": "2026-03-09 21:40:15.587552"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_community_support_enginee_e9fbfaee",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Community Support Engineering",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7643974/",
+      "scraped_at": "2026-03-09 21:40:29.908533"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_community_support_enginee_e9fbfaee",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Community Support Engineering",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7482013/",
+      "scraped_at": "2026-03-09 21:40:36.978147"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_data_infrastructure_88860a9a",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Data Infrastructure",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7683174/",
+      "scraped_at": "2026-03-09 21:40:44.255632"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_guest_host_f7fc47ba",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Guest & Host",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7518674/",
+      "scraped_at": "2026-03-09 21:40:51.796182"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_guest_host_f7fc47ba",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Guest & Host",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7430121/",
+      "scraped_at": "2026-03-09 21:40:59.204131"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_guest_host_listing_0e1a1fb1",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Guest & Host (Listing)",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7450454/",
+      "scraped_at": "2026-03-09 21:41:06.575537"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_guest_host_partner_integr_9917d780",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Guest & Host (Partner Integrations)",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7639355/",
+      "scraped_at": "2026-03-09 21:41:14.406021"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_messaging_foundations_bec5e076",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Messaging Foundations",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7651517/",
+      "scraped_at": "2026-03-09 21:41:21.766535"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_payments_e3174863",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Payments",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7613550/",
+      "scraped_at": "2026-03-09 21:41:29.032326"
     },
     {
       "id": "airbnb_senior_software_engineer_reliability_engineering_77061a4b",
@@ -1360,7 +1815,41 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7565550/",
-      "scraped_at": "2026-02-14 06:01:34.159241"
+      "scraped_at": "2026-03-09 21:41:36.180815"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_search_input_0899c6ad",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Search Input",
+      "requirements": [
+        "5+ years of hands-on experience in backend/full-stack development.",
+        "Bachelor’s and/or Master’s degree, preferably in CS, or equivalent experience.",
+        "In-depth experience working in Java and/or Kotlin within a microservice architecture at scale.",
+        "Passion for efficiency, availability, technical quality, and system quality.",
+        "Passion for design and UX, with a focus on building user-centric products.",
+        "Excellent communication and collaboration skills, and the ability to work well within a large engineering organization as well as cross functionally.",
+        "Enthusiastic about code reviews and architecture discussions, actively contributing to improve teammates’ productivity.",
+        "Experience working on a product team or customer-centric software for a medium to large engineering organization."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Java",
+        "Kotlin"
+      ],
+      "url": "https://careers.airbnb.com/positions/7541927/",
+      "scraped_at": "2026-03-09 21:41:50.441971"
+    },
+    {
+      "id": "airbnb_senior_software_engineer_service_mesh_b6f73ffd",
+      "company": "airbnb",
+      "title": "Senior Software Engineer, Service Mesh",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7609564/",
+      "scraped_at": "2026-03-09 21:41:57.791796"
     },
     {
       "id": "airbnb_senior_software_engineer_service_tools_ded3653c",
@@ -1371,12 +1860,198 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7490348/",
-      "scraped_at": "2026-02-14 06:01:38.176884"
+      "scraped_at": "2026-03-09 21:42:05.054169"
     },
     {
-      "id": "airbnb_software_engineer_search_infrastructure_f0551661",
+      "id": "airbnb_senior_software_engineer_trust_platform_81aa326b",
       "company": "airbnb",
-      "title": "Software Engineer, Search Infrastructure",
+      "title": "Senior Software Engineer,Trust Platform",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7684833/",
+      "scraped_at": "2026-03-09 21:42:12.305306"
+    },
+    {
+      "id": "airbnb_senior_staff_data_engineer_marketplaces_dna_ee8b6595",
+      "company": "airbnb",
+      "title": "Senior Staff Data Engineer, Marketplaces DNA",
+      "requirements": [
+        "12+ years of relevant industry experience with a Bachelor’s and/or Master’s degree in CS/EE, or equivalent experience, or 9+ years of experience with a PhD",
+        "Experience collaborating with client, backend, ml, analytics teams, product and business partners",
+        "Experience designing and deploying high performance systems with reliable monitoring and logging practices.",
+        "Effectively work across team boundaries to establish overarching data architecture, data flow, and provide guidance to individual teams.",
+        "Strong knowledge of relational databases and query authoring (SQL).",
+        "Strong expertise with Java / Scala / Spark and operating on data at the petabyte scale.",
+        "Excellent communication skills, both written and verbal."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Java",
+        "Scala",
+        "Spark"
+      ],
+      "url": "https://careers.airbnb.com/positions/7463663/",
+      "scraped_at": "2026-03-09 21:42:19.505166"
+    },
+    {
+      "id": "airbnb_senior_staff_engineer_payments_compliance_63c6ea3c",
+      "company": "airbnb",
+      "title": "Senior Staff Engineer, Payments Compliance",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7688467/",
+      "scraped_at": "2026-03-09 21:42:26.938054"
+    },
+    {
+      "id": "airbnb_senior_staff_engineer_performance_e7aec050",
+      "company": "airbnb",
+      "title": "Senior Staff Engineer, Performance",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7315583/",
+      "scraped_at": "2026-03-09 21:42:34.119633"
+    },
+    {
+      "id": "airbnb_senior_staff_machine_learning_engineer_guest_host_4cf480f3",
+      "company": "airbnb",
+      "title": "Senior Staff Machine Learning Engineer – Guest & Host",
+      "requirements": [
+        "Industry experience building and shipping end to end machine learning features",
+        "12+ years of industry experience in applied Machine Learning, with experience in both Natural Language Processing and Computer Vision",
+        "A Bachelor’s, Master’s or PhD in CS/ML or related field",
+        "Strong programming (Python / Java/ C++ or equivalent) skills with data and backend engineering expertise",
+        "Deep understanding of Machine Learning best practices (eg. training/serving skew minimization, A/B test, feature engineering, feature/model selection) and algorithms (eg. gradient boosted trees, neural networks/deep learning, optimization)",
+        "Experience with technologies such as: Tensorflow, PyTorch, Kubernetes, Airflow (or equivalent), Kafka (or equivalent)",
+        "Expertise with architectural patterns of a large, high-scale software applications (e.g., well-designed APIs, high volume data pipelines, efficient algorithms, models)"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Airflow",
+        "Java",
+        "Kafka",
+        "Kubernetes",
+        "PyTorch",
+        "Python",
+        "TensorFlow"
+      ],
+      "url": "https://careers.airbnb.com/positions/6817373/",
+      "scraped_at": "2026-03-09 21:42:41.019263"
+    },
+    {
+      "id": "airbnb_senior_staff_machine_learning_engineer_genai_0f4bcf6d",
+      "company": "airbnb",
+      "title": "Senior Staff Machine Learning Engineer – GenAI",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7028263/",
+      "scraped_at": "2026-03-09 21:42:48.698844"
+    },
+    {
+      "id": "airbnb_senior_staff_machine_learning_engineer_communicati_c482b3cb",
+      "company": "airbnb",
+      "title": "Senior Staff Machine Learning Engineer, Communication & Connectivity",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7005605/",
+      "scraped_at": "2026-03-09 21:42:55.988653"
+    },
+    {
+      "id": "airbnb_senior_staff_machine_learning_engineer_data_eval_e5eb8d9d",
+      "company": "airbnb",
+      "title": "Senior Staff Machine Learning Engineer, Data & Eval",
+      "requirements": [
+        "Define evaluation strategy and success metrics for GenAI systems, aligning offline evaluation with online business and customer experience outcomes.",
+        "Build and scale evaluation frameworks (golden sets, synthetic data, automated regressions, rubric-based grading, LLM-as-judge where appropriate) with strong controls for bias, drift, and reliability.",
+        "Design the data flywheel: instrumentation, feedback collection, data quality checks, labeling strategy, dataset versioning, and governance to support continuous improvement.",
+        "Lead cross-functional quality initiatives across product, ops, and engineering, driving clarity on what “good” looks like and how teams act on evaluation results.",
+        "Develop and productionize pipelines for dataset creation, model monitoring, evaluation-at-scale, and continuous testing (pre-deploy and post-deploy).",
+        "Drive technical decisions and architecture for evaluation and data infrastructure, balancing speed, rigor, cost, and safety."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/6757302/",
+      "scraped_at": "2026-03-09 21:43:10.598379"
+    },
+    {
+      "id": "airbnb_senior_staff_machine_learning_engineer_relevance_a_5b403c58",
+      "company": "airbnb",
+      "title": "Senior Staff Machine Learning Engineer, Relevance and Personalization",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7381973/",
+      "scraped_at": "2026-03-09 21:43:17.836395"
+    },
+    {
+      "id": "airbnb_senior_staff_software_engineer_payments_92ec1a8a",
+      "company": "airbnb",
+      "title": "Senior Staff Software Engineer, Payments",
+      "requirements": [
+        "15+ years of experience in a hands-on software engineering role.",
+        "Bachelor’s and/or Master’s degree, preferably in CS, or equivalent experience.",
+        "Experience building, leading, and architecting production systems or features with broad impact.",
+        "Demonstrated technical leadership: hands on experience leading project teams, setting technical direction and strategy, prototyping to iterate ideas, and working cross functionally with Product, Design and Operations teams.",
+        "Strong communication and collaboration skills with both technical and non-technical partners, experience driving initiatives that span across teams, departments and leadership.",
+        "Passion to level-up those around you through curiosity and fostering a collaborative and inclusive team environment.",
+        "Proven experience in defining product/technical strategy and driving alignment with cross-functional leaders and stakeholders."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7525479/",
+      "scraped_at": "2026-03-09 21:43:25.179565"
+    },
+    {
+      "id": "airbnb_senior_systems_engineer_oic_f8614cdb",
+      "company": "airbnb",
+      "title": "Senior Systems Engineer – OIC",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7556182/",
+      "scraped_at": "2026-03-09 21:43:32.272293"
+    },
+    {
+      "id": "airbnb_senior_systems_engineer_biztech_63a6c97f",
+      "company": "airbnb",
+      "title": "Senior Systems Engineer, Biztech",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7681127/",
+      "scraped_at": "2026-03-09 21:43:40.044810"
+    },
+    {
+      "id": "airbnb_senior_workday_integration_engineer_talent_systems_14ed223b",
+      "company": "airbnb",
+      "title": "Senior Workday Integration Engineer – Talent Systems (BizTech)",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7685812/",
+      "scraped_at": "2026-03-09 21:43:47.186055"
+    },
+    {
+      "id": "airbnb_software_engineer_infrastructure_57579661",
+      "company": "airbnb",
+      "title": "Software Engineer, Infrastructure",
       "requirements": [
         "Proficiency with Java for building scalable, maintainable systems",
         "BS, MS, or PhD in Computer Science, a related field, or equivalent work experience.",
@@ -1392,7 +2067,7 @@
         "Java"
       ],
       "url": "https://careers.airbnb.com/positions/7365942/",
-      "scraped_at": "2026-02-14 06:01:41.734559"
+      "scraped_at": "2026-03-09 21:43:54.046397"
     },
     {
       "id": "airbnb_staff_android_automation_engineer_bf46cc64",
@@ -1403,41 +2078,343 @@
       "posting_date": null,
       "tech_stack": [],
       "url": "https://careers.airbnb.com/positions/7380185/",
-      "scraped_at": "2026-02-14 06:01:46.147470"
+      "scraped_at": "2026-03-09 21:44:01.408239"
+    },
+    {
+      "id": "airbnb_staff_android_engineer_guest_host_811ab217",
+      "company": "airbnb",
+      "title": "Staff Android Engineer, Guest & Host",
+      "requirements": [
+        "10+ years of relevant experience in the tech industry; 1+ years of experience in an Architect or Staff Engineer role, with ownership responsibility over multiple product surfaces.",
+        "A product-focused Android engineer, preferably with experience using Kotlin and Jetpack Compose.  You’re also aware of cross-platform similarities and differences, and can advocate for web and Android concerns",
+        "Strong sense for product experience and business outcomes, willingness to experiment and anticipate future product needs.",
+        "Track record of strong partnership with product and design leadership, through proactive collaboration, iterative development, and leadership demos.",
+        "Experience leading multiple engineering teams, architecting, building, and releasing complex user products.",
+        "Excellent engineering and coding skills, and experience working with GraphQL and REST APIs. Solid understanding client networking, performance, caching, client storage solutions, accessibility, and asynchronous programming. Animation and motion experience, a plus.",
+        "Strong communication and collaboration skills with both technical and non-technical partners. Demonstrated ability to influence non-technical partners such as product managers, design, and the business to develop a unified approach to overall architecture and product/design capabilities. Demonstrated ability to collaborate effectively with Android, iOS, web, and backend engineers.",
+        "A proven track record of fostering a culture of Diversity and Belonging, within the organization and across the tech community"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "GraphQL",
+        "Kotlin",
+        "REST"
+      ],
+      "url": "https://careers.airbnb.com/positions/7681159/",
+      "scraped_at": "2026-03-09 21:44:08.667839"
+    },
+    {
+      "id": "airbnb_staff_android_engineer_reservation_management_addi_6db4d54a",
+      "company": "airbnb",
+      "title": "Staff Android Engineer, Reservation Management & Additional Products",
+      "requirements": [
+        "10+ years industry experience",
+        "Bachelor’s and/or Master’s degree, preferably in CS, or equivalent experience",
+        "Expertise building and maintaining high-performance and scalable consumer Android applications, preferably using Kotlin and Jetpack Compose.",
+        "Solid engineering and coding skills. Understanding of basic data structures and asynchronous programming",
+        "Ability to mentor and grow more junior engineers (set and drive best practices for Android client development)",
+        "Personal projects that show an aptitude for technical excellence and product sense",
+        "Ability to work in areas outside of your usual comfort zone and show motivation for personal growth",
+        "Interest in innovations within the mobile industry",
+        "Nice to have: demonstrated design and UX sensibilities"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Kotlin"
+      ],
+      "url": "https://careers.airbnb.com/positions/7539152/",
+      "scraped_at": "2026-03-09 21:44:15.971136"
+    },
+    {
+      "id": "airbnb_staff_backend_engineer_hosting_services_6e662c4a",
+      "company": "airbnb",
+      "title": "Staff Backend Engineer – Hosting Services",
+      "requirements": [
+        "9+ years of relevant software development industry experience in a fast-paced tech environment",
+        "Expertise with backend systems in large-scale service-oriented architectures",
+        "Good judgment in making tradeoffs to balance short-term business needs with long-term technical quality",
+        "Strong understanding of how deep backend systems are expressed in the UX shown to customers",
+        "End-to-end mentality that transcends team boundaries and helps find globally optimal solutions",
+        "Excellent communication skills and the ability to work well within a team and with teams across the engineering organization",
+        "Passionate about efficiency, availability, system quality and user experience"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7609100/",
+      "scraped_at": "2026-03-09 21:44:30.363763"
+    },
+    {
+      "id": "airbnb_staff_data_engineer_data_ai_listings_structured_da_a4a7dacf",
+      "company": "airbnb",
+      "title": "Staff Data Engineer – Data AI-Listings & Structured Data",
+      "requirements": [
+        "9+ years of relevant industry experience with a Bachelor’s and/or Master’s degree in CS/EE, or equivalent experience, or 6+ years of experience with a PhD",
+        "Experience collaborating with client, backend, ml, analytics teams, product and business partners",
+        "Experience designing and deploying high performance systems with reliable monitoring and logging practices.",
+        "Effectively work across team boundaries to establish overarching data architecture, data flow, and provide guidance to individual teams.",
+        "Strong knowledge of relational databases and query authoring (SQL).",
+        "Strong expertise with Java / Scala / Spark and operating on data at the petabyte scale.",
+        "Excellent communication skills, both written and verbal."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Java",
+        "Scala",
+        "Spark"
+      ],
+      "url": "https://careers.airbnb.com/positions/7012829/",
+      "scraped_at": "2026-03-09 21:44:37.361159"
+    },
+    {
+      "id": "airbnb_staff_fullstack_software_engineer_marketing_techno_eef564ce",
+      "company": "airbnb",
+      "title": "Staff Fullstack Software Engineer, Marketing Technology",
+      "requirements": [
+        "9+ years of experience in a hands-on software engineering role.",
+        "Bachelor’s and/or Master’s degree, preferably in CS, or equivalent experience",
+        "Technical leadership: hands on experience leading project teams, setting technical direction and strategy and mentoring engineers.",
+        "Passionate about efficiency, availability, technical quality and system quality.",
+        "Passion to level-up those around you through curiosity and fostering a collaborative and inclusive team environment.",
+        "Proven experience in defining product/technical strategy and driving alignment with cross-functional leaders and stakeholders.",
+        "Strong communication and collaboration skills with experience driving initiatives that span across teams, departments and leadership.",
+        "Bonus - if you’ve worked in Marketing Technologies"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7554915/",
+      "scraped_at": "2026-03-09 21:44:50.554251"
+    },
+    {
+      "id": "airbnb_staff_genai_system_engineer_automation_foundation_be5935ca",
+      "company": "airbnb",
+      "title": "Staff GenAI System Engineer, Automation Foundation",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7463421/",
+      "scraped_at": "2026-03-09 21:44:58.295279"
+    },
+    {
+      "id": "airbnb_staff_machine_learning_engineer_community_support__9112c728",
+      "company": "airbnb",
+      "title": "Staff Machine Learning Engineer – Community Support Engineering",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7116975/",
+      "scraped_at": "2026-03-09 21:45:05.888901"
+    },
+    {
+      "id": "airbnb_staff_machine_learning_engineer_listings_and_host__fa1134fb",
+      "company": "airbnb",
+      "title": "Staff Machine Learning Engineer, Listings and Host Tools Data and AI",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7454348/",
+      "scraped_at": "2026-03-09 21:45:13.297144"
+    },
+    {
+      "id": "airbnb_staff_machine_learning_engineer_relevance_and_pers_6547b71a",
+      "company": "airbnb",
+      "title": "Staff Machine Learning Engineer, Relevance and Personalization",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7450356/",
+      "scraped_at": "2026-03-09 21:45:20.452552"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_android_platform_f5b55b3b",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Android Platform",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7235415/",
+      "scraped_at": "2026-03-09 21:45:27.652445"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_communication_connectivity_de0c860c",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Communication & Connectivity",
+      "requirements": [
+        "9+ years of relevant industry experience with a Bachelor’s and/or Master’s degree in CS/EE, or equivalent experience, or 6+ years of experience with a PhD",
+        "Strong CS fundamentals, and knowledge of architecture and common design patterns",
+        "You’re passionate about being in a product-focused environment where everyone cares deeply about customer impact",
+        "You have experience of running data processing pipelines in production using distributed data processing frameworks like Apache Spark or Flink",
+        "Experience collaborating with client, backend, ml, analytics teams, product and business partners",
+        "Effectively work across team boundaries to establish overarching data architecture, data flow, and provide guidance to individual teams",
+        "Experience working on/with end-to-end Machine Learning products",
+        "Excellent communication skills, both written and verbal"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Apache",
+        "Spark"
+      ],
+      "url": "https://careers.airbnb.com/positions/7421419/",
+      "scraped_at": "2026-03-09 21:45:34.919779"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_communication_products_c3be5511",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Communication Products",
+      "requirements": [
+        "9+ years of relevant engineering hands-on work experience",
+        "Bachelors, Masters, or PhD in CS or related field",
+        "Demonstrated experience building and shipping ML-powered product features in production environments, including model serving, feature pipelines, online/offline evaluation, and monitoring",
+        "Exceptional architecture abilities and experience with architectural patterns of large, high-scale applications",
+        "Familiarity with NLP/NLU techniques and large language models, particularly as applied to messaging, conversational AI, or content understanding",
+        "Shipped several large-scale projects with multiple dependencies across teams, specifically at the intersection of ML infrastructure and product engineering",
+        "Technical leadership and strong communication skills with the ability to translate between ML research, product goals, and engineering execution",
+        "Experience operating distributed, real-time systems at scale with high reliability requirements",
+        "Experience with real-time messaging systems or event-driven architectures",
+        "Familiarity with ML infrastructure at scale (e.g., feature stores, model registries, online inference platforms)",
+        "Prior work on trust & safety, content moderation, or internationalization in a messaging context",
+        "Experience with LLM-based product features, including prompt engineering, retrieval-augmented generation, or fine-tuning"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7655958/",
+      "scraped_at": "2026-03-09 21:45:42.399517"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_community_support_engineer_407910df",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Community Support Engineering",
+      "requirements": [
+        "9+ years of software development experience.",
+        "Strong proficiency in at least one major backend programming language (e.g., Java, Kotlin, Scala, Python); experience with modern front-end frameworks (e.g., React, Angular, Vue.js) are preferred but not a must.",
+        "Proven track record of delivering end-to-end products in a collaborative environment globally.",
+        "Experience with architectural patterns of large-scale web applications, including well-designed APIs, high-volume data pipelines, and efficient algorithms.",
+        "Demonstrated ability to make data-driven decisions, articulate technical trade-offs, and communicate effectively with cross-functional partners.",
+        "Passion for creating intuitive user experiences and a keen interest in data systems and analytics.",
+        "Bachelor's degree in Computer Science or related field, or equivalent practical experience.",
+        "Fluent in both English and Chinese."
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [
+        "Angular",
+        "Java",
+        "Kotlin",
+        "Python",
+        "React",
+        "Scala",
+        "Vue",
+        "Vue.js"
+      ],
+      "url": "https://careers.airbnb.com/positions/6448191/",
+      "scraped_at": "2026-03-09 21:45:56.725914"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_listings_host_tools_and_ai_91d2df86",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Listings & Host Tools and AI",
+      "requirements": [
+        "10+ years industry experience",
+        "You have experience leading teams, setting technical direction, building & launching high-impact user-facing products",
+        "You have experience influencing partners such as designers and product managers as well as other engineering teams",
+        "You are excited to ideate, prototype new ideas, and influence product direction",
+        "You have excellent communication skills and the ability to work well within a team and across engineering teams",
+        "You have demonstrated an ability to mentor and grow more junior engineers, set and drive best practices"
+      ],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7528577/",
+      "scraped_at": "2026-03-09 21:46:03.661850"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_network_infrastructure_09e7f835",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Network Infrastructure",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7600470/",
+      "scraped_at": "2026-03-09 21:46:11.228282"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_performance_a3d97fcf",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Performance",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/6996864/",
+      "scraped_at": "2026-03-09 21:46:18.546483"
+    },
+    {
+      "id": "airbnb_staff_software_engineer_technical_lead_kv_stores_c_2e283f9f",
+      "company": "airbnb",
+      "title": "Staff Software Engineer, Technical Lead – KV Stores & Caching",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7527285/",
+      "scraped_at": "2026-03-09 21:46:25.829681"
+    },
+    {
+      "id": "airbnb_staff_technical_program_manager_reliability_observ_82a2f74c",
+      "company": "airbnb",
+      "title": "Staff Technical Program Manager, Reliability & Observability",
+      "requirements": [],
+      "location": "Remote",
+      "posting_date": null,
+      "tech_stack": [],
+      "url": "https://careers.airbnb.com/positions/7558202/",
+      "scraped_at": "2026-03-09 21:46:32.972427"
     }
   ],
   "metadata": {
-    "total_count": 65,
-    "filtered_count": 65,
-    "cached_at": "2026-02-14T06:01:46.335462",
+    "total_count": 119,
+    "filtered_count": 119,
+    "cached_at": "2026-03-09T21:46:38.361701",
     "companies": {
       "posthog": {
-        "count": 0,
-        "last_scraped": "2026-02-14T06:01:46.247695",
+        "count": 1,
+        "last_scraped": "2026-03-09T21:46:38.211353",
         "status": "success",
         "error": null
       },
       "kraken": {
-        "count": 27,
-        "last_scraped": "2026-02-14T06:01:46.266948",
+        "count": 25,
+        "last_scraped": "2026-03-09T21:46:38.234909",
         "status": "success",
         "error": null
       },
       "coinbase": {
-        "count": 0,
-        "last_scraped": "2026-02-14T06:01:46.284561",
+        "count": 2,
+        "last_scraped": "2026-03-09T21:46:38.261340",
         "status": "success",
         "error": null
       },
       "railway": {
-        "count": 16,
-        "last_scraped": "2026-02-14T06:01:46.304154",
+        "count": 15,
+        "last_scraped": "2026-03-09T21:46:38.290553",
         "status": "success",
         "error": null
       },
       "airbnb": {
-        "count": 22,
-        "last_scraped": "2026-02-14T06:01:46.324257",
+        "count": 76,
+        "last_scraped": "2026-03-09T21:46:38.339007",
         "status": "success",
         "error": null
       }

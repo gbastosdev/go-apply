@@ -1,8 +1,9 @@
 [phases.setup]
-aptPkgs = ["chromium-browser", "chromium-chromedriver"]
+# Camoufox (Firefox-based) runtime libs
+aptPkgs = ["libgtk-3-0", "libx11-xcb1", "libasound2", "libdbus-glib-1-2"]
 
 [phases.build]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["pip install -r requirements.txt", "python -m camoufox fetch"]
 
 [start]
 cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"

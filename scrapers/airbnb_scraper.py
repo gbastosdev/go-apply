@@ -1,5 +1,4 @@
 import asyncio
-import time
 from typing import List, Dict
 
 from scrapers.base_scraper import BaseScraper
@@ -10,101 +9,82 @@ logger = setup_logger(__name__)
 
 class AirbnbScraper(BaseScraper):
     COMPANY_NAME = "airbnb"
-    # Brazil location filter returns 0 results — scrape all Engineering positions instead.
-    # The listing shows Brazil-specific roles (location text in each card).
+    # Brazil location filter returns 0 — use engineering-only URL.
+    # Brazil-specific roles appear in location text (e.g. "Brazil", "São Paulo").
     BASE_URL = "https://careers.airbnb.com/positions/?_departments=engineering"
 
     async def scrape(self) -> List[Dict]:
         loop = asyncio.get_event_loop()
         return await loop.run_in_executor(None, self._sync_scrape)
 
-    def _collect_page_jobs(self, driver) -> list:
-        """Return job link data from the currently rendered listing page."""
-        return driver.execute_script("""
-            return Array.from(document.querySelectorAll('a[href*="/positions/"]'))
-                .map(function(a) {
-                    return {
-                        href: a.href,
-                        title: a.textContent.trim(),
-                        parentText: a.parentElement ? a.parentElement.textContent.trim() : ''
-                    };
-                })
-                .filter(function(j) {
-                    return j.href &&
-                        j.href.indexOf('?') === -1 &&
-                        j.href.indexOf('#') === -1 &&
-                        j.title.length > 2;
-                });
-        """) or []
-
     def _sync_scrape(self) -> List[Dict]:
         jobs = []
-        driver = self._create_driver()
-        try:
-            logger.info(f"{self.COMPANY_NAME}: Loading {self.BASE_URL}")
-            driver.get(self.BASE_URL)
-            time.sleep(6)
+        with self._browser() as browser:
+            page = browser.new_page()
+            try:
+                # Phase 1: collect ALL job links across all listing pages
+                all_job_data = self._collect_all_job_links(page)
+                logger.info(f"{self.COMPANY_NAME}: Total unique jobs found: {len(all_job_data)}")
 
-            seen_hrefs: set = set()
-            page_num = 1
-
-            while page_num <= 10:  # safety cap
-                # Scroll to trigger lazy-load
-                for _ in range(2):
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-                    time.sleep(1)
-                driver.execute_script("window.scrollTo(0, 0)")
-                time.sleep(1)
-
-                job_data = self._collect_page_jobs(driver)
-                new_jobs = [j for j in job_data if j["href"] not in seen_hrefs]
-                logger.info(f"{self.COMPANY_NAME}: Page {page_num} — {len(job_data)} links, {len(new_jobs)} new")
-
-                for item in new_jobs:
-                    seen_hrefs.add(item["href"])
+                # Phase 2: visit each detail page
+                for item in all_job_data:
                     try:
-                        driver.get(item["href"])
-                        time.sleep(3)
+                        page.goto(item["url"], wait_until="domcontentloaded")
+                        page.wait_for_function("() => document.body && document.body.offsetHeight > 0")
+                        page.wait_for_timeout(2000)
 
-                        # Location from parentText (e.g. "Hybrid • São Paulo, Brazil")
-                        location = "Remote"
-                        parent_text = item.get("parentText", "")
-                        if "•" in parent_text:
-                            parts = parent_text.split("•")
-                            if len(parts) >= 2:
-                                loc = parts[-1].strip()
-                                location = loc or "Remote"
+                        # Location from detail page (listing card text is multiline noise)
+                        location = page.evaluate("""() => {
+                            const sel = [
+                                '.job-location', '[class*="location"]',
+                                '[data-qa="location"]', '.location'
+                            ];
+                            for (const s of sel) {
+                                const el = document.querySelector(s);
+                                if (el) { const t = el.innerText.trim(); if (t) return t; }
+                            }
+                            // Fallback: first short single line after h1 that looks like a location
+                            const h1 = document.querySelector('h1');
+                            if (h1) {
+                                let el = h1.nextElementSibling;
+                                for (let i = 0; i < 5; i++) {
+                                    if (!el) break;
+                                    const t = el.innerText.split('\\n')[0].trim();
+                                    if (t && t.length < 60) return t;
+                                    el = el.nextElementSibling;
+                                }
+                            }
+                            return 'Remote';
+                        }""") or "Remote"
 
-                        # Extract from "Your Expertise" section.
-                        # Airbnb uses <p><strong>Your Expertise</strong></p> followed
-                        # by a sibling <ul>. Walk up to 5 ancestor levels to find LI
-                        # elements in a sibling container.
-                        requirements = driver.execute_script("""
-                            var results = [];
-                            var headings = document.querySelectorAll('h1,h2,h3,h4,h5,h6,strong,b,p');
-                            var found = null;
-                            for (var i = 0; i < headings.length; i++) {
-                                if (headings[i].textContent.trim().toLowerCase().indexOf('your expertise') !== -1) {
-                                    found = headings[i];
+                        # "Your Expertise" section — walk up to 5 ancestor levels
+                        # to find sibling LI container (Airbnb uses <p><strong> heading)
+                        requirements = page.evaluate("""() => {
+                            const results = [];
+                            const headings = document.querySelectorAll('h1,h2,h3,h4,h5,h6,strong,b,p');
+                            let found = null;
+                            for (const h of headings) {
+                                if (h.textContent.trim().toLowerCase().includes('your expertise')) {
+                                    found = h;
                                     break;
                                 }
                             }
                             if (!found) return results;
-                            var el = found;
-                            for (var depth = 0; depth < 5; depth++) {
-                                var sib = el.nextElementSibling;
+                            let el = found;
+                            for (let depth = 0; depth < 5; depth++) {
+                                let sib = el.nextElementSibling;
                                 while (sib) {
-                                    var lis = sib.querySelectorAll('li');
+                                    const lis = sib.querySelectorAll('li');
                                     if (lis.length > 0) {
-                                        for (var k = 0; k < lis.length; k++) {
-                                            var t = lis[k].textContent.trim();
+                                        for (const li of lis) {
+                                            const t = li.textContent.trim();
                                             if (t.length > 10) results.push(t);
                                         }
                                         return results;
                                     }
                                     if (sib.tagName === 'LI') {
-                                        var t2 = sib.textContent.trim();
-                                        if (t2.length > 10) results.push(t2);
+                                        const t = sib.textContent.trim();
+                                        if (t.length > 10) results.push(t);
                                     }
                                     sib = sib.nextElementSibling;
                                 }
@@ -112,51 +92,79 @@ class AirbnbScraper(BaseScraper):
                                 el = el.parentElement;
                             }
                             return results;
-                        """) or []
+                        }""") or []
 
-                        # Full page text for tech_stack (catches tech not in requirements)
-                        description = driver.execute_script(
-                            "return document.body.innerText"
-                        ) or ""
+                        description = page.evaluate("() => document.body.innerText") or ""
 
                         job = self.create_job_dict(
                             title=item["title"],
                             requirements=requirements[:15],
                             location=location,
-                            url=item["href"],
+                            url=item["url"],
                             description=description,
                         )
                         jobs.append(job)
-                        logger.info(f"{self.COMPANY_NAME}: Scraped - {item['title']} ({location}) - {len(requirements)} reqs")
-
-                        # Go back to the listing page
-                        driver.back()
-                        time.sleep(3)
+                        logger.info(f"{self.COMPANY_NAME}: Scraped - {item['title']} ({item['location']}) - {len(requirements)} reqs")
 
                     except Exception as e:
-                        logger.warning(f"{self.COMPANY_NAME}: Error scraping {item['href']}: {e}")
-                        driver.get(self.BASE_URL)
-                        time.sleep(4)
+                        logger.warning(f"{self.COMPANY_NAME}: Error scraping {item['url']}: {e}")
                         continue
 
-                # Try to click next page
-                try:
-                    next_btn = driver.execute_script("""
-                        var links = document.querySelectorAll('a.facetwp-page.next');
-                        return links.length > 0 ? links[0] : null;
-                    """)
-                    if not next_btn:
-                        logger.info(f"{self.COMPANY_NAME}: No more pages after page {page_num}")
-                        break
-                    driver.execute_script("arguments[0].click();", next_btn)
-                    time.sleep(4)
-                    page_num += 1
-                except Exception as e:
-                    logger.info(f"{self.COMPANY_NAME}: Pagination ended at page {page_num}: {e}")
-                    break
-
-        finally:
-            driver.quit()
-            logger.info(f"{self.COMPANY_NAME}: Driver closed. Total: {len(jobs)}")
+            finally:
+                logger.info(f"{self.COMPANY_NAME}: Done. Total: {len(jobs)}")
 
         return jobs
+
+    def _collect_all_job_links(self, page) -> List[Dict]:
+        """Navigate all listing pages and return deduplicated job link data."""
+        logger.info(f"{self.COMPANY_NAME}: Loading {self.BASE_URL}")
+        page.goto(self.BASE_URL, wait_until="load")
+        page.wait_for_function("() => document.body && document.body.offsetHeight > 0")
+        page.wait_for_timeout(3000)
+
+        all_jobs: Dict[str, Dict] = {}
+        page_num = 1
+
+        while page_num <= 15:  # safety cap
+            for _ in range(2):
+                page.evaluate("() => window.scrollTo(0, document.body.scrollHeight)")
+                page.wait_for_timeout(800)
+
+            job_data = page.evaluate("""() => {
+                return Array.from(document.querySelectorAll('a[href*="/positions/"]'))
+                    .map(a => {
+                        const parent = a.closest('li') || a.parentElement;
+                        const parentText = parent ? parent.innerText : '';
+                        let location = 'Remote';
+                        if (parentText.includes('\\u2022')) {
+                            const parts = parentText.split('\\u2022');
+                            location = parts[parts.length - 1].trim() || 'Remote';
+                        }
+                        return {url: a.href, title: a.textContent.trim(), location};
+                    })
+                    .filter(j => j.url && !j.url.includes('?') && !j.url.includes('#') && j.title.length > 2);
+            }""") or []
+
+            new_count = 0
+            for j in job_data:
+                if j["url"] not in all_jobs:
+                    all_jobs[j["url"]] = j
+                    new_count += 1
+
+            logger.info(f"{self.COMPANY_NAME}: Page {page_num} — {len(job_data)} links, {new_count} new (total: {len(all_jobs)})")
+
+            if not job_data:
+                logger.info(f"{self.COMPANY_NAME}: No jobs on page {page_num}, stopping")
+                break
+
+            # FacetWP "next" button
+            next_btn = page.locator("a.facetwp-page.next")
+            if next_btn.count() == 0:
+                logger.info(f"{self.COMPANY_NAME}: No more pages after page {page_num}")
+                break
+
+            next_btn.first.click()
+            page.wait_for_timeout(3000)
+            page_num += 1
+
+        return list(all_jobs.values())

@@ -22,41 +22,48 @@ def analyze_job_cv(job_description: str, resume_text: str):
             detail="Internal error: Anthropic API key not configured."
         )
 
-    system_message = """You are an ATS (Applicant Tracking System) for analyzing compatibility between job postings and resumes.
+    system_prompt = """You are an ATS (Applicant Tracking System) for analyzing compatibility between job postings and resumes.
 
-    TASK:
-    Compare the job requirements with the literal content of the resume and return a JSON analysis.
+        TASK:
+        Compare the job requirements with the literal content of the resume and return a JSON analysis.
 
-    MATCHING RULES (follow strictly):
-    - A requirement is MET only if the term, technology, or concept appears EXPLICITLY in the resume.
-    - DO NOT make inferences. Example: "cloud experience" does NOT imply "AWS" if AWS is not written.
-    - DO NOT use external knowledge. Analyze only the provided text.
-    - If in doubt, classify as missing.
+        LANGUAGE DETECTION:
+        - Detect the language of the job description automatically.
+        - Return ALL JSON values (matched_requirements, missing_requirements, observation) in the SAME language as the job description.
+        - If job description is in Portuguese, respond in Portuguese.
+        - If job description is in English, respond in English.
+        - If job description is in Spanish, respond in Spanish.
 
-    SCORING RULES:
-    - Calculate: (total matched_requirements / total job requirements) * 100
-    - Round to integer.
-    - Mandatory requirements count 2x in the calculation if explicitly marked as mandatory in the job posting.
+        MATCHING RULES (follow strictly):
+        - A requirement is MET only if the term, technology, or concept appears EXPLICITLY in the resume.
+        - DO NOT make inferences. Example: "cloud experience" does NOT imply "AWS" if AWS is not written.
+        - DO NOT use external knowledge. Analyze only the provided text.
+        - If in doubt, classify as missing.
 
-    LANGUAGE: All JSON values in English.
+        SCORING RULES:
+        - Calculate: (total matched_requirements / total job requirements) * 100
+        - Round to integer.
+        - Mandatory requirements count 2x in the calculation if explicitly marked as mandatory in the job posting.
 
-    OUTPUT FORMAT:
-    Return ONLY the JSON object below, with no text before or after, no markdown, no explanations:
+        OUTPUT FORMAT:
+        Return ONLY the JSON object below, with no text before or after, no markdown, no explanations:
 
-    {"matched_requirements":["matched requirement 1","matched requirement 2"],"missing_requirements":["missing requirement 1"],"score":75,"observation":"objective observation about the candidate profile relative to the job posting"}"""
-
-    user_message = f"""JOB DESCRIPTION:
-    {job_description}
-
-    RESUME:
-    {resume_text}"""
+        {"matched_requirements":["matched requirement 1","matched requirement 2"],"missing_requirements":["missing requirement 1"],"score":75,"observation":"objective observation about the candidate profile relative to the job posting"}"""
+        
+    user_message = f"""
+        JOB DESCRIPTION:
+        {job_description}
+        
+        RESUME:
+        {resume_text}
+        """
 
     try:
         message = client.messages.create(
             model="claude-haiku-4-5",
             max_tokens=1024,  # JSON de ATS nunca precisa de 5000 tokens
             temperature=0.1,
-            system=system_message,
+            system=system_prompt,
             messages=[{"role": "user", "content": user_message}]
         )
 

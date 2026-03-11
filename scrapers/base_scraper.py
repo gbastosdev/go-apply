@@ -1,13 +1,10 @@
 import asyncio
-import shutil
 import hashlib
 from abc import ABC, abstractmethod
 from datetime import datetime
 from typing import List, Dict
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
+from camoufox.sync_api import Camoufox
 
 from utils.logger import setup_logger
 from services.tech_stack_extractor import TechStackExtractor
@@ -16,7 +13,6 @@ logger = setup_logger(__name__)
 
 
 class BaseScraper(ABC):
-    TIMEOUT = 30  # seconds (selenium uses seconds, not ms)
     MAX_RETRIES = 3
     COMPANY_NAME = "unknown"
 
@@ -42,34 +38,18 @@ class BaseScraper(ABC):
                 await asyncio.sleep(5 * attempt)
         return []
 
-    def _create_driver(self) -> webdriver.Chrome:
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--window-size=1920,1080")
-        # Locate system chromium (Railway apt-installed)
-        chromium = shutil.which("chromium-browser") or shutil.which("chromium")
-        if chromium:
-            options.binary_location = chromium
-        return webdriver.Chrome(options=options)
+    def _browser(self) -> Camoufox:
+        """Return a configured Camoufox context manager."""
+        return Camoufox(headless=True)
 
-    def safe_get_text(self, driver: webdriver.Chrome, selector: str, default: str = "") -> str:
-        try:
-            el = driver.find_element(By.CSS_SELECTOR, selector)
-            return el.text.strip() or default
-        except Exception:
-            return default
+    def extract_tech_stack(self, text: str) -> List[str]:
+        return self.tech_extractor.extract(text)
 
     def generate_job_id(self, title: str, company: str) -> str:
         sanitized = "".join(c.lower() if c.isalnum() else "_" for c in title)
         sanitized = "_".join(filter(None, sanitized.split("_")))[:50]
         hash_short = hashlib.md5(f"{company}_{title}".encode()).hexdigest()[:8]
         return f"{company}_{sanitized}_{hash_short}"
-
-    def extract_tech_stack(self, text: str) -> List[str]:
-        return self.tech_extractor.extract(text)
 
     def create_job_dict(
         self,
@@ -83,8 +63,6 @@ class BaseScraper(ABC):
         tech_text = description if description else " ".join(requirements)
         tech_stack = self.extract_tech_stack(tech_text)
         # Combine requirements + tech keywords into one searchable `skills` list.
-        # Requirements come first (human-readable context); tech keywords are
-        # appended so callers can filter/search by exact technology name.
         skills = list(dict.fromkeys(requirements + tech_stack))
         return {
             "id": self.generate_job_id(title, self.COMPANY_NAME),

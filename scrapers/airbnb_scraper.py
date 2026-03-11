@@ -36,21 +36,28 @@ class AirbnbScraper(BaseScraper):
                         # Location from detail page (listing card text is multiline noise)
                         location = page.evaluate("""() => {
                             const sel = [
-                                '.job-location', '[class*="location"]',
-                                '[data-qa="location"]', '.location'
+                                '.job-location', '[data-qa="location"]', '.location'
                             ];
                             for (const s of sel) {
                                 const el = document.querySelector(s);
-                                if (el) { const t = el.innerText.trim(); if (t) return t; }
+                                if (el) {
+                                    const t = el.innerText.trim();
+                                    if (t && !t.includes('\\n')) return t;
+                                }
                             }
-                            // Fallback: first short single line after h1 that looks like a location
+                            // Fallback: element after h1 contains "Work Model\\nTitle\\nCity" — last line is city
                             const h1 = document.querySelector('h1');
                             if (h1) {
                                 let el = h1.nextElementSibling;
                                 for (let i = 0; i < 5; i++) {
                                     if (!el) break;
-                                    const t = el.innerText.split('\\n')[0].trim();
-                                    if (t && t.length < 60) return t;
+                                    const lines = el.innerText.split('\\n').map(l => l.trim()).filter(Boolean);
+                                    if (lines.length >= 2) {
+                                        const last = lines[lines.length - 1];
+                                        if (last.length < 80) return last;
+                                    } else if (lines.length === 1 && lines[0].length < 80) {
+                                        return lines[0];
+                                    }
                                     el = el.nextElementSibling;
                                 }
                             }
